@@ -1,8 +1,11 @@
 import styled from "styled-components"
 import { bplg, bpmd } from "../../const/constants"
 
+import bgimage from "../../images/background2.jpg"
+/* inline background image won't work with gatsby-plugin-styled-components*/
+
 export const HeroContainer = styled.div`
-  background: url("../../images/background2.jpg");
+  background: url(${bgimage});
   height: 100vh;
   width: 100%;
   display: flex;
@@ -31,6 +34,7 @@ export const Para = styled.p`
   margin-top: 8px;
   color: #fff;
   font-size: 32px;
+
   @media screen and (max-width: ${bpmd}) {
     font-size: 30px;
   }
