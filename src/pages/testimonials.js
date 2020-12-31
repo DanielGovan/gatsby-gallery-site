@@ -7,9 +7,8 @@ import SEO from "../components/seo"
 const Testimonials = () => (
   <Layout>
     <SEO title="Testimonials" />
-    <h1>Hi from the Testimonials page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <h1>Testimonials</h1>
+    <p>A few quick reviews from instagram...</p>
   </Layout>
 )
 
