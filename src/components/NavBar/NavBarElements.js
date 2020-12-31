@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { DiScala } from "react-icons/di"
+import { GiDragonBalls } from "react-icons/gi"
 import { Link } from "gatsby"
 import { bplg, nearBlack } from "../../const/constants"
 
@@ -42,7 +42,7 @@ export const NavLogo = styled(Link)`
   align-items: center;
 `
 
-export const NavIcon = styled(DiScala)`
+export const NavIcon = styled(GiDragonBalls)`
   margin: 0 0.5rem 0 2rem;
 `
 
