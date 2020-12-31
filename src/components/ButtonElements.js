@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { bplg, bpmd } from "../const/constants"
+import { bpmd } from "../const/constants"
 
 export const Button = styled.button`
   border-radius: 4px;
