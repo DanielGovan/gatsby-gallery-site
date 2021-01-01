@@ -39,7 +39,7 @@ const Testimonials = () => {
 
     return (
       <div style={{ display: "inline-block" }} key={img.relativePath}>
-        {img.relativePath}
+        {name}
         <ImageItem
           style={{ width: "150px" }}
           key={img.relativePath}
@@ -56,7 +56,7 @@ const Testimonials = () => {
       <p>A few quick reviews from instagram...</p>
 
       {oogabooga}
-
+      <div>All pics</div>
       {data.allFile.edges.map((image, key) => (
         <div style={{ display: "inline-block", maxWidth: "100px" }} key={key}>
           {image.node.relativePath}
