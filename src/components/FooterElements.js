@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import { GiDragonBalls } from "react-icons/gi"
 import styled from "styled-components"
-import { bplg } from "../../const/constants"
+import { bplg } from "../const/constants"
 
 export const FooterContainer = styled.div`
   background-color: #101522;

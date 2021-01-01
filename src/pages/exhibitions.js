@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Footer from "../components/Footer/Footer"
 
 const Exhibitions = () => (
   <Layout>
@@ -16,7 +15,6 @@ const Exhibitions = () => (
       was a collaborative crusade to learn from, signal-boost and celebrate some
       of the local queer icons.{" "}
     </p>
-    <Footer />
   </Layout>
 )
 

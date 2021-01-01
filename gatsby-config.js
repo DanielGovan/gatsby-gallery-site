@@ -10,8 +10,35 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `siteImages`,
+        path: `${__dirname}/src/images/siteImages`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `testimonialImages`,
+        path: `${__dirname}/src/images/testimonials`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `galleryImages`,
+        path: `${__dirname}/src/images/galleryImages`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `exhibitionImages`,
+        path: `${__dirname}/src/images/exhibition`,
       },
     },
     `gatsby-transformer-sharp`,

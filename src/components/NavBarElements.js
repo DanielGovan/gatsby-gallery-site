@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { GiDragonBalls } from "react-icons/gi"
 import { Link } from "gatsby"
-import { bplg, nearBlack } from "../../const/constants"
+import { bplg, nearBlack } from "../const/constants"
 
 export const Nav = styled.nav`
   background: ${({ active }) =>

@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { bplg, bpmd } from "../../const/constants"
+import { bplg, bpmd } from "../const/constants"
 
-import bgimage from "../../images/background2.jpg"
+import bgimage from "../images/background2.jpg"
 /* inline background image won't work with gatsby-plugin-styled-components*/
 
 export const HeroContainer = styled.div`

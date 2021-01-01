@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Footer from "../components/Footer/Footer"
 
 const ShootPrices = () => (
   <Layout>
@@ -28,7 +27,6 @@ const ShootPrices = () => (
       portraits included
     </p>
     <p>If you can't quite pick and want extra final shots, £15 per capture.</p>
-    <Footer />
   </Layout>
 )
 
