@@ -31,15 +31,15 @@ const Testimonials = () => {
     console.log(GALLERY_IMAGES)
   }, [GALLERY_IMAGES])
 
-  const oogabooga = GALLERY_IMAGES.map(({ name, date, images }) => {
+  const displayImages = GALLERY_IMAGES.map(({ name, date, images }) => {
     // Finds associated image from the array of images
     const img = data.allFile.edges.find(
       ({ node }) => node.relativePath === images[0]
     ).node
-
+    if (date) return
     return (
       <div style={{ display: "inline-block" }} key={img.relativePath}>
-        {name}
+        {name} // {date}
         <ImageItem
           style={{ width: "150px" }}
           key={img.relativePath}
@@ -55,20 +55,23 @@ const Testimonials = () => {
       <h1>Testimonials</h1>
       <p>A few quick reviews from instagram...</p>
 
-      {oogabooga}
-      <div>All pics</div>
-      {data.allFile.edges.map((image, key) => (
-        <div style={{ display: "inline-block", maxWidth: "100px" }} key={key}>
-          {image.node.relativePath}
-          <ImageItem
-            style={{ width: "100px" }}
-            key={key}
-            fluid={image.node.childImageSharp.fluid}
-          />
-        </div>
-      ))}
+      {displayImages}
     </Layout>
   )
 }
 
 export default Testimonials
+
+{
+  /* <div>All pics</div>
+{data.allFile.edges.map((image, key) => (
+  <div style={{ display: "inline-block", maxWidth: "100px" }} key={key}>
+    {image.node.relativePath}
+    <ImageItem
+      style={{ width: "100px" }}
+      key={key}
+      fluid={image.node.childImageSharp.fluid}
+    />
+  </div>
+))} */
+}
