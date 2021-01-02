@@ -51,10 +51,7 @@ const NavBar = () => {
                 <NavLinks to="/">Home</NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/aboutShoots/">About Shoots</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="/shootPrices/">Prices</NavLinks>
+                <NavLinks to="/aboutShoots/">Book a shoot</NavLinks>
               </NavItem>
               <NavItem>
                 <NavLinks to="/background/">Background</NavLinks>

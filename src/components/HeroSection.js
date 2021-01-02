@@ -2,27 +2,32 @@ import React from "react"
 import { Button } from "./ButtonElements"
 import {
   HeroContainer,
-  HeroHeader,
-  Para,
+  Tagline,
+  HeroPara,
   ButtonWrap,
 } from "./HeroSectionElements"
+import { InnerWrap } from "./LayoutElements"
 
 const HeroSection = () => {
   return (
     <HeroContainer>
-      <HeroHeader>A different light</HeroHeader>
-      <Para>
-        Hello and welcome! My name’s Dan, and I made this site and all the
-        images on it. I create queer surreal portrait photography in East
-        London, focusing on celebrating vulnerability, joy, and the sheer
-        absurdity of the situation.
-      </Para>
+      <InnerWrap>
+        <Tagline>
+          Queer / surreal / colourful portrait photography in East London
+        </Tagline>
 
-      <ButtonWrap>
-        <Button fontBig big primary>
-          Get started
-        </Button>
-      </ButtonWrap>
+        <HeroPara>
+          Hi there! My name’s Dan, and I do cute portraits of people with
+          colourful lights, celebrating vulnerability, absurdity and joy.
+        </HeroPara>
+        <HeroPara></HeroPara>
+
+        <ButtonWrap>
+          <Button fontBig big primary>
+            Get in touch
+          </Button>
+        </ButtonWrap>
+      </InnerWrap>
     </HeroContainer>
   )
 }

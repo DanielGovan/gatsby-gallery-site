@@ -11,11 +11,9 @@ import SEO from "../components/seo"
 
 const Background = () => (
   <Layout>
-    <SEO title="History" />
+    <SEO title="Background" />
     <InnerWrap>
-      <Header>History</Header>
-
-      <Para></Para>
+      <Header>Background</Header>
 
       <SubHeader>Nightlife</SubHeader>
       <Para>

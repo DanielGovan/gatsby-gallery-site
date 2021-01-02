@@ -17,20 +17,20 @@ export const HeroContainer = styled.div`
   margin-top: -80px;
 `
 
-export const HeroHeader = styled.h1`
+export const Tagline = styled.h1`
   color: #fff;
-  font-size: 100px;
+  font-size: 60px;
   margin-top: 0px;
 
   @media screen and (max-width: ${bplg}) {
-    font-size: 70px;
+    font-size: 40px;
   }
 
   @media screen and (max-width: ${bpmd}) {
-    font-size: 60px;
+    font-size: 35px;
   }
 `
-export const Para = styled.p`
+export const HeroPara = styled.p`
   margin-top: 8px;
   color: #fff;
   font-size: 32px;

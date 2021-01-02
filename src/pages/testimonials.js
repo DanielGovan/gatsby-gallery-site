@@ -8,6 +8,8 @@ import {
   ImageItem,
   ImageGrid,
   InnerWrap,
+  Header,
+  Para,
 } from "../components/LayoutElements"
 
 const Testimonials = () => {
@@ -36,8 +38,8 @@ const Testimonials = () => {
     <Layout>
       <SEO title="Testimonials" />
       <InnerWrap>
-        <h1>Testimonials</h1>
-        <p>A few quick reviews from instagram...</p>
+        <Header>Testimonials</Header>
+        <Para>Some quick reviews taken from instagram...</Para>
       </InnerWrap>
 
       <ImageContainer>

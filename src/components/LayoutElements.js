@@ -54,3 +54,15 @@ export const SubHeader = styled.h2`
 export const Para = styled.p`
   margin: 0.5rem 0 1.5rem;
 `
+
+export const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+export const ListItem = styled.li`
+  /* max-width: 400px; */
+  //min-width: 80%;
+  margin: 0;
+  padding: 0 0 10px 0;
+`
