@@ -10,8 +10,14 @@ import {
 const HeroSection = () => {
   return (
     <HeroContainer>
-      <HeroHeader>Travel more</HeroHeader>
-      <Para>Plan your next trip today</Para>
+      <HeroHeader>A different light</HeroHeader>
+      <Para>
+        Hello and welcome! My name’s Dan, and I made this site and all the
+        images on it. I create queer surreal portrait photography in East
+        London, focusing on celebrating vulnerability, joy, and the sheer
+        absurdity of the situation.
+      </Para>
+
       <ButtonWrap>
         <Button fontBig big primary>
           Get started

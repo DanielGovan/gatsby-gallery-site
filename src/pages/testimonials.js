@@ -1,23 +1,29 @@
-import React, { useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
 
 import Layout from "../components/layout"
-import { GALLERY_IMAGES } from "../const/GalleryList"
 import SEO from "../components/seo"
-import { ImageItem } from "../components/Image"
+import { useStaticQuery, graphql } from "gatsby"
+import {
+  ImageContainer,
+  ImageItem,
+  ImageGrid,
+  InnerWrap,
+} from "../components/LayoutElements"
 
 const Testimonials = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query testimonialImages {
       allFile(
-        filter: { sourceInstanceName: { eq: "galleryImages" } }
-        sort: { fields: relativePath, order: ASC }
+        filter: {
+          sourceInstanceName: { eq: "testimonialImages" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 300, maxHeight: 400) {
+              fluid(maxHeight: 600, maxWidth: 400) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -26,52 +32,27 @@ const Testimonials = () => {
       }
     }
   `)
-
-  useEffect(() => {
-    console.log(GALLERY_IMAGES)
-  }, [GALLERY_IMAGES])
-
-  const displayImages = GALLERY_IMAGES.map(({ name, date, images }) => {
-    // Finds associated image from the array of images
-    const img = data.allFile.edges.find(
-      ({ node }) => node.relativePath === images[0]
-    ).node
-    if (date) return
-    return (
-      <div style={{ display: "inline-block" }} key={img.relativePath}>
-        {name} // {date}
-        <ImageItem
-          style={{ width: "150px" }}
-          key={img.relativePath}
-          fluid={img.childImageSharp.fluid}
-        />
-      </div>
-    )
-  })
-
   return (
     <Layout>
       <SEO title="Testimonials" />
-      <h1>Testimonials</h1>
-      <p>A few quick reviews from instagram...</p>
+      <InnerWrap>
+        <h1>Testimonials</h1>
+        <p>A few quick reviews from instagram...</p>
+      </InnerWrap>
 
-      {displayImages}
+      <ImageContainer>
+        <ImageGrid>
+          {data.allFile.edges.map((image, key) => (
+            <ImageItem
+              key={key}
+              fluid={image.node.childImageSharp.fluid}
+              alt={image.node.relativePath.split(".")[0]}
+            />
+          ))}
+        </ImageGrid>
+      </ImageContainer>
     </Layout>
   )
 }
 
 export default Testimonials
-
-{
-  /* <div>All pics</div>
-{data.allFile.edges.map((image, key) => (
-  <div style={{ display: "inline-block", maxWidth: "100px" }} key={key}>
-    {image.node.relativePath}
-    <ImageItem
-      style={{ width: "100px" }}
-      key={key}
-      fluid={image.node.childImageSharp.fluid}
-    />
-  </div>
-))} */
-}

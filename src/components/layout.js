@@ -12,6 +12,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./layout.css"
 import NavBar from "./NavBar"
 import Footer from "./Footer"
+import { MainWrap } from "./LayoutElements"
+import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +21,8 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
+          author
         }
       }
     }
@@ -26,9 +30,16 @@ const Layout = ({ children }) => {
   console.log(data)
   return (
     <>
-      <NavBar />
+      <Helmet
+        title={data.site.siteMetadata.title}
+        meta={[
+          { name: "description", content: data.site.siteMetadata.description },
+          { name: "keywords", content: "Photography, Portrait, London" },
+        ]}
+      ></Helmet>
 
-      <main>{children}</main>
+      <NavBar />
+      <MainWrap>{children}</MainWrap>
       <Footer />
     </>
   )

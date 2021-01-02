@@ -18,11 +18,10 @@ const Footer = () => {
     <FooterContainer>
       <SocialMedia>
         <SocialMediaWrap>
-          <SocialLogo to="/">
+          <WebsiteRights>
+            © Light by Dan {new Date().getFullYear()}
             <SocialIcon />
-            Light by Dan
-          </SocialLogo>
-          <WebsiteRights>© Dan Govan {new Date().getFullYear()}</WebsiteRights>
+          </WebsiteRights>
           <SocialIcons>
             <SocialIconLink
               href="//www.instagram.com/lightbydan"

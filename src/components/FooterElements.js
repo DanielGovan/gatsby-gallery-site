@@ -21,30 +21,19 @@ export const SocialMediaWrap = styled.div`
   align-items: center;
   width: 90%;
   max-width: 1000px;
-  margin: 20px auto;
+  margin: 10px auto;
 
   @media screen and (max-width: ${bplg}) {
     flex-direction: column;
   }
 `
 
-export const SocialLogo = styled(Link)`
-  color: #fff;
-  justify-self: start;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-`
-
 export const SocialIcon = styled(GiDragonBalls)`
-  margin-right: 10px;
+  margin-left: 10px;
 `
-export const WebsiteRights = styled.small`
+export const WebsiteRights = styled.span`
   color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   font-family: "Roboto" sans-serif;
 `
 

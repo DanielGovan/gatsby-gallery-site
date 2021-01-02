@@ -1,16 +1,18 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Image from "../components/Image"
 import SEO from "../components/seo"
 import HeroSection from "../components/HeroSection"
+import Gallery from "../components/Gallery"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <HeroSection />
-    <Image />
-  </Layout>
+  <>
+    <Layout>
+      <SEO title="Home" />
+      <HeroSection />
+      <Gallery />
+    </Layout>
+  </>
 )
 
 export default IndexPage
