@@ -16,7 +16,7 @@ import {
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
 
-const settings = {
+const slickSettings = {
   dots: true,
   infinite: true,
   speed: 500,
@@ -24,7 +24,7 @@ const settings = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 600, // tablet breakpoint
+      breakpoint: 700,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -34,28 +34,6 @@ const settings = {
 }
 
 const Background = () => {
-  // const data = useStaticQuery(graphql`
-  //   query backgroundImages {
-  //     allFile(
-  //       filter: {
-  //         sourceInstanceName: { eq: "siteImages" }
-  //         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-  //       }
-  //     ) {
-  //       edges {
-  //         node {
-  //           relativePath
-  //           childImageSharp {
-  //             fluid(maxWidth: 300, maxHeight: 400) {
-  //               ...GatsbyImageSharpFluid
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
   const data = useStaticQuery(graphql`
     query exhibitionImages {
       allFile(
@@ -144,7 +122,7 @@ const Background = () => {
           people’s reactions and the fun in the moment.
         </Para>
 
-        <Slider {...settings}>
+        <Slider {...slickSettings}>
           <div>
             <ImageItem
               fluid={data.imageOne.childImageSharp.fluid}

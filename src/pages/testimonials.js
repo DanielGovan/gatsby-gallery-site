@@ -1,4 +1,5 @@
 import React from "react"
+import Slider from "react-slick"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,6 +12,23 @@ import {
   Header,
   Para,
 } from "../components/LayoutElements"
+
+const slickSettings = {
+  dots: true,
+  infinite: true,
+  speed: 200,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
 
 const Testimonials = () => {
   const data = useStaticQuery(graphql`
@@ -25,7 +43,7 @@ const Testimonials = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 600, maxWidth: 400) {
+              fluid(maxHeight: 800, maxWidth: 400) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -40,10 +58,8 @@ const Testimonials = () => {
       <InnerWrap>
         <Header>Testimonials</Header>
         <Para>Some quick reviews taken from instagram...</Para>
-      </InnerWrap>
 
-      <ImageContainer>
-        <ImageGrid>
+        <Slider {...slickSettings}>
           {data.allFile.edges.map((image, key) => (
             <ImageItem
               key={key}
@@ -51,8 +67,9 @@ const Testimonials = () => {
               alt={image.node.relativePath.split(".")[0]}
             />
           ))}
-        </ImageGrid>
-      </ImageContainer>
+        </Slider>
+        <p>Ho</p>
+      </InnerWrap>
     </Layout>
   )
 }
