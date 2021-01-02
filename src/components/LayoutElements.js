@@ -20,7 +20,7 @@ export const ImageContainer = styled.div`
   max-width: 1000px;
   padding: 0 32px;
   text-align: center;
-  margin: 50px auto;
+  margin: 0 auto;
 `
 export const ImageGrid = styled.div`
   display: grid;
@@ -40,7 +40,7 @@ export const ImageItem = styled(Img)`
   }
 
   img:hover {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
   }
 `
 
@@ -49,7 +49,7 @@ export const Header = styled.h1`
   margin-bottom: 44px;
 `
 export const SubHeader = styled.h2`
-  margin: 1rem 0 0rem;
+  margin: 2rem 0 0rem;
 `
 export const Para = styled.p`
   margin: 0.5rem 0 1.5rem;
