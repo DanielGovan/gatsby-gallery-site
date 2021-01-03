@@ -5,9 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import {
-  ImageContainer,
   ImageItem,
-  ImageGrid,
   InnerWrap,
   Header,
   Para,

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { bplg, bpmd } from "../const/constants"
+import { bpmd } from "../const/constants"
 
 //Layout
 

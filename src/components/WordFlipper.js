@@ -1,57 +1,9 @@
+import React from "react"
 import styled from "styled-components"
-import { bplg, bpmd } from "../const/constants"
 
-import bgimage from "../images/siteimages/art-140427.jpg"
-/* inline background image won't work with gatsby-plugin-styled-components*/
-
-export const HeroContainer = styled.div`
-  background: url(${bgimage});
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  background-size: cover;
-  object-fit: contain;
-  margin-top: -80px;
-`
-
-export const HeroInner = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 100px 32px 0;
-`
-
-export const SiteHeader = styled.h1`
-  display: flex;
-  color: #fff;
-  font-size: 60px;
-  text-shadow: 1px 1px 10px #000;
-
-  @media screen and (max-width: ${bplg}) {
-    font-size: 40px;
-  }
-
-  @media screen and (max-width: ${bpmd}) {
-    font-size: 35px;
-  }
-`
-
-export const Context = styled.span`
-  display: inline-block;
-`
-
-export const ButtonWrap = styled.div`
-  margin-top: 32px;
-`
-
-export const FadeIn = styled.span`
-  display: inline-block;
-  width: 10rem;
-  text-align: right;
-  position: relative;
+export const FadeIn = styled.div`
+  display: inline;
+  text-indent: 8px;
 
   span {
     animation: fadeEffect 12.5s linear infinite 0s;
@@ -60,8 +12,7 @@ export const FadeIn = styled.span`
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    right: 1rem;
-    bottom: 0;
+    left: 0;
   }
   span:nth-child(2) {
     animation-delay: 2.5s;
@@ -113,3 +64,19 @@ export const FadeIn = styled.span`
     }
   }
 `
+
+/*FadeIn*/
+
+const WordFlipper = () => {
+  return (
+    <FadeIn>
+      <span>Queer</span>
+      <span>Surreal</span>
+      <span>Colourful</span>
+      <span>Queer</span>
+      <span>Colourful</span>
+    </FadeIn>
+  )
+}
+
+export default WordFlipper

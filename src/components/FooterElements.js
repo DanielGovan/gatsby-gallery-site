@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import { GiDragonBalls } from "react-icons/gi"
 import styled from "styled-components"
 import { bplg } from "../const/constants"

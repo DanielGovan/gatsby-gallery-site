@@ -6,7 +6,6 @@ import {
   FooterContainer,
   SocialMedia,
   SocialMediaWrap,
-  SocialLogo,
   SocialIcons,
   SocialIcon,
   SocialIconLink,

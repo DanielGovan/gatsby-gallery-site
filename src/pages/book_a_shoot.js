@@ -116,9 +116,8 @@ const AboutShoots = () => {
 
           <List>
             <ListItem>
-              At my home studio in Mile End, we'll start with tea (or water?)
-              and an initial chat about the shoot; your hopes, fears,
-              expectations, and self image.
+              At my home studio in Mile End, we'll start with a chat about the
+              shoot; your hopes, fears, expectations, and self image.
             </ListItem>
             <ListItem>
               We’ll work through a variety of lighting setups, colours, props

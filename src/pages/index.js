@@ -3,35 +3,21 @@ import React from "react"
 import { Button } from "../components/ButtonElements"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {
-  HeroContainer,
-  Tagline,
-  ButtonWrap,
-} from "../components/HeroSectionElements"
-import { InnerWrap, Para, SubHeader } from "../components/LayoutElements"
+
+import { InnerWrap, Para } from "../components/LayoutElements"
+import { ButtonWrap } from "../components/HeroSectionElements"
+import HeroSection from "../components/HeroSection"
 
 const IndexPage = () => (
   <>
     <Layout>
       <SEO title="Home" />
-      <HeroContainer>
-        <InnerWrap>
-          <Tagline>
-            Queer / surreal / colourful portrait photography in East London
-          </Tagline>
-
-          <ButtonWrap>
-            <Button fontBig big primary>
-              Get in touch
-            </Button>
-          </ButtonWrap>
-        </InnerWrap>
-      </HeroContainer>
+      <HeroSection />
       <InnerWrap>
         pixs go here
         <Para>
           Hi there! My name’s Dan, and I do cute portraits of people with
-          colourful lights. I call it Light By Dan
+          colourful lights in East London. I call it Light By Dan
         </Para>
         <Para>
           Before portraits I took hundreds of thousands of photos of queer
