@@ -186,7 +186,7 @@ const Background = () => {
         <Para>
           In ten years of taking hundreds of thousands of photos of queer
           nightlife (and deleting most of them), I’ve learned a lot about queer
-          culture, and how people see themselves. I try to keep it irreverant,
+          culture and how people see themselves. I try to keep it irreverant,
           ridiculous and fantastical, not getting too bogged down in
           preconceptions, focusing more on the person and their character.
         </Para>

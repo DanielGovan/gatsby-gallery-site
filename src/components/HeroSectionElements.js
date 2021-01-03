@@ -21,7 +21,8 @@ export const HeroContainer = styled.div`
 export const Tagline = styled.h1`
   color: #fff;
   font-size: 60px;
-  margin-top: 0px;
+  margin-top: 150px;
+  text-shadow: 1px 1px 10px #000;
 
   @media screen and (max-width: ${bplg}) {
     font-size: 40px;
@@ -35,6 +36,7 @@ export const HeroPara = styled.p`
   margin-top: 8px;
   color: #fff;
   font-size: 32px;
+  text-shadow: 1px 1px 10px #000;
 
   @media screen and (max-width: ${bpmd}) {
     font-size: 30px;

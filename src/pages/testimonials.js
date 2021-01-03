@@ -21,7 +21,14 @@ const slickSettings = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 700,
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 550,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
