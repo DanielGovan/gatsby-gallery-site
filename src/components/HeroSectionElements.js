@@ -32,16 +32,16 @@ export const Tagline = styled.h1`
     font-size: 35px;
   }
 `
-export const HeroPara = styled.p`
-  margin-top: 8px;
-  color: #fff;
-  font-size: 32px;
-  text-shadow: 1px 1px 10px #000;
+// export const HeroPara = styled.p`
+//   margin-top: 8px;
+//   color: #fff;
+//   font-size: 32px;
+//   text-shadow: 1px 1px 10px #000;
 
-  @media screen and (max-width: ${bpmd}) {
-    font-size: 30px;
-  }
-`
+//   @media screen and (max-width: ${bpmd}) {
+//     font-size: 30px;
+//   }
+// `
 
 export const ButtonWrap = styled.div`
   margin-top: 32px;

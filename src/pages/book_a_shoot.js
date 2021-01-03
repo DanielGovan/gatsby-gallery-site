@@ -11,6 +11,7 @@ import {
   SubHeader,
   Para,
   InnerWrap,
+  Wrap,
   List,
   ListItem,
 } from "../components/LayoutElements"
@@ -24,7 +25,7 @@ const slickSettingsWide = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 700,
+      breakpoint: 660,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -41,9 +42,9 @@ const slickSettingsNarrow = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 700,
+      breakpoint: 660,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
       },
     },
@@ -102,12 +103,42 @@ const AboutShoots = () => {
       <SEO title="Book a shoot" />
       <InnerWrap>
         <Header>Book a shoot</Header>
-        <SubHeader>Thinking of getting lit by Dan?</SubHeader>
-        <Para>
-          It’s great for promotion if you’re a performer or some kind of online
-          brand, but more than that it’s a great experience for exploring and
-          improving self-image in a safe environment.
-        </Para>
+
+        <Wrap>
+          <SubHeader>Thinking of getting lit by Dan?</SubHeader>
+          <Para>
+            It’s great for promotion if you’re a performer or some kind of
+            online brand, but more than that it’s a great experience for
+            exploring and improving self-image in a safe environment.
+          </Para>
+
+          <SubHeader>How does it work?</SubHeader>
+
+          <List>
+            <ListItem>
+              At my home studio in Mile End, we'll start with tea (or water?)
+              and an initial chat about the shoot; your hopes, fears,
+              expectations, and self image.
+            </ListItem>
+            <ListItem>
+              We’ll work through a variety of lighting setups, colours, props
+              and poses. I’ll show you some of the photos as we go, so you can
+              get a sense of how things are turning out and we can change
+              direction as needed.
+            </ListItem>
+            <ListItem>
+              Later I’ll work through the photos, editing down from hundreds to
+              dozens, then I'll sending you a gallery so you can select the ones
+              you want (and also which you want deleted for all time).
+            </ListItem>
+            <ListItem>
+              Finally I spruce the chosen ones up and send them to you in high
+              resolution. If you give the go ahead I might use some on my
+              Instagram or websites too!
+            </ListItem>
+          </List>
+        </Wrap>
+
         <Illustration>
           <Slider {...slickSettingsNarrow}>
             <div>
@@ -130,32 +161,6 @@ const AboutShoots = () => {
             </div>
           </Slider>
         </Illustration>
-
-        <SubHeader>How does it work?</SubHeader>
-
-        <List>
-          <ListItem>
-            At my home studio in Mile End, we'll start with tea (or water?) and
-            an initial chat about the shoot; your hopes, fears, expectations,
-            and self image.
-          </ListItem>
-          <ListItem>
-            We’ll work through a variety of lighting setups, colours, props and
-            poses. I’ll show you some of the photos as we go, so you can get a
-            sense of how things are turning out and we can change direction as
-            needed.
-          </ListItem>
-          <ListItem>
-            Later I’ll work through the photos, editing down from hundreds to
-            dozens, then I'll sending you a gallery so you can select the ones
-            you want (and also which you want deleted for all time).
-          </ListItem>
-          <ListItem>
-            Finally I spruce the chosen ones up and send them to you in high
-            resolution. If you give the go ahead I might use some on my
-            Instagram or websites too!
-          </ListItem>
-        </List>
 
         <SubHeader>Prices</SubHeader>
 

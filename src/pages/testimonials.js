@@ -75,7 +75,6 @@ const Testimonials = () => {
             />
           ))}
         </Slider>
-        <p>Ho</p>
       </InnerWrap>
     </Layout>
   )

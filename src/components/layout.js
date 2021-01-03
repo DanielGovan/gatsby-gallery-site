@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  console.log(data)
+
   return (
     <>
       <Helmet

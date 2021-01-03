@@ -16,14 +16,32 @@ export const InnerWrap = styled.div`
 `
 
 export const Illustration = styled.div`
-  width: 400px;
-  margin: 0 0 20px 40px;
-  float: right;
+  /* max-width: 400px; */
+  width: 48%;
+  margin: 2rem 0 0;
+  padding: 0 20px;
+  display: inline-block;
+  vertical-align: top;
 
   @media screen and (max-width: ${bpmd}) {
     width: auto;
+    display: block;
     float: none;
-    margin: 0 20px;
+    margin: 20px 0;
+    max-width: ${bpmd};
+    width: 100%;
+  }
+`
+
+export const Wrap = styled.div`
+  display: inline-block;
+  width: 48%;
+  margin-right: 3.8%;
+
+  @media screen and (max-width: ${bpmd}) {
+    display: block;
+    width: 100%;
+    margin-right: 0;
   }
 `
 
