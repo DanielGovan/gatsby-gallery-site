@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { bplg } from "../const/constants"
 
 export const FooterContainer = styled.div`
-  background-color: #101522;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;

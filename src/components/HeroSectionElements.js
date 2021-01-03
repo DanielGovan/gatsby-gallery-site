@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { bplg, bpmd } from "../const/constants"
 
-import bgimage from "../images/background2.jpg"
+import bgimage from "../images/siteimages/art-140427.jpg"
 /* inline background image won't work with gatsby-plugin-styled-components*/
 
 export const HeroContainer = styled.div`
@@ -13,6 +13,7 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  background-size: cover;
   object-fit: contain;
   margin-top: -80px;
 `

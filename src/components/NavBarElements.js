@@ -6,8 +6,8 @@ import { bplg, nearBlack } from "../const/constants"
 export const Nav = styled.nav`
   background: ${({ active }) =>
     active
-      ? "#fff"
-      : "linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100% )"};
+      ? "#000"
+      : "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100% )"};
   height: 80px;
   display: flex;
   justify-content: center;
@@ -18,7 +18,7 @@ export const Nav = styled.nav`
   z-index: 999;
 
   @media screen and (max-width: ${bplg}) {
-    background: ${({ click }) => (click ? "#fff" : "transparent")};
+    background: ${({ click }) => (click ? "#000" : "transparent")};
     transition: 0.8s all ease;
   }
 `
@@ -33,7 +33,7 @@ export const NavBarContainer = styled.div`
 `
 
 export const NavLogo = styled(Link)`
-  color: ${nearBlack};
+  color: #fff;
   justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
@@ -44,6 +44,7 @@ export const NavLogo = styled(Link)`
 
 export const NavIcon = styled(GiDragonBalls)`
   margin: 0 0.5rem 0 2rem;
+  color: #fff;
 `
 
 export const MobileIcon = styled.div`
@@ -75,7 +76,8 @@ export const NavMenu = styled.ul`
     top: ${({ click }) => (click ? "100%" : "-1000px")};
     opacity: 1;
     transition: all 0.2 ease;
-    background: #fff;
+    background: #000;
+    font-size: 1.5rem;
   }
 `
 export const NavItem = styled.li`
@@ -88,7 +90,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLinks = styled(Link)`
-  color: ${nearBlack};
+  color: #fff;
   display: flex;
   align-items: center;
   text-decoration: none;

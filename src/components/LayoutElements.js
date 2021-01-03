@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { bplg, bpmd } from "../const/constants"
 
 //Layout
 
@@ -12,6 +13,18 @@ export const InnerWrap = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 32px;
+`
+
+export const Illustration = styled.div`
+  width: 400px;
+  margin: 0 0 20px 40px;
+  float: right;
+
+  @media screen and (max-width: ${bpmd}) {
+    width: auto;
+    float: none;
+    margin: 0 20px;
+  }
 `
 
 //Images
@@ -57,12 +70,12 @@ export const Para = styled.p`
 
 export const List = styled.ul`
   margin: 0;
-  padding: 0;
-  list-style: none;
+  padding: 0 0 0 20px;
+  list-style: disc;
 `
 export const ListItem = styled.li`
   /* max-width: 400px; */
   //min-width: 80%;
   margin: 0;
-  padding: 0 0 10px 0;
+  padding: 10px 0 5px 0;
 `

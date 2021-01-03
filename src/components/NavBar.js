@@ -40,11 +40,15 @@ const NavBar = () => {
         <Nav active={scroll} click={click}>
           <NavBarContainer>
             <NavLogo to="/">
-              <NavIcon />
+              <IconContext.Provider value={{ color: "white", size: "40px" }}>
+                <NavIcon />
+              </IconContext.Provider>
               Light by Dan
             </NavLogo>
             <MobileIcon onClick={handleClick}>
-              {click ? <FaTimes /> : <FaBars />}
+              <IconContext.Provider value={{ color: "white", size: "40px" }}>
+                {click ? <FaTimes /> : <FaBars />}
+              </IconContext.Provider>
             </MobileIcon>
             <NavMenu onClick={handleClick} click={click}>
               <NavItem>

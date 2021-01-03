@@ -1,11 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Slider from "react-slick"
+import "../slick.css"
 
 import Layout from "../components/layout"
 import {
-  ImageContainer,
+  Illustration,
   ImageItem,
-  ImageGrid,
   Header,
   SubHeader,
   Para,
@@ -15,37 +16,82 @@ import {
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
 
-const AboutShoots = () => {
-  // export const query = graphql`
-  //   query {
-  //     bts: file(relativePath: { eq: "images/image1.jpg" }) {
-  //       ...squareImage
-  //     }
-  //     image2: file(relativePath: { eq: "images/image2.jpg" }) {
-  //       ...squareImage
-  //     }
-  //     image3: file(relativePath: { eq: "images/image3.jpg" }) {
-  //       ...squareImage
-  //     }
-  //   }
-  // `
+const slickSettingsWide = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
 
+const slickSettingsNarrow = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
+
+const AboutShoots = () => {
   const data = useStaticQuery(graphql`
-    query siteImages {
-      allFile(
-        filter: {
-          sourceInstanceName: { eq: "siteImages" }
-          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+    query {
+      bts_n_1: file(relativePath: { eq: "bts-7172018.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
         }
-      ) {
-        edges {
-          node {
-            relativePath
-            childImageSharp {
-              fluid(maxWidth: 300, maxHeight: 400) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+      }
+      bts_n_2: file(relativePath: { eq: "bts-220108.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bts_n_3: file(relativePath: { eq: "bts-205504.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bts_w_1: file(relativePath: { eq: "bts-7090896.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bts_w_2: file(relativePath: { eq: "bts-4043958.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bts_w_3: file(relativePath: { eq: "bts-8110347.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -56,18 +102,42 @@ const AboutShoots = () => {
       <SEO title="Book a shoot" />
       <InnerWrap>
         <Header>Book a shoot</Header>
+        <SubHeader>Thinking of getting lit by Dan?</SubHeader>
         <Para>
-          Thinking of getting lit by Dan? It’s obviously great for promotion if
-          you’re a performer or some kind of online brand, but more than that
-          it’s a great experience for exploring and improving self-image in a
-          safe environment.
+          It’s great for promotion if you’re a performer or some kind of online
+          brand, but more than that it’s a great experience for exploring and
+          improving self-image in a safe environment.
         </Para>
+        <Illustration>
+          <Slider {...slickSettingsNarrow}>
+            <div>
+              <ImageItem
+                fluid={data.bts_n_1.childImageSharp.fluid}
+                alt="Living Vivid Exhibition at Dalston Superstore"
+              />
+            </div>
+            <div>
+              <ImageItem
+                fluid={data.bts_n_2.childImageSharp.fluid}
+                alt="Living Vivid Exhibition at Dalston Superstore"
+              />
+            </div>
+            <div>
+              <ImageItem
+                fluid={data.bts_n_3.childImageSharp.fluid}
+                alt="Living Vivid Exhibition at Dalston Superstore"
+              />
+            </div>
+          </Slider>
+        </Illustration>
+
         <SubHeader>How does it work?</SubHeader>
 
         <List>
           <ListItem>
             At my home studio in Mile End, we'll start with tea (or water?) and
-            a chat about the shoot; hopes, fears, expectations, and self image.
+            an initial chat about the shoot; your hopes, fears, expectations,
+            and self image.
           </ListItem>
           <ListItem>
             We’ll work through a variety of lighting setups, colours, props and
@@ -89,12 +159,12 @@ const AboutShoots = () => {
 
         <SubHeader>Prices</SubHeader>
 
-        <strong>£150 Commission, up to 1hr</strong>
+        <strong>£150 Commission, up to 1hr shoot</strong>
         <Para>
           If you know exactly what you want, we can quickly set it up, try a few
           variations, and get that look you’re after. 6 final portraits included
         </Para>
-        <strong> £250 Creative shoot, 2hr shoot</strong>
+        <strong> £250 Creative shoot, 2hr, 1 or 2 people</strong>
         <Para>
           Alternatively for those that want to look great, but they're not sure
           how, this option gives us time to explore in a safe space what works
@@ -102,20 +172,30 @@ const AboutShoots = () => {
           included.
         </Para>
         <Para>
-          If you can't quite pick and want extra final shots, £15 per capture.
+          (If you can't quite pick and want extra final shots, £15 per capture.)
         </Para>
-      </InnerWrap>
-      <ImageContainer>
-        <ImageGrid>
-          {data.allFile.edges.map((image, key) => (
+
+        <Slider {...slickSettingsWide}>
+          <div>
             <ImageItem
-              key={key}
-              fluid={image.node.childImageSharp.fluid}
-              alt={image.node.relativePath.split(".")[0]}
+              fluid={data.bts_w_1.childImageSharp.fluid}
+              alt="Living Vivid Exhibition at Dalston Superstore"
             />
-          ))}
-        </ImageGrid>
-      </ImageContainer>
+          </div>
+          <div>
+            <ImageItem
+              fluid={data.bts_w_2.childImageSharp.fluid}
+              alt="Living Vivid Exhibition at Dalston Superstore"
+            />
+          </div>
+          <div>
+            <ImageItem
+              fluid={data.bts_w_3.childImageSharp.fluid}
+              alt="Living Vivid Exhibition at Dalston Superstore"
+            />
+          </div>
+        </Slider>
+      </InnerWrap>
     </Layout>
   )
 }
