@@ -11,6 +11,10 @@ const Testimonials = () => {
       <SEO title="Portrait Gallery" />
       <InnerWrap>
         <Header>Portrait Gallery</Header>
+        <Para>
+          Here's (almost) everyone I've ever shot! Both for easy reference and
+          as an antidote for my imposter syndrome.
+        </Para>
       </InnerWrap>
       <Gallery />
     </Layout>

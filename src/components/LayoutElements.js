@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import Zoom from "react-medium-image-zoom"
 import { bpmd } from "../const/constants"
+import { Link } from "gatsby"
 
 //Layout
 
@@ -177,6 +178,16 @@ export const ListItem = styled.li`
   padding: 10px 0 5px 0;
 `
 export const InlineLink = styled.a`
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+`
+
+export const InteriorLink = styled(Link)`
   font-weight: 700;
   color: inherit;
   text-decoration: underline;

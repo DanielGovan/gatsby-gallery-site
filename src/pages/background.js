@@ -13,6 +13,7 @@ import {
   InnerWrap,
   Para,
   SubHeader,
+  InteriorLink,
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
 
@@ -111,15 +112,14 @@ const Background = () => {
       <InnerWrap>
         <Header>Background</Header>
 
-        <SubHeader>Nightlife</SubHeader>
+        <SubHeader>Nightlife: 2008 to 2018</SubHeader>
         <Para>
-          I've been a shutterbug since 2008, starting with documenting nights
-          out with friends, my mission to capture moments of unguarded joy
-          (whilst skipping some of the mess). I didn't start official club
-          photography until 2012, then gradually focused more on drag and
-          cabaret performers and perfomances. Whatever the subject, my aim was
-          always about capturing situations rather than things, looking for
-          people’s reactions and the fun in the moment.
+          I starting out documenting nights out with friends, my mission to
+          capture moments of unguarded joy (whilst skipping some of the mess). I
+          didn't start official club photography until 2012, then gradually
+          focused more on drag and cabaret performers and perfomances. My aim
+          was always capturing situations rather than things, looking for
+          people’s reactions in the moment.
         </Para>
 
         <Slider {...slickSettings}>
@@ -161,7 +161,7 @@ const Background = () => {
           </div>
         </Slider>
 
-        <SubHeader>Living Vivid exhibition</SubHeader>
+        <SubHeader>Living Vivid exhibition: 2019</SubHeader>
         <Para>
           After a year of shooting performer friends in a collaborative crusade
           to learn from, signal-boost and celebrate some of the local queer
@@ -181,6 +181,14 @@ const Background = () => {
           ))}
         </ImageGrid>
       </ImageContainer>
+      <InnerWrap>
+        <SubHeader>Light By Dan: 2017-?</SubHeader>
+        <Para>
+          What you're here for! Check out the{" "}
+          <InteriorLink to="/gallery">gallery</InteriorLink> for just about
+          everyone I've ever shot.
+        </Para>
+      </InnerWrap>
     </Layout>
   )
 }
