@@ -11,7 +11,6 @@ const Testimonials = () => {
       <SEO title="Portrait Gallery" />
       <InnerWrap>
         <Header>Portrait Gallery</Header>
-        <Para>Todo: sort by date or likes (?), filter by drag / skin </Para>
       </InnerWrap>
       <Gallery />
     </Layout>

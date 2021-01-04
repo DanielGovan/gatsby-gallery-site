@@ -16,6 +16,7 @@ import {
 
 const Gallery = () => {
   const [imageArray, setImageArray] = useState([])
+  const [output, setOutput] = useState()
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -29,7 +30,7 @@ const Gallery = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 300, maxHeight: 400) {
+              fluid(maxWidth: 500, maxHeight: 700) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -41,6 +42,7 @@ const Gallery = () => {
 
   useEffect(() => {
     const displayImages = []
+    //map data array to image query
     GALLERY_IMAGES.map(({ name, date, images }) => {
       const img = data.allFile.edges.find(
         ({ node }) => node.relativePath === images[0]
@@ -61,42 +63,9 @@ const Gallery = () => {
     setImageArray(sortedImages)
   }, [])
 
-  const handleDateFilter = e => {
-    e.preventDefault()
-    const sortedImages = imageArray.sort((a, b) => {
-      if (a === b) {
-        return 0
-      }
-      return a.dateType > b.dateType ? -1 : 1
-    })
-    setImageArray(sortedImages)
-    console.log(sortedImages, imageArray)
-  }
-
-  const handleNameFilter = e => {
-    e.preventDefault()
-    const sortedImages = imageArray.sort((a, b) => {
-      if (a === b) {
-        return 0
-      }
-      return a.name < b.name ? -1 : 1
-    })
-    setImageArray(sortedImages)
-    console.log(sortedImages, imageArray)
-  }
-
-  return (
-    <>
-      <Filters>
-        <a href="/" onClick={handleDateFilter}>
-          Order by date
-        </a>
-
-        <a href="/" onClick={handleNameFilter}>
-          Order by Name
-        </a>
-      </Filters>
-      <GalleryWrap>
+  useEffect(() => {
+    setOutput(
+      <>
         {imageArray.map(({ img, name, humanDate }) => (
           <GalleryItem key={img.relativePath}>
             <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
@@ -113,7 +82,44 @@ const Gallery = () => {
             </Zoom>
           </GalleryItem>
         ))}
-      </GalleryWrap>
+      </>
+    )
+  }, [imageArray])
+
+  const handleDateFilter = e => {
+    e.preventDefault()
+    let dateSortedImages = [...imageArray].sort((a, b) => {
+      if (a === b) {
+        return 0
+      }
+      return a.dateType > b.dateType ? -1 : 1
+    })
+    setImageArray(dateSortedImages)
+  }
+
+  const handleNameFilter = e => {
+    e.preventDefault()
+    let nameSortedImages = [...imageArray].sort((a, b) => {
+      if (a === b) {
+        return 0
+      }
+      return a.name < b.name ? -1 : 1
+    })
+    setImageArray(nameSortedImages)
+  }
+
+  return (
+    <>
+      <Filters>
+        <a href="/" onClick={handleDateFilter}>
+          Order by date
+        </a>
+
+        <a href="/" onClick={handleNameFilter}>
+          Order by Name
+        </a>
+      </Filters>
+      <GalleryWrap>{output}</GalleryWrap>
     </>
   )
 }

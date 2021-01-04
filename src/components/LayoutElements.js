@@ -74,8 +74,20 @@ export const GalleryWrap = styled.div`
 `
 export const Filters = styled.div`
   margin: 0 auto;
+  padding: 0 32px;
   width: 100%;
   max-width: 1000px;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px 12px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 `
 
 export const GalleryItem = styled.div`
