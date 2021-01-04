@@ -14,16 +14,16 @@ export const GALLERY_IMAGES = [
       "Acacia+Bones-281395.jpg",
     ],
   },
-  {
-    name: "Acacia & Bones",
-    date: "28 Nov 2018",
-    keyWords: "drag",
-    images: [
-      "Acacia+Bones.jpg",
-      "Acacia+Bones-281164.jpg",
-      "Acacia+Bones-281412.jpg",
-    ],
-  },
+  // {
+  //   name: "Acacia & Bones",
+  //   date: "28 Nov 2018",
+  //   keyWords: "drag",
+  //   images: [
+  //     "Acacia+Bones.jpg",
+  //     "Acacia+Bones-281164.jpg",
+  //     "Acacia+Bones-281412.jpg",
+  //   ],
+  // },
   {
     name: "Bones",
     date: "28 Nov 2018",
@@ -585,7 +585,7 @@ export const GALLERY_IMAGES = [
   {
     name: "Matt B",
     date: "23 Nov 2018",
-    keyWords: "skin",
+    keyWords: "skin other",
     images: ["MattB-.jpg"],
   },
   {
@@ -839,7 +839,7 @@ export const GALLERY_IMAGES = [
   {
     name: "Stu",
     date: "7 Jan 2018",
-    keyWords: "skin",
+    keyWords: "other",
     images: ["Stu-1072192.jpg"],
   },
   {
@@ -936,7 +936,6 @@ export const GALLERY_IMAGES = [
     keyWords: "skin",
     images: ["Zia-8255135.jpg"],
   },
-
   {
     name: "Gonorrihanna",
     date: "15 Feb 2018",
@@ -946,5 +945,101 @@ export const GALLERY_IMAGES = [
       "gonorrihanna-2151971.jpg",
       "gonorrihanna-2152000.jpg",
     ],
+  },
+  {
+    name: "Raymon",
+    date: "7 Oct 2019",
+    keyWords: "skin",
+    images: ["Raymon.jpg"],
+  },
+  {
+    name: "Teddy",
+    date: "8 Oct 2019",
+    keyWords: "skin",
+    images: ["Teddy-083047.jpg"],
+  },
+  {
+    name: "Paud",
+    date: "12 Dec 2019",
+    keyWords: "skin",
+    images: ["Paud-00456.jpg"],
+  },
+  {
+    name: "Steven",
+    date: "4 Jan 2020",
+    keyWords: "skin",
+    images: ["Steven-00576.jpg"],
+  },
+  {
+    name: "Dann",
+    date: "5 Jan 2020",
+    keyWords: "skin",
+    images: ["Dann-01341.jpg"],
+  },
+  {
+    name: "Tom R",
+    date: "20 Jan 2020",
+    keyWords: "skin",
+    images: ["TomR-01880.jpg"],
+  },
+  {
+    name: "Damien",
+    date: "21 Jan 2020",
+    keyWords: "skin",
+    images: ["Damien-02186.jpg"],
+  },
+  {
+    name: "Shaun & Nick",
+    date: "27 Jan 2020",
+    keyWords: "other",
+    images: ["Shaun-Nick-02592.jpg"],
+  },
+  {
+    name: "Mufseen",
+    date: "5 Feb 2020",
+    keyWords: "skin",
+    images: ["Mufseen.jpg"],
+  },
+  {
+    name: "Xander",
+    date: "06 Feb 2020",
+    keyWords: "skin",
+    images: ["Xander-03629.jpg"],
+  },
+  {
+    name: "Seb",
+    date: "8 Feb 2020",
+    keyWords: "drag",
+    images: ["Seb-03854.jpg"],
+  },
+  {
+    name: "Anthony",
+    date: "18 Aug 2020",
+    keyWords: "other",
+    images: ["Anthony-04501.jpg"],
+  },
+  {
+    name: "Charlie P",
+    date: "3 Oct 2020",
+    keyWords: "skin",
+    images: ["CharlieP.jpg"],
+  },
+  {
+    name: "Luca",
+    date: "12 Oct 2020",
+    keyWords: "skin",
+    images: ["Luca.jpg"],
+  },
+  {
+    name: "Kage",
+    date: "15 Oct 2020",
+    keyWords: "skin",
+    images: ["Kage.jpg"],
+  },
+  {
+    name: "Chris R",
+    date: "19 Oct 2020",
+    keyWords: "skin",
+    images: ["ChrisR-06551.jpg"],
   },
 ]
