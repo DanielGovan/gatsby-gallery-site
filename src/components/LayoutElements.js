@@ -71,7 +71,6 @@ export const GalleryWrap = styled.div`
   grid-auto-rows: minmax(50px, auto);
   margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
 `
 export const Filters = styled.div`
   margin: 0 auto;
@@ -89,6 +88,10 @@ export const Filters = styled.div`
     border-radius: 10px;
     cursor: pointer;
   }
+`
+export const Search = styled.input`
+  padding: 4px 8px;
+  font-size: 1.2rem;
 `
 
 export const GalleryItem = styled(Zoom)`

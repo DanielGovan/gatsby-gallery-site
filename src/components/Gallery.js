@@ -11,11 +11,14 @@ import {
   GalleryImageInfo,
   Filters,
   GalleryImage,
+  Search,
 } from "./LayoutElements"
 
 const Gallery = () => {
+  const [imagesSource, setImagesSource] = useState([])
   const [imageArray, setImageArray] = useState([])
   const [galleryRender, setGalleryRender] = useState()
+  const [searchValue, setSearchValue] = useState(null)
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -39,9 +42,10 @@ const Gallery = () => {
     }
   `)
 
+  // Images init
   useEffect(() => {
     const displayImages = []
-    //map data array to image query
+    // map data array to image query
     GALLERY_IMAGES.map(({ name, date, images }) => {
       const img = data.allFile.edges.find(
         ({ node }) => node.relativePath === images[0]
@@ -53,6 +57,8 @@ const Gallery = () => {
       displayImages.push({ img, name, dateType, humanDate })
     })
     // sort images by date
+
+    sortImages("dateType", "up", displayImages)
     const sortedImages = displayImages.sort((a, b) => {
       if (a === b) {
         return 0
@@ -60,9 +66,11 @@ const Gallery = () => {
       return a.dateType > b.dateType ? -1 : 1
     })
     setImageArray(sortedImages)
+    setImagesSource(sortedImages)
   }, [])
 
   useEffect(() => {
+    console.log("Gallery render effect")
     setGalleryRender(
       <>
         {imageArray.map(({ img, name, humanDate }) => (
@@ -83,30 +91,55 @@ const Gallery = () => {
         ))}
       </>
     )
-  }, [imageArray])
+  }, [imageArray, data.allFile.edges])
 
   // Filtering
 
-  const handleDateFilter = e => {
-    e.preventDefault()
-    let dateSortedImages = [...imageArray].sort((a, b) => {
+  useEffect(() => {
+    if (searchValue === null) return
+    if (searchValue === "") {
+      return setImageArray(imagesSource)
+    }
+    let filteredImages = [...imagesSource].filter(item =>
+      item.name.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    setImageArray(filteredImages)
+    console.log("Search attempt", searchValue, filteredImages)
+  }, [searchValue])
+
+  // Sorting
+
+  const sortImages = (value, direction) => {
+    let sortedImages = [...imageArray].sort((a, b) => {
       if (a === b) {
         return 0
       }
-      return a.dateType > b.dateType ? -1 : 1
+      if (direction === "up") {
+        return a[value] > b[value] ? -1 : 1
+      } else {
+        return a[value] < b[value] ? -1 : 1
+      }
     })
-    setImageArray(dateSortedImages)
+    setImageArray(sortedImages)
+  }
+
+  const handleDateFilter = e => {
+    e.preventDefault()
+    sortImages("dateType", "up")
   }
 
   const handleNameFilter = e => {
     e.preventDefault()
-    let nameSortedImages = [...imageArray].sort((a, b) => {
-      if (a === b) {
-        return 0
-      }
-      return a.name < b.name ? -1 : 1
-    })
-    setImageArray(nameSortedImages)
+    sortImages("name", "down")
+  }
+
+  const searchHandler = e => {
+    setSearchValue(e.target.value)
+  }
+
+  const handleReset = e => {
+    e.preventDefault()
+    setImageArray(imagesSource)
   }
 
   return (
@@ -119,6 +152,12 @@ const Gallery = () => {
         <a href="/" onClick={handleNameFilter}>
           Order by Name
         </a>
+
+        <Search onChange={searchHandler} />
+
+        {/* <a href="/" onClick={handleReset}>
+          Reset
+        </a> */}
       </Filters>
       <GalleryWrap>{galleryRender}</GalleryWrap>
     </>
