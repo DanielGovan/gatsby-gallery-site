@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 
-import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css"
 
 import { GALLERY_IMAGES } from "../const/GalleryList"
@@ -11,12 +10,12 @@ import {
   GalleryImageWrap,
   GalleryImageInfo,
   Filters,
-  ImageItem,
+  GalleryImage,
 } from "./LayoutElements"
 
 const Gallery = () => {
   const [imageArray, setImageArray] = useState([])
-  const [output, setOutput] = useState()
+  const [galleryRender, setGalleryRender] = useState()
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -64,27 +63,29 @@ const Gallery = () => {
   }, [])
 
   useEffect(() => {
-    setOutput(
+    setGalleryRender(
       <>
         {imageArray.map(({ img, name, humanDate }) => (
-          <GalleryItem key={img.relativePath}>
-            <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
-              <GalleryImageWrap>
-                <GalleryImageInfo>
-                  {name} / {humanDate}
-                </GalleryImageInfo>
-                <ImageItem
-                  style={{ width: "200px" }}
-                  key={img.relativePath}
-                  fluid={img.childImageSharp.fluid}
-                />
-              </GalleryImageWrap>
-            </Zoom>
+          <GalleryItem
+            key={img.relativePath}
+            overlayBgColorEnd="rgba(0, 0, 0, 0.6)"
+          >
+            <GalleryImageWrap>
+              <GalleryImageInfo>
+                {name} / {humanDate}
+              </GalleryImageInfo>
+              <GalleryImage
+                key={img.relativePath}
+                fluid={img.childImageSharp.fluid}
+              />
+            </GalleryImageWrap>
           </GalleryItem>
         ))}
       </>
     )
   }, [imageArray])
+
+  // Filtering
 
   const handleDateFilter = e => {
     e.preventDefault()
@@ -119,7 +120,7 @@ const Gallery = () => {
           Order by Name
         </a>
       </Filters>
-      <GalleryWrap>{output}</GalleryWrap>
+      <GalleryWrap>{galleryRender}</GalleryWrap>
     </>
   )
 }
