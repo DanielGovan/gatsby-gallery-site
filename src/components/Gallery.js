@@ -152,7 +152,7 @@ const Gallery = () => {
           Order by Name
         </a>
 
-        <Search onChange={searchHandler} />
+        <Search placeholder="Search" onChange={searchHandler} />
 
         {/* <a href="/" onClick={handleReset}>
           Reset
