@@ -65,6 +65,9 @@ export const ImageGrid = styled.div`
 export const ImageItem = styled(Img)`
   display: block;
 
+  button {
+  }
+
   img {
     transform: scale(1);
     transition: 0.2s all ease !important;

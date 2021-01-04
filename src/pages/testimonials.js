@@ -48,7 +48,7 @@ const Testimonials = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 800, maxWidth: 400) {
+              fluid(maxHeight: 600, maxWidth: 350) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -62,7 +62,6 @@ const Testimonials = () => {
       <SEO title="Testimonials" />
       <InnerWrap>
         <Header>Testimonials</Header>
-        <Para>Some quick reviews taken from instagram...</Para>
 
         <Slider {...slickSettings}>
           {data.allFile.edges.map((image, key) => (

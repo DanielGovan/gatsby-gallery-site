@@ -21,7 +21,7 @@ export const HeroContainer = styled.div`
 export const HeroInner = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-  padding: 100px 32px 0;
+  padding: 30vh 32px 0;
 `
 
 export const SiteHeader = styled.h1`

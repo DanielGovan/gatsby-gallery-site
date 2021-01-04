@@ -1,4 +1,8 @@
 import React from "react"
+
+import Zoom from "react-medium-image-zoom"
+import "react-medium-image-zoom/dist/styles.css"
+
 import { GALLERY_IMAGES } from "../const/GalleryList"
 import { useStaticQuery, graphql } from "gatsby"
 import { ImageItem } from "./LayoutElements"
@@ -37,11 +41,13 @@ const Gallery = () => {
         key={img.relativePath}
       >
         {name} / {date}
-        <ImageItem
-          style={{ width: "200px" }}
-          key={img.relativePath}
-          fluid={img.childImageSharp.fluid}
-        />
+        <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
+          <ImageItem
+            style={{ width: "200px" }}
+            key={img.relativePath}
+            fluid={img.childImageSharp.fluid}
+          />
+        </Zoom>
       </div>
     )
   })
