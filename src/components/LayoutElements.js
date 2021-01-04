@@ -176,3 +176,12 @@ export const ListItem = styled.li`
   margin: 0;
   padding: 10px 0 5px 0;
 `
+export const InlineLink = styled.a`
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+`

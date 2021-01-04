@@ -70,7 +70,6 @@ const Gallery = () => {
   }, [])
 
   useEffect(() => {
-    console.log("Gallery render effect")
     setGalleryRender(
       <>
         {imageArray.map(({ img, name, humanDate }) => (

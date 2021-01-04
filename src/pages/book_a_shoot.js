@@ -14,6 +14,7 @@ import {
   Wrap,
   List,
   ListItem,
+  InlineLink,
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
 
@@ -116,8 +117,15 @@ const AboutShoots = () => {
 
           <List>
             <ListItem>
-              At my home studio in Mile End, we'll start with a chat about the
-              shoot; your hopes, fears, expectations, and self image.
+              At my home studio in{" "}
+              <InlineLink
+                target="_blank"
+                href="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
+              >
+                Mile End
+              </InlineLink>
+              , we'll start with a chat about the shoot; your hopes, fears,
+              expectations, and self image.
             </ListItem>
             <ListItem>
               We’ll work through a variety of lighting setups, colours, props
