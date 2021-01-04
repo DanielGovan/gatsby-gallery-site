@@ -62,6 +62,39 @@ export const ImageGrid = styled.div`
   width: 100%;
   max-width: 1000px;
 `
+
+export const GalleryWrap = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+`
+export const Filters = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+`
+
+export const GalleryItem = styled.div`
+  text-align: center;
+`
+
+export const GalleryImageWrap = styled.div`
+  position: relative;
+  text-align: center;
+`
+
+export const GalleryImageInfo = styled.div`
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+`
+
 export const ImageItem = styled(Img)`
   display: block;
 
