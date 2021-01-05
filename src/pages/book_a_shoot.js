@@ -10,6 +10,7 @@ import {
   Header,
   SubHeader,
   Para,
+  Callout,
   InnerWrap,
   Column,
   List,
@@ -17,6 +18,8 @@ import {
   InlineLink,
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
+import { Button } from "../components/ButtonElements"
+import { ButtonWrap } from "../components/HeroSectionElements"
 
 const slickSettingsWide = {
   dots: true,
@@ -30,6 +33,7 @@ const slickSettingsWide = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
       },
     },
   ],
@@ -47,6 +51,14 @@ const slickSettingsNarrow = {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 330,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
       },
     },
   ],
@@ -171,12 +183,12 @@ const AboutShoots = () => {
 
         <SubHeader>Prices</SubHeader>
 
-        <strong>£150 Commission, up to 1hr shoot</strong>
+        <Callout>£150 Commission, up to 1hr shoot</Callout>
         <Para>
           If you know exactly what you want, we can quickly set it up, try a few
           variations, and get that look you’re after. 6 final portraits included
         </Para>
-        <strong> £250 Creative shoot, 2hr, 1 or 2 people</strong>
+        <Callout> £250 Creative shoot, 2hr, 1 or 2 people</Callout>
         <Para>
           Alternatively for those that want to look great, but they're not sure
           how, this option gives us time to explore in a safe space what works
@@ -207,6 +219,15 @@ const AboutShoots = () => {
             />
           </div>
         </Slider>
+        <ButtonWrap>
+          <Button
+            fontBig
+            primary
+            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+          >
+            Email now to discuss!
+          </Button>
+        </ButtonWrap>
       </InnerWrap>
     </Layout>
   )

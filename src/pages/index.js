@@ -38,6 +38,12 @@ const slickSettingsPicks = {
         slidesToShow: 3,
       },
     },
+    {
+      breakpoint: 330,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
   ],
 }
 
@@ -115,7 +121,11 @@ const IndexPage = () => {
           Lit by Dan, check out the booking page!
         </Para>
         <ButtonWrap>
-          <Button fontBig primary>
+          <Button
+            fontBig
+            primary
+            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+          >
             or drop me a line!
           </Button>
         </ButtonWrap>

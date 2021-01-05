@@ -22,13 +22,15 @@ const HeroSection = () => {
             <span>Vibrant</span>
             <span>Gaudy</span>
           </FadeIn>
-          <Context>
-            <br />
-            portrait photography
-          </Context>
+          <Context>portrait photography</Context>
         </SiteHeader>
         <ButtonWrap>
-          <Button fontBig big primary>
+          <Button
+            fontBig
+            big
+            primary
+            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+          >
             Get in touch
           </Button>
         </ButtonWrap>

@@ -21,7 +21,6 @@ export const InnerWrap = styled.div`
 `
 
 export const Illustration = styled.div`
-  /* max-width: 400px; */
   width: 48%;
   margin: 2rem 0 0;
   padding: 0 20px;
@@ -194,14 +193,38 @@ export const ImageItem = styled(Img)`
 export const Header = styled.h1`
   font-family: "Ubuntu", sans-serif;
   margin-bottom: 44px;
+  font-size: 2.5rem;
+  @media screen and (max-width: 500px) {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 `
 export const SubHeader = styled.h2`
   font-family: "Ubuntu", sans-serif;
   margin: 2rem 0 0rem;
+  font-size: 1.8rem;
+  @media screen and (max-width: 500px) {
+    font-size: 1.6rem;
+    text-align: center;
+  }
 `
+export const Callout = styled.h2`
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  font-size: 1.6rem;
+  @media screen and (max-width: 500px) {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+`
+
 export const Para = styled.p`
   font-size: 1.4rem;
   margin: 0.5rem 0 1.5rem;
+  @media screen and (max-width: 500px) {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 `
 
 export const List = styled.ul`
@@ -210,11 +233,14 @@ export const List = styled.ul`
   list-style: disc;
 `
 export const ListItem = styled.li`
-  /* max-width: 400px; */
-  //min-width: 80%;
   margin: 0;
   padding: 10px 0 5px 0;
+  font-size: 1.4rem;
+  @media screen and (max-width: 500px) {
+    font-size: 1.2rem;
+  }
 `
+
 export const InlineLink = styled.a`
   font-weight: 700;
   color: inherit;

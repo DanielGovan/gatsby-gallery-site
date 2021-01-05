@@ -19,6 +19,9 @@ const Gallery = () => {
   const [imageArray, setImageArray] = useState([])
   const [galleryRender, setGalleryRender] = useState()
   const [searchValue, setSearchValue] = useState(null)
+  const [sortType, setSortType] = useState("date")
+  const [sortDirection, setSortDirection] = useState("down")
+  const [filter, setFilter] = useState("all")
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -42,6 +45,24 @@ const Gallery = () => {
     }
   `)
 
+  // Sorting
+
+  const sortImages = (type, direction) => {
+    // if type == type, change direction
+    // if not, change type & reset direction
+    let sortedImages = [...imageArray].sort((a, b) => {
+      if (a === b) {
+        return 0
+      }
+      if (direction === "up") {
+        return a[type] > b[type] ? -1 : 1
+      } else {
+        return a[type] < b[type] ? -1 : 1
+      }
+    })
+    setImageArray(sortedImages)
+  }
+
   // Images init
   useEffect(() => {
     const displayImages = []
@@ -55,10 +76,9 @@ const Gallery = () => {
       var parts = date.split(" ")
       let humanDate = parts[1] + " '" + parts[2].substring(2)
       displayImages.push({ img, name, dateType, humanDate })
+      return null
     })
     // sort images by date
-
-    sortImages("dateType", "up", displayImages)
     const sortedImages = displayImages.sort((a, b) => {
       if (a === b) {
         return 0
@@ -67,7 +87,7 @@ const Gallery = () => {
     })
     setImageArray(sortedImages)
     setImagesSource(sortedImages)
-  }, [])
+  }, [data.allFile.edges])
 
   useEffect(() => {
     setGalleryRender(
@@ -77,10 +97,10 @@ const Gallery = () => {
             key={img.relativePath}
             overlayBgColorEnd="rgba(0, 0, 0, 0.6)"
           >
+            <GalleryImageInfo>
+              {name} / {humanDate}
+            </GalleryImageInfo>
             <GalleryImageWrap>
-              <GalleryImageInfo>
-                {name} / {humanDate}
-              </GalleryImageInfo>
               <GalleryImage
                 key={img.relativePath}
                 fluid={img.childImageSharp.fluid}
@@ -104,23 +124,7 @@ const Gallery = () => {
     )
     setImageArray(filteredImages)
     console.log("Search attempt", searchValue, filteredImages)
-  }, [searchValue])
-
-  // Sorting
-
-  const sortImages = (value, direction) => {
-    let sortedImages = [...imageArray].sort((a, b) => {
-      if (a === b) {
-        return 0
-      }
-      if (direction === "up") {
-        return a[value] > b[value] ? -1 : 1
-      } else {
-        return a[value] < b[value] ? -1 : 1
-      }
-    })
-    setImageArray(sortedImages)
-  }
+  }, [searchValue, imagesSource])
 
   const handleDateFilter = e => {
     e.preventDefault()

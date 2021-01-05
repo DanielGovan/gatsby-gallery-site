@@ -46,7 +46,7 @@ const NavBar = () => {
               Light by Dan
             </NavLogo>
             <MobileIcon onClick={handleClick}>
-              <IconContext.Provider value={{ color: "white", size: "40px" }}>
+              <IconContext.Provider value={{ color: "white", size: "30px" }}>
                 {click ? <FaTimes /> : <FaBars />}
               </IconContext.Provider>
             </MobileIcon>

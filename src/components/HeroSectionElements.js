@@ -6,6 +6,7 @@ import bgimage from "../images/siteimages/art-140427.jpg"
 
 export const HeroContainer = styled.div`
   background: url(${bgimage});
+  background-position: center;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -35,20 +36,19 @@ export const SiteHeader = styled.h1`
   }
 
   @media screen and (max-width: ${bpmd}) {
-    font-size: 35px;
+    font-size: 30px;
+    flex-direction: column;
   }
 `
 
-export const Context = styled.span`
-  display: inline-block;
-`
+export const Context = styled.span``
 
 export const ButtonWrap = styled.div`
-  margin-top: 32px;
+  margin: 50px 0;
+  text-align: center;
 `
 
 export const FadeIn = styled.span`
-  display: inline-block;
   width: 10rem;
   text-align: right;
   position: relative;
@@ -62,6 +62,10 @@ export const FadeIn = styled.span`
     position: absolute;
     right: 1rem;
     bottom: 0;
+    @media screen and (max-width: ${bpmd}) {
+      right: auto;
+      left: 0;
+    }
   }
   span:nth-child(2) {
     animation-delay: 2.5s;

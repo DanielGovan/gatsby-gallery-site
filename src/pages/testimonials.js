@@ -4,16 +4,12 @@ import Slider from "react-slick"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
-import {
-  ImageItem,
-  InnerWrap,
-  Header,
-  Para,
-} from "../components/LayoutElements"
+import { ImageItem, InnerWrap, Header } from "../components/LayoutElements"
 
 const slickSettings = {
   dots: true,
   infinite: true,
+  swipeToSlide: true,
   speed: 200,
   slidesToShow: 3,
   slidesToScroll: 1,
