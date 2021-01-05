@@ -11,7 +11,7 @@ import {
   SubHeader,
   Para,
   InnerWrap,
-  Wrap,
+  Column,
   List,
   ListItem,
   InlineLink,
@@ -105,7 +105,7 @@ const AboutShoots = () => {
       <InnerWrap>
         <Header>Book a shoot</Header>
 
-        <Wrap>
+        <Column>
           <SubHeader>Thinking of getting lit by Dan?</SubHeader>
           <Para>
             It’s great for promotion if you’re a performer or brand, but more
@@ -144,7 +144,7 @@ const AboutShoots = () => {
               Instagram or websites too!
             </ListItem>
           </List>
-        </Wrap>
+        </Column>
 
         <Illustration>
           <Slider {...slickSettingsNarrow}>

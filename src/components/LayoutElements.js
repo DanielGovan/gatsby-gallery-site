@@ -15,6 +15,9 @@ export const InnerWrap = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 32px;
+  @media screen and (max-width: 350px) {
+    padding: 0 10px 0 10px;
+  }
 `
 
 export const Illustration = styled.div`
@@ -28,22 +31,54 @@ export const Illustration = styled.div`
   @media screen and (max-width: ${bpmd}) {
     width: auto;
     display: block;
-    float: none;
     margin: 20px 0;
     max-width: ${bpmd};
     width: 100%;
   }
 `
 
-export const Wrap = styled.div`
+export const Column = styled.div`
   display: inline-block;
   width: 48%;
-  margin-right: 3.8%;
+  margin: 0 3.8% 0 0;
 
   @media screen and (max-width: ${bpmd}) {
     display: block;
     width: 100%;
     margin-right: 0;
+  }
+`
+
+export const HomeContent = styled.div`
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 32px 0 350px;
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (max-width: 650px) {
+    padding: 0 32px 0 32px;
+  }
+
+  @media screen and (max-width: 350px) {
+    padding: 0 10px 0 10px;
+  }
+`
+
+export const HomeIllus = styled.div`
+  width: 350px;
+  max-width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 60vh;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 650px) {
+    width: 250px;
+    position: static;
+    float: left;
+    margin-right: 20px;
   }
 `
 

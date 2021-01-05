@@ -1,35 +1,65 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import { Button } from "../components/ButtonElements"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { InnerWrap, Para } from "../components/LayoutElements"
+import {
+  InnerWrap,
+  HomeContent,
+  HomeIllus,
+  Para,
+  ImageItem,
+} from "../components/LayoutElements"
 import { ButtonWrap } from "../components/HeroSectionElements"
 import HeroSection from "../components/HeroSection"
 
-const IndexPage = () => (
-  <>
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      melol: file(relativePath: { eq: "dan-2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
     <Layout>
       <SEO title="Home" />
       <HeroSection />
-      <InnerWrap>
-        pixs go here
+      <HomeContent>
+        <HomeIllus>
+          <ImageItem fluid={data.melol.childImageSharp.fluid} alt="Dan" />
+        </HomeIllus>
         <Para>
           Hi there! My name’s Dan, and I do cute portraits of people with
-          colourful lights in East London. I call it Light By Dan
+          colourful lights in East London. I call it{" "}
+          <strong>Light By Dan</strong>.
         </Para>
         <Para>
-          Before portraits I took hundreds of thousands of photos of queer
-          nightlife over 10 years (and deleting most of them), so I learned a
-          lot about queer culture and how people see themselves.
+          I learned a lot about how people see themselves taking hundreds of
+          thousands of photos of queer nightlife over 10 years (and deleting
+          most of them).
         </Para>
         <Para>
-          I try to keep a similar vibe in my shoots; fun, irreverant, maybe a
-          little fantastical. Not getting too bogged down in preconceptions or
-          the humdrum, instead focusing on the person and their character, and
-          always celebrating vulnerability, absurdity and joy
+          That still informs my style and vibe with shoots: bright and fun with
+          no preconceptions, a safe space to get to know yourself, and always
+          celebrating vulnerability, absurdity and joy.
         </Para>
+      </HomeContent>
+
+      <InnerWrap>
+        <i>XOXOX Need a specific CTAs, and maybe alternative links.XOXOX</i>
+        <Para>
+          If you're thinking about getting Lit by Dan, check out the booking
+          page.
+        </Para>
+        <Para>You can see some testimonials, find out more about </Para>
+        <Para>(I also make websites, and I made this one, with Gatsby.)</Para>
         <ButtonWrap>
           <Button fontBig primary>
             Get in touch
@@ -38,7 +68,7 @@ const IndexPage = () => (
         </ButtonWrap>
       </InnerWrap>
     </Layout>
-  </>
-)
+  )
+}
 
 export default IndexPage
