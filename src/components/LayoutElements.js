@@ -157,12 +157,15 @@ export const ImageItem = styled(Img)`
 
 //Typography
 export const Header = styled.h1`
+  font-family: "Ubuntu", sans-serif;
   margin-bottom: 44px;
 `
 export const SubHeader = styled.h2`
+  font-family: "Ubuntu", sans-serif;
   margin: 2rem 0 0rem;
 `
 export const Para = styled.p`
+  font-size: 1.4rem;
   margin: 0.5rem 0 1.5rem;
 `
 

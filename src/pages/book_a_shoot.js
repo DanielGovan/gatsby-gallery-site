@@ -108,9 +108,9 @@ const AboutShoots = () => {
         <Wrap>
           <SubHeader>Thinking of getting lit by Dan?</SubHeader>
           <Para>
-            It’s great for promotion if you’re a performer or some kind of
-            online brand, but more than that it’s a great experience for
-            exploring and improving self-image in a safe environment.
+            It’s great for promotion if you’re a performer or brand, but more
+            than that it’s a great experience for exploring and improving
+            self-image in a safe environment.
           </Para>
 
           <SubHeader>How does it work?</SubHeader>

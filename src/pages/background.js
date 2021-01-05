@@ -161,13 +161,13 @@ const Background = () => {
           </div>
         </Slider>
 
-        <SubHeader>Living Vivid exhibition: 2019</SubHeader>
+        <SubHeader>Living Vivid exhibition: Autumn 2018</SubHeader>
         <Para>
           After a year of shooting performer friends in a collaborative crusade
           to learn from, signal-boost and celebrate some of the local queer
           icons, I had an opportunity to show an exhibition at Dalston
           Superstore; 40 portraits of kings and queens displayed for 2 months in
-          the same scene that most of them came up in.
+          the same scene that most of them came up in. The circle complete.
         </Para>
       </InnerWrap>
       <ImageContainer>
@@ -182,11 +182,13 @@ const Background = () => {
         </ImageGrid>
       </ImageContainer>
       <InnerWrap>
-        <SubHeader>Light By Dan: 2017-?</SubHeader>
+        <SubHeader>Light By Dan: 2017 onwards</SubHeader>
         <Para>
           What you're here for! Check out the{" "}
           <InteriorLink to="/gallery">gallery</InteriorLink> for just about
-          everyone I've ever shot.
+          everyone I've ever shot or{" "}
+          <InteriorLink to="/book_a_shoot">Book a shoot</InteriorLink> to get
+          some of the magic for yourself.
         </Para>
       </InnerWrap>
     </Layout>
