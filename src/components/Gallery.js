@@ -19,9 +19,9 @@ const Gallery = () => {
   const [imageArray, setImageArray] = useState([])
   const [galleryRender, setGalleryRender] = useState()
   const [searchValue, setSearchValue] = useState(null)
-  const [sortType, setSortType] = useState("date")
-  const [sortDirection, setSortDirection] = useState("down")
-  const [filter, setFilter] = useState("all")
+  // const [sortType, setSortType] = useState("date")
+  // const [sortDirection, setSortDirection] = useState("down")
+  // const [filter, setFilter] = useState("all")
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -140,11 +140,6 @@ const Gallery = () => {
     setSearchValue(e.target.value)
   }
 
-  const handleReset = e => {
-    e.preventDefault()
-    setImageArray(imagesSource)
-  }
-
   return (
     <>
       <Filters>
@@ -157,10 +152,6 @@ const Gallery = () => {
         </a>
 
         <Search placeholder="Search" onChange={searchHandler} />
-
-        {/* <a href="/" onClick={handleReset}>
-          Reset
-        </a> */}
       </Filters>
       <GalleryWrap>{galleryRender}</GalleryWrap>
     </>
