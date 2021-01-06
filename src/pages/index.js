@@ -25,6 +25,7 @@ const slickSettingsPicks = {
   infinite: true,
   speed: 500,
   slidesToShow: 6,
+  slidesToScroll: 2,
   responsive: [
     {
       breakpoint: 900,
@@ -61,7 +62,7 @@ const IndexPage = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 600, maxWidth: 600) {
+              fluid(maxHeight: 800, maxWidth: 800) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -77,21 +78,25 @@ const IndexPage = () => {
       }
     }
   `)
+
   return (
     <Layout>
       <SEO title="Home" />
       <HeroSection />
 
       <Slider {...slickSettingsPicks}>
-        {data.allFile.edges.map((image, key) => (
-          <div>
+        {data.allFile.edges
+          //.sort(() => Math.random() - 0.5)
+          .map((image, key) => (
             <ImageItem
               key={key}
-              fluid={image.node.childImageSharp.fluid}
+              fluid={{
+                ...image.node.childImageSharp.fluid,
+                aspectRatio: 1 / 1,
+              }}
               alt="Light by Dan picks"
             />
-          </div>
-        ))}
+          ))}
       </Slider>
 
       <HomeContent>

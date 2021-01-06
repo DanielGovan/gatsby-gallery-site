@@ -51,7 +51,7 @@ export const Column = styled.div`
 export const HomeContent = styled.div`
   max-width: 1000px;
   margin: 40px auto;
-  padding: 0 32px 0 350px;
+  padding: 0 32px 0 392px;
   overflow: hidden;
   position: relative;
 
@@ -65,11 +65,11 @@ export const HomeContent = styled.div`
 `
 
 export const HomeIllus = styled.div`
-  width: 350px;
+  width: 340px;
   max-width: 50%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 32px;
   max-height: 60vh;
   margin-bottom: 40px;
 
@@ -174,14 +174,13 @@ export const GalleryImage = styled(Img)`
 `
 
 export const ImageItem = styled(Img)`
-  display: block;
-
   button {
   }
 
   img {
-    transform: scale(1);
-    transition: 0.2s all ease !important;
+    /* object-fit: contain !important; */
+    background: black !important;
+    object-fit: scale-down !important;
   }
 
   img:hover {
