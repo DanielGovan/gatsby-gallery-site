@@ -3,6 +3,7 @@ import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css"
 
 import { GALLERY_IMAGES } from "../const/GalleryList"
+import LoadingRipple from "./LoadingRipple"
 import { useStaticQuery, graphql } from "gatsby"
 import {
   GalleryWrap,
@@ -121,7 +122,7 @@ const Gallery = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   }
@@ -144,7 +145,7 @@ const Gallery = () => {
 
         <Search placeholder="Search" onChange={searchHandler} />
       </Filters>
-      {imageArray && (
+      {imageArray ? (
         <GalleryWrap
           variants={galleryWrapAnimation}
           initial="hidden"
@@ -169,6 +170,8 @@ const Gallery = () => {
             </GalleryItem>
           ))}
         </GalleryWrap>
+      ) : (
+        <LoadingRipple />
       )}
     </>
   )
