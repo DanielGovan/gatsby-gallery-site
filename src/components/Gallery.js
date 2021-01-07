@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import "react-medium-image-zoom/dist/styles.css"
+import Zoom from "react-medium-image-zoom"
 
 import { GALLERY_IMAGES } from "../const/GalleryList"
 import { useStaticQuery, graphql } from "gatsby"
 import {
   GalleryWrap,
   GalleryItem,
-  GalleryImageWrap,
   GalleryImageInfo,
   GalleryImage,
   Filters,
@@ -94,7 +94,6 @@ const Gallery = () => {
         {imageArray.map(({ img, name, humanDate }) => (
           <GalleryItem
             key={img.relativePath}
-            overlayBgColorEnd="rgba(0, 0, 0, 0.6)"
             layout
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -104,12 +103,12 @@ const Gallery = () => {
               {name} / {humanDate}
             </GalleryImageInfo>
 
-            <GalleryImageWrap>
+            <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
               <GalleryImage
                 key={img.relativePath}
                 fluid={img.childImageSharp.fluid}
               />
-            </GalleryImageWrap>
+            </Zoom>
           </GalleryItem>
         ))}
       </>

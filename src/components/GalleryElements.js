@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-import Zoom from "react-medium-image-zoom"
-import { bpmd } from "../const/constants"
 import { motion } from "framer-motion"
 
 export const Filters = styled.div`
@@ -36,13 +34,9 @@ export const GalleryWrap = styled.div`
 `
 
 export const GalleryItem = styled(motion.div)`
-  // Zoom for zooming?
-  text-align: center;
-  /* display: flex; */
+  display: grid;
   position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 50vh;
 `
 
 export const GalleryImageInfo = styled.div`
@@ -54,28 +48,7 @@ export const GalleryImageInfo = styled.div`
   left: 0;
   right: 0;
 `
-export const GalleryImageWrap = styled.div`
-  position: relative;
-  text-align: center;
-  width: 100%;
-`
 
 export const GalleryImage = styled(Img)`
   width: 100%;
-
-  button {
-  }
-
-  img {
-    /* display: flex;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1);
-    transition: 0.2s all ease !important; */
-  }
-
-  img:hover {
-    /* transform: scale(1.1); */
-  }
 `
