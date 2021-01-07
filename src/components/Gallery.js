@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-
 import "react-medium-image-zoom/dist/styles.css"
 
 import { GALLERY_IMAGES } from "../const/GalleryList"
@@ -9,10 +8,10 @@ import {
   GalleryItem,
   GalleryImageWrap,
   GalleryImageInfo,
-  Filters,
   GalleryImage,
+  Filters,
   Search,
-} from "./LayoutElements"
+} from "./GalleryElements"
 
 const Gallery = () => {
   const [imagesSource, setImagesSource] = useState([])
@@ -96,10 +95,15 @@ const Gallery = () => {
           <GalleryItem
             key={img.relativePath}
             overlayBgColorEnd="rgba(0, 0, 0, 0.6)"
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
           >
             <GalleryImageInfo>
               {name} / {humanDate}
             </GalleryImageInfo>
+
             <GalleryImageWrap>
               <GalleryImage
                 key={img.relativePath}
