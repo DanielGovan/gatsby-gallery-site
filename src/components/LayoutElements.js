@@ -144,7 +144,7 @@ export const Header = styled.h1`
 `
 export const SubHeader = styled.h2`
   font-family: "Ubuntu", sans-serif;
-  margin: 2rem 0 0rem;
+  margin: 2rem 0 1rem;
   font-size: 2rem;
   @media screen and (max-width: 500px) {
     font-size: 1.6rem;
@@ -161,16 +161,6 @@ export const Callout = styled.h2`
   }
 `
 
-export const Para = styled(motion.p)`
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 0.5rem 0 1.5rem;
-  @media screen and (max-width: 500px) {
-    font-size: 1.3rem;
-    text-align: center;
-  }
-`
-
 export const List = styled.ul`
   margin: 0;
   padding: 0 0 0 20px;
@@ -178,7 +168,7 @@ export const List = styled.ul`
 `
 export const ListItem = styled.li`
   margin: 0;
-  padding: 10px 0 5px 0;
+  padding: 0 0 1rem 0;
   font-size: 1.4rem;
   @media screen and (max-width: 500px) {
     font-size: 1.2rem;
