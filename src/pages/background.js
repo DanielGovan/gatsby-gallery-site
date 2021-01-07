@@ -188,9 +188,9 @@ const Background = () => {
           changing the way they see themselves. Which is, I hope, what you're
           here for! Check out the{" "}
           <InteriorLink to="/gallery">gallery</InteriorLink> for just about
-          everyone I've ever shot, or{" "}
-          <InteriorLink to="/book_a_shoot">Book a shoot</InteriorLink> to get
-          some of the magic for yourself.
+          everyone I've ever lit, or{" "}
+          <InteriorLink to="/book_a_shoot">Book a shoot</InteriorLink> to see
+          about getting some of the magic for yourself.
         </Para>
       </InnerWrap>
     </Layout>

@@ -31,7 +31,7 @@ const HeroSection = () => {
             primary
             href="mailto:lightbydan@gmail.com?subject=Site inquiry"
           >
-            Get in touch
+            Inquire now
           </Button>
         </ButtonWrap>
       </HeroInner>

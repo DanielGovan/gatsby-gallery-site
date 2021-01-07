@@ -64,6 +64,13 @@ export const HomeContent = styled.div`
   }
 `
 
+export const HomeWrapper = styled.div`
+  min-height: calc(100vh - 130px);
+
+  @media screen and (max-width: ${bpmd}) {
+  }
+`
+
 export const HomeIllus = styled.div`
   width: 340px;
   max-width: 50%;
@@ -203,18 +210,18 @@ export const Header = styled.h1`
 export const SubHeader = styled.h2`
   font-family: "Ubuntu", sans-serif;
   margin: 2rem 0 0rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   @media screen and (max-width: 500px) {
     font-size: 1.6rem;
     text-align: center;
   }
 `
 export const Callout = styled.h2`
-  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Ubuntu", sans-serif; */
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   @media screen and (max-width: 500px) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 `

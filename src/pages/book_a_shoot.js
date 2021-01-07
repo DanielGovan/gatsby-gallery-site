@@ -118,7 +118,7 @@ const AboutShoots = () => {
         <Header>Book a shoot</Header>
         <SubHeader>Thinking of getting lit by Dan?</SubHeader>
         <Para>
-          It’s great for promotion if you’re a performer or brand, but more than
+          It’s ideal for promotion if you’re a performer or brand, but more than
           that it’s a great experience for exploring and improving self-image in
           a safe environment.
         </Para>
@@ -139,20 +139,20 @@ const AboutShoots = () => {
               expectations, and self image.
             </ListItem>
             <ListItem>
-              We’ll work through a variety of lighting setups, colours, props
-              and poses. I’ll show you some of the photos as we go, so you can
-              get a sense of how things are turning out and we can change
-              direction as needed.
+              We’ll work through a variety of lighting setups, colours and
+              poses. I’ll show you some photos as we go, so we can confer and
+              change direction if needed.
             </ListItem>
             <ListItem>
-              Later I’ll work through the photos, editing down from hundreds to
-              dozens, then I'll sending you a gallery so you can select the ones
-              you want (and also which you want deleted for all time).
+              Later I’ll carry out broad edits and whittle them down from
+              hundreds to dozens, then I'll send you the set in a gallery so you
+              can select which you want (and which you want deleted for all
+              time!).
             </ListItem>
             <ListItem>
-              Finally I spruce the chosen ones up and send them to you in high
-              resolution. If you give the go ahead I might use some on my
-              Instagram or websites too!
+              Finally I edit the final pics and send them to you in full
+              resolution to do with as you wish. If you give the go ahead I
+              might use some on my Instagram or websites too!
             </ListItem>
           </List>
         </Column>
@@ -180,7 +180,7 @@ const AboutShoots = () => {
           </Slider>
         </Illustration>
 
-        <SubHeader>Prices</SubHeader>
+        <SubHeader>Packages</SubHeader>
 
         <Callout>£150 Commission, up to 1hr shoot</Callout>
         <Para>
@@ -189,15 +189,30 @@ const AboutShoots = () => {
         </Para>
         <Callout> £250 Creative shoot, 2hr, 1 or 2 people</Callout>
         <Para>
-          Alternatively for those that want to look great, but they're not sure
-          how, this option gives us time to explore in a safe space what works
-          for you, with a wider range of poses and techniques. 8 portraits
-          included.
+          For those that want to look great, but they're not sure how, this
+          option gives us time to explore and experiment and find what works for
+          you, with a wider range of poses and techniques. 8 portraits included.
         </Para>
         <Para>
-          (If you can't quite pick and want extra final shots, add £15 each.)
+          In either case if you need extra final shots, add £15 each. Headshots
+          and drag shoots also available, for any of these email{" "}
+          <InlineLink
+            target="_blank"
+            href="mailto:lightbydan@gmail.com?subject=Booking inquiry"
+          >
+            lightbydan@gmail.com
+          </InlineLink>{" "}
+          to discuss!
         </Para>
-
+        {/* <ButtonWrap>
+          <Button
+            fontBig
+            primary
+            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+          >
+            Email now to discuss!
+          </Button>
+        </ButtonWrap> */}
         <Slider {...slickSettingsWide}>
           <div>
             <ImageItem
@@ -218,15 +233,6 @@ const AboutShoots = () => {
             />
           </div>
         </Slider>
-        <ButtonWrap>
-          <Button
-            fontBig
-            primary
-            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
-          >
-            Email now to discuss!
-          </Button>
-        </ButtonWrap>
       </InnerWrap>
     </Layout>
   )
