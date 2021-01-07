@@ -1,11 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
-
 import "../slick.css"
+import "react-medium-image-zoom/dist/styles.css"
 
 import Layout from "../components/layout"
 import {
+  GridZoom,
   ImageContainer,
   ImageItem,
   ImageGrid,
@@ -170,17 +171,15 @@ const Background = () => {
           the same scene that most of them came up in. The circle complete.
         </Para>
       </InnerWrap>
-      <ImageContainer>
-        <ImageGrid>
-          {data.allFile.edges.map((image, key) => (
-            <ImageItem
-              key={key}
-              fluid={image.node.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          ))}
-        </ImageGrid>
-      </ImageContainer>
+      <ImageGrid>
+        {data.allFile.edges.map((image, key) => (
+          <ImageItem
+            key={key}
+            fluid={image.node.childImageSharp.fluid}
+            alt="Living Vivid Exhibition at Dalston Superstore"
+          />
+        ))}
+      </ImageGrid>
       <InnerWrap>
         <SubHeader>Light By Dan: 2017 onwards</SubHeader>
         <Para>

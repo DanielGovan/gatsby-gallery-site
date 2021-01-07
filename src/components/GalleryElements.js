@@ -1,12 +1,18 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
+import * as cssVars from "../const/constants"
+// ${cssVars}
 
 export const Filters = styled.div`
   margin: 0 auto;
-  padding: 0 32px;
   width: 100%;
   max-width: 1000px;
+  padding: 0 ${cssVars.deskPad};
+
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    padding: 0 ${cssVars.mobPad};
+  }
 
   a {
     display: inline-block;

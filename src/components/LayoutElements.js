@@ -1,22 +1,24 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
-import { bpmd } from "../const/constants"
 import { Link } from "gatsby"
+import Zoom from "react-medium-image-zoom"
+import * as cssVars from "../const/constants"
+// ${cssVars}
 
 //Layout
 
 export const MainWrap = styled.main`
   margin: 0 auto;
-  min-height: calc(100vh - 130px);
+  min-height: ${cssVars.screenHeight};
 `
 
 export const InnerWrap = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 32px;
-  @media screen and (max-width: 350px) {
-    padding: 0 10px 0 10px;
+  padding: 0 ${cssVars.deskPad};
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    padding: 0 ${cssVars.mobPad};
   }
 `
 
@@ -27,11 +29,11 @@ export const Illustration = styled.div`
   display: inline-block;
   vertical-align: top;
 
-  @media screen and (max-width: ${bpmd}) {
+  @media screen and (max-width: ${cssVars.breakPointM}) {
     width: auto;
     display: block;
     margin: 20px 0;
-    max-width: ${bpmd};
+    max-width: ${cssVars.breakPointM};
     width: 100%;
   }
 `
@@ -41,7 +43,7 @@ export const Column = styled.div`
   width: 48%;
   margin: 0 3.8% 0 0;
 
-  @media screen and (max-width: ${bpmd}) {
+  @media screen and (max-width: ${cssVars.breakPointM}) {
     display: block;
     width: 100%;
     margin-right: 0;
@@ -51,23 +53,23 @@ export const Column = styled.div`
 export const HomeContent = styled.div`
   max-width: 1000px;
   margin: 40px auto;
-  padding: 0 32px 0 392px;
+  padding: 0 ${cssVars.deskPad} 0 392px;
   overflow: hidden;
   position: relative;
 
-  @media screen and (max-width: 650px) {
-    padding: 0 32px 0 32px;
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    padding: 0 ${cssVars.deskPad};
   }
 
-  @media screen and (max-width: 350px) {
-    padding: 0 10px 0 10px;
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    padding: 0 ${cssVars.mobPad};
   }
 `
 
 export const HomeWrapper = styled.div`
-  min-height: calc(100vh - 130px);
+  min-height: ${cssVars.screenHeight};
 
-  @media screen and (max-width: ${bpmd}) {
+  @media screen and (max-width: ${cssVars.breakPointM}) {
   }
 `
 
@@ -80,7 +82,7 @@ export const HomeIllus = styled.div`
   max-height: 60vh;
   margin-bottom: 40px;
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: ${cssVars.breakPointM}) {
     width: 250px;
     position: static;
     float: left;
@@ -92,7 +94,6 @@ export const HomeIllus = styled.div`
 
 export const ImageContainer = styled.div`
   max-width: 1000px;
-  padding: 0 32px;
   text-align: center;
   margin: 0 auto;
 `
@@ -104,9 +105,14 @@ export const ImageGrid = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 1000px;
+  padding: 0 ${cssVars.deskPad};
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    padding: 0 10px;
+  }
 `
-export const Grid = styled.div`
+export const GridZoom = styled(Zoom)`
   display: grid;
+  position: relative;
 `
 
 export const ImageItem = styled(Img)`
