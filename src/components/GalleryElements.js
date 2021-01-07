@@ -24,7 +24,7 @@ export const Search = styled.input`
   font-size: 1.2rem;
 `
 
-export const GalleryWrap = styled.div`
+export const GalleryWrap = styled(motion.div)`
   display: grid;
   grid-gap: 2px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

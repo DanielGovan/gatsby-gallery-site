@@ -1,9 +1,8 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-import Zoom from "react-medium-image-zoom"
+import { motion } from "framer-motion"
 import { bpmd } from "../const/constants"
 import { Link } from "gatsby"
-import { motion } from "framer-motion"
 
 //Layout
 
@@ -106,6 +105,9 @@ export const ImageGrid = styled.div`
   width: 100%;
   max-width: 1000px;
 `
+export const Grid = styled.div`
+  display: grid;
+`
 
 export const ImageItem = styled(Img)`
   button {
@@ -153,7 +155,7 @@ export const Callout = styled.h2`
   }
 `
 
-export const Para = styled.p`
+export const Para = styled(motion.p)`
   font-size: 1.4rem;
   margin: 0.5rem 0 1.5rem;
   @media screen and (max-width: 500px) {

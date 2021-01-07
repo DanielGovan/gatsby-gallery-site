@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
-import "react-medium-image-zoom/dist/styles.css"
 import Zoom from "react-medium-image-zoom"
+import "react-medium-image-zoom/dist/styles.css"
 
 import { GALLERY_IMAGES } from "../const/GalleryList"
 import { useStaticQuery, graphql } from "gatsby"
@@ -15,8 +15,7 @@ import {
 
 const Gallery = () => {
   const [imagesSource, setImagesSource] = useState([])
-  const [imageArray, setImageArray] = useState([])
-  const [galleryRender, setGalleryRender] = useState()
+  const [imageArray, setImageArray] = useState()
   const [searchValue, setSearchValue] = useState(null)
   // const [sortType, setSortType] = useState("date")
   // const [sortDirection, setSortDirection] = useState("down")
@@ -34,7 +33,7 @@ const Gallery = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 500, maxHeight: 700) {
+              fluid(maxWidth: 800, maxHeight: 1000) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -88,33 +87,6 @@ const Gallery = () => {
     setImagesSource(sortedImages)
   }, [data.allFile.edges])
 
-  useEffect(() => {
-    setGalleryRender(
-      <>
-        {imageArray.map(({ img, name, humanDate }) => (
-          <GalleryItem
-            key={img.relativePath}
-            layout
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <GalleryImageInfo>
-              {name} / {humanDate}
-            </GalleryImageInfo>
-
-            <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
-              <GalleryImage
-                key={img.relativePath}
-                fluid={img.childImageSharp.fluid}
-              />
-            </Zoom>
-          </GalleryItem>
-        ))}
-      </>
-    )
-  }, [imageArray, data.allFile.edges])
-
   // Filtering
 
   useEffect(() => {
@@ -143,6 +115,22 @@ const Gallery = () => {
     setSearchValue(e.target.value)
   }
 
+  // Animation varients
+  const galleryWrapAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+
+  const galleryItemAnimation = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  }
+
   return (
     <>
       <Filters>
@@ -156,7 +144,32 @@ const Gallery = () => {
 
         <Search placeholder="Search" onChange={searchHandler} />
       </Filters>
-      <GalleryWrap>{galleryRender}</GalleryWrap>
+      {imageArray && (
+        <GalleryWrap
+          variants={galleryWrapAnimation}
+          initial="hidden"
+          animate="show"
+        >
+          {imageArray.map(({ img, name, humanDate }) => (
+            <GalleryItem
+              key={img.relativePath}
+              layout
+              variants={galleryItemAnimation}
+            >
+              <GalleryImageInfo>
+                {name} / {humanDate}
+              </GalleryImageInfo>
+
+              <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
+                <GalleryImage
+                  key={img.relativePath}
+                  fluid={img.childImageSharp.fluid}
+                />
+              </Zoom>
+            </GalleryItem>
+          ))}
+        </GalleryWrap>
+      )}
     </>
   )
 }

@@ -12,9 +12,17 @@ import { Button } from "../components/ButtonElements"
 
 const HeroSection = () => {
   return (
-    <HeroContainer>
+    <HeroContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.8 }}
+    >
       <HeroInner>
-        <SiteHeader>
+        <SiteHeader
+          initial={{ x: -500, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 1.4 }}
+        >
           <FadeIn>
             <span>Queer</span>
             <span>Vivid</span>
@@ -26,6 +34,9 @@ const HeroSection = () => {
         </SiteHeader>
         <ButtonWrap>
           <Button
+            initial={{ x: -500, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.6 }}
             fontBig
             big
             primary

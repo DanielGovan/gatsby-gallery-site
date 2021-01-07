@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { bplg, bpmd } from "../const/constants"
+import { motion } from "framer-motion"
 
 import bgimage from "../images/siteimages/art-140427.jpg"
 /* inline background image won't work with gatsby-plugin-styled-components*/
 
-export const HeroContainer = styled.div`
+export const HeroContainer = styled(motion.div)`
   background: url(${bgimage});
   background-position: center;
   height: 100vh;
@@ -25,7 +26,7 @@ export const HeroInner = styled.div`
   padding: 30vh 32px 0;
 `
 
-export const SiteHeader = styled.h1`
+export const SiteHeader = styled(motion.h1)`
   display: flex;
   color: #fff;
   font-size: 60px;

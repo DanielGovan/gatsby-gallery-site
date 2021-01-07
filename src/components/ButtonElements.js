@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import { bpmd } from "../const/constants"
+import { motion } from "framer-motion"
 
-export const Button = styled.a`
+export const Button = styled(motion.a)`
   border-radius: 12px;
-  background: ${({ primary }) => (primary ? "#ff4040" : "#000")};
   white-space: nowrap;
-  padding: ${({ big }) => (big ? " 16px 32px" : " 10px 20px")};
   color: #fff;
+  background: ${({ primary }) => (primary ? "#ff4040" : "#000")};
+  padding: ${({ big }) => (big ? " 16px 32px" : " 10px 20px")};
   font-size: ${({ fontBig }) => (fontBig ? " 20px" : " 16px")};
   border: none;
   cursor: pointer;
