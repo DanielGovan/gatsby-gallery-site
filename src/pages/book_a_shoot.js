@@ -18,8 +18,8 @@ import {
   InlineLink,
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
-import { Button } from "../components/ButtonElements"
-import { ButtonWrap } from "../components/HeroSectionElements"
+// import { Button } from "../components/ButtonElements"
+// import { ButtonWrap } from "../components/HeroSectionElements"
 
 const slickSettingsWide = {
   dots: true,

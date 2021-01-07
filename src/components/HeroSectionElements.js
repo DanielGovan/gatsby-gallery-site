@@ -1,12 +1,10 @@
 import styled from "styled-components"
-import { bplg, bpmd } from "../const/constants"
+import * as cssVars from "../const/constants"
 import { motion } from "framer-motion"
 
-import bgimage from "../images/siteimages/art-140427.jpg"
 /* inline background image won't work with gatsby-plugin-styled-components*/
 
 export const HeroContainer = styled(motion.div)`
-  background: url(${bgimage});
   background-position: center;
   height: 100vh;
   width: 100%;
@@ -32,11 +30,11 @@ export const SiteHeader = styled(motion.h1)`
   font-size: 60px;
   text-shadow: 1px 1px 10px #000;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     font-size: 40px;
   }
 
-  @media screen and (max-width: ${bpmd}) {
+  @media screen and (max-width: ${cssVars.breakPointM}) {
     font-size: 30px;
     flex-direction: column;
   }
@@ -63,7 +61,7 @@ export const FadeIn = styled.span`
     position: absolute;
     right: 1rem;
     bottom: 0;
-    @media screen and (max-width: ${bpmd}) {
+    @media screen and (max-width: ${cssVars.breakPointM}) {
       right: auto;
       left: 0;
     }

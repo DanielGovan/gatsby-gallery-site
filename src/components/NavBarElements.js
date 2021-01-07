@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { GiDragonBalls } from "react-icons/gi"
 import { Link } from "gatsby"
-import { bplg } from "../const/constants"
+import * as cssVars from "../const/constants"
 
 export const Nav = styled.nav`
   background: ${({ active }) =>
@@ -17,7 +17,7 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 999;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     background: ${({ click }) => (click ? "#000" : "transparent")};
     transition: 0.8s all ease;
   }
@@ -50,7 +50,7 @@ export const NavIcon = styled(GiDragonBalls)`
 export const MobileIcon = styled.div`
   display: none;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     display: block;
     position: absolute;
     top: 0;
@@ -67,7 +67,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -84,7 +84,7 @@ export const NavItem = styled.li`
   padding: 0;
   height: 80px;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     width: 100%;
   }
 `
@@ -98,7 +98,7 @@ export const NavLinks = styled(Link)`
   height: 100%;
   font-family: "Ubuntu", sans-serif;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     text-align: center;
     padding: 2rem;
     width: 100%;

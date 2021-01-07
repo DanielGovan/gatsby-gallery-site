@@ -13,4 +13,5 @@ export const mobPad = "10px"
 
 export const screenHeight = "calc(100vh - 130px);"
 
+// add primary colour and secondary colour
 //also maybe... fonts?

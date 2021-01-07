@@ -1,6 +1,6 @@
 import { GiDragonBalls } from "react-icons/gi"
 import styled from "styled-components"
-import { bplg } from "../const/constants"
+import * as cssVars from "../const/constants"
 
 export const FooterContainer = styled.div`
   background-color: #000;
@@ -22,7 +22,7 @@ export const SocialMediaWrap = styled.div`
   max-width: 1000px;
   margin: 10px auto;
 
-  @media screen and (max-width: ${bplg}) {
+  @media screen and (max-width: ${cssVars.breakPointL}) {
     flex-direction: column;
   }
 `

@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { bpmd } from "../const/constants"
-import { motion } from "framer-motion"
+import * as cssVars from "../const/constants"
+// import { motion } from "framer-motion"
 
-// rework to not use styled components, because we need it to look the same whether it be a "a" or a "Link"
+// rework to not use styled components? because we need it to look the same whether it be a "a" or a "Link"
 
 export const Button = styled.a`
   border-radius: 12px;
@@ -22,7 +22,7 @@ export const Button = styled.a`
     background: ${({ primary }) => (primary ? "#000" : "#ff4040")};
   }
 
-  @media screen and (max-width: ${bpmd}) {
+  @media screen and (max-width: ${cssVars.breakPointS}) {
     width: 100%;
   }
 `

@@ -6,8 +6,6 @@ import "react-medium-image-zoom/dist/styles.css"
 
 import Layout from "../components/layout"
 import {
-  GridZoom,
-  ImageContainer,
   ImageItem,
   ImageGrid,
   Header,

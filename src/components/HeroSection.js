@@ -9,10 +9,12 @@ import {
   ButtonWrap,
 } from "../components/HeroSectionElements"
 import { Button } from "../components/ButtonElements"
+import bgimage from "../images/siteimages/art-140427.jpg"
 
 const HeroSection = () => {
   return (
     <HeroContainer
+      style={{ backgroundImage: "url(" + bgimage + ")" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.8 }}
