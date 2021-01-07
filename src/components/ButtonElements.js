@@ -2,7 +2,9 @@ import styled from "styled-components"
 import { bpmd } from "../const/constants"
 import { motion } from "framer-motion"
 
-export const Button = styled(motion.a)`
+// rework to not use styled components, because we need it to look the same whether it be a "a" or a "Link"
+
+export const Button = styled.a`
   border-radius: 12px;
   white-space: nowrap;
   color: #fff;
@@ -14,6 +16,7 @@ export const Button = styled(motion.a)`
   font-family: "Ubuntu", sans-serif;
   transition: all 0.3s ease-out;
   text-decoration: none;
+  margin: 0 10px;
 
   &:hover {
     background: ${({ primary }) => (primary ? "#000" : "#ff4040")};

@@ -125,15 +125,17 @@ const IndexPage = () => {
         </HomeContent>
 
         <InnerWrap>
-          <Para>
-            So welcome, take a look around! and if you're thinking about getting
-            Lit by Dan, check out the booking page!
-          </Para>
-          <Para>
-            The Gallery has almost everyone I've lit, Book a shoot tells you all
-            about what it's like, and Background
-          </Para>
+          <Para>So welcome, and take a look around!</Para>
           <ButtonWrap>
+            <Button fontBig primary href="/gallery/">
+              Gallery of everyone I've lit &gt;
+            </Button>
+            <Button fontBig primary href="/book_a_shoot">
+              about getting lit by dan &gt;
+            </Button>
+            <Button fontBig primary href="/background">
+              photographic context &gt;
+            </Button>
             <Button
               fontBig
               primary
