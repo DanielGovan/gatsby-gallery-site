@@ -52,19 +52,29 @@ const NavBar = () => {
             </MobileIcon>
             <NavMenu onClick={handleClick} click={click}>
               <NavItem>
-                <NavLinks to="/">Home</NavLinks>
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/">
+                  Home
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/gallery/">Gallery</NavLinks>
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/gallery/">
+                  Gallery
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/book_a_shoot/">Book a shoot</NavLinks>
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/book_a_shoot/">
+                  Book a shoot
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/background/">Background</NavLinks>
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/background/">
+                  Background
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/testimonials/">Testimonials</NavLinks>
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/testimonials/">
+                  Testimonials
+                </NavLinks>
               </NavItem>
             </NavMenu>
           </NavBarContainer>
