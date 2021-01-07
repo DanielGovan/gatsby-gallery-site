@@ -67,7 +67,7 @@ const slickSettingsNarrow = {
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
     query {
-      bts_n_1: file(relativePath: { eq: "bts-7172018.jpg" }) {
+      bts_n_1: file(relativePath: { eq: "bts-reflection.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
@@ -88,21 +88,21 @@ const AboutShoots = () => {
           }
         }
       }
-      bts_w_1: file(relativePath: { eq: "bts-7090896.jpg" }) {
+      bts_w_1: file(relativePath: { eq: "bts-wide1.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      bts_w_2: file(relativePath: { eq: "bts-4043958.jpg" }) {
+      bts_w_2: file(relativePath: { eq: "bts-wide2.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      bts_w_3: file(relativePath: { eq: "bts-8110347.jpg" }) {
+      bts_w_3: file(relativePath: { eq: "bts-wide3.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
@@ -116,15 +116,14 @@ const AboutShoots = () => {
       <SEO title="Book a shoot" />
       <InnerWrap>
         <Header>Book a shoot</Header>
+        <SubHeader>Thinking of getting lit by Dan?</SubHeader>
+        <Para>
+          It’s great for promotion if you’re a performer or brand, but more than
+          that it’s a great experience for exploring and improving self-image in
+          a safe environment.
+        </Para>
 
         <Column>
-          <SubHeader>Thinking of getting lit by Dan?</SubHeader>
-          <Para>
-            It’s great for promotion if you’re a performer or brand, but more
-            than that it’s a great experience for exploring and improving
-            self-image in a safe environment.
-          </Para>
-
           <SubHeader>How does it work?</SubHeader>
 
           <List>
@@ -163,19 +162,19 @@ const AboutShoots = () => {
             <div>
               <ImageItem
                 fluid={data.bts_n_1.childImageSharp.fluid}
-                alt="Living Vivid Exhibition at Dalston Superstore"
+                alt="Giani behind the scenes with Light By Dan"
               />
             </div>
             <div>
               <ImageItem
                 fluid={data.bts_n_2.childImageSharp.fluid}
-                alt="Living Vivid Exhibition at Dalston Superstore"
+                alt="Richard behind the scenes with Light By Dan"
               />
             </div>
             <div>
               <ImageItem
                 fluid={data.bts_n_3.childImageSharp.fluid}
-                alt="Living Vivid Exhibition at Dalston Superstore"
+                alt="Orlando behind the scenes with Light By Dan"
               />
             </div>
           </Slider>
@@ -196,26 +195,26 @@ const AboutShoots = () => {
           included.
         </Para>
         <Para>
-          (If you can't quite pick and want extra final shots, £15 per capture.)
+          (If you can't quite pick and want extra final shots, add £15 each.)
         </Para>
 
         <Slider {...slickSettingsWide}>
           <div>
             <ImageItem
               fluid={data.bts_w_1.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
+              alt="Jason behind the scenes with Light By Dan"
             />
           </div>
           <div>
             <ImageItem
               fluid={data.bts_w_2.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
+              alt="Vaneet behind the scenes with Light By Dan"
             />
           </div>
           <div>
             <ImageItem
               fluid={data.bts_w_3.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
+              alt="Harry behind the scenes with Light By Dan"
             />
           </div>
         </Slider>

@@ -184,9 +184,11 @@ const Background = () => {
       <InnerWrap>
         <SubHeader>Light By Dan: 2017 onwards</SubHeader>
         <Para>
-          What you're here for! Check out the{" "}
+          But now it's all about portraits, making connections with people and
+          changing the way they see themselves. Which is, I hope, what you're
+          here for! Check out the{" "}
           <InteriorLink to="/gallery">gallery</InteriorLink> for just about
-          everyone I've ever shot or{" "}
+          everyone I've ever shot, or{" "}
           <InteriorLink to="/book_a_shoot">Book a shoot</InteriorLink> to get
           some of the magic for yourself.
         </Para>
