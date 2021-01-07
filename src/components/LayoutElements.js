@@ -52,8 +52,8 @@ export const Column = styled.div`
 
 export const HomeContent = styled.div`
   max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 ${cssVars.deskPad} 0 392px;
+  margin: 2rem auto 0;
+  padding: 0 ${cssVars.deskPad} 0 410px;
   overflow: hidden;
   position: relative;
 
@@ -153,7 +153,7 @@ export const SubHeader = styled.h2`
 `
 export const Callout = styled.h2`
   /* font-family: "Ubuntu", sans-serif; */
-  margin: 0;
+  margin: 0.5rem 0 0;
   font-size: 1.4rem;
   @media screen and (max-width: 500px) {
     font-size: 1.2rem;
@@ -162,10 +162,11 @@ export const Callout = styled.h2`
 `
 
 export const Para = styled(motion.p)`
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
   margin: 0.5rem 0 1.5rem;
   @media screen and (max-width: 500px) {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
   }
 `

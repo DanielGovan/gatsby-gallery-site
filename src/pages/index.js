@@ -128,13 +128,12 @@ const IndexPage = () => {
         <InnerWrap>
           <Para>
             <br />
-            So welcome, and take a look around! See{" "}
-            <InteriorLink to="/gallery">the gallery</InteriorLink> of everyone
-            I've lit, find out about what it's like and{" "}
-            <InteriorLink to="/book_a_shoot">booking a shoot</InteriorLink>, or
-            read about my{" "}
+            So welcome, and take a look around! Find out about my{" "}
             <InteriorLink to="/background">background</InteriorLink> in
-            photography.
+            photography, see{" "}
+            <InteriorLink to="/gallery">the gallery</InteriorLink> of everyone
+            I've lit, or read about what it's like{" "}
+            <InteriorLink to="/book_a_shoot">booking a shoot</InteriorLink>.
           </Para>
           <ButtonWrap>
             <Button
@@ -142,7 +141,7 @@ const IndexPage = () => {
               primary
               href="mailto:lightbydan@gmail.com?subject=Site inquiry"
             >
-              or drop me a line!
+              Or drop me a line!
             </Button>
           </ButtonWrap>
         </InnerWrap>

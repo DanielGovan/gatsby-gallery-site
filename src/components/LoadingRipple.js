@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Rippling = styled.div`
   width: 10.4rem;
   height: 10.4rem;
-  margin: 4rem auto 0;
+  margin: 6rem auto 0;
 
   div {
     position: absolute;

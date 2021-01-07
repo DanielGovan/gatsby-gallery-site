@@ -10,7 +10,7 @@ export const Button = styled.a`
   color: #fff;
   background: ${({ primary }) => (primary ? "#ff4040" : "#000")};
   padding: ${({ big }) => (big ? " 16px 32px" : " 10px 20px")};
-  font-size: ${({ fontBig }) => (fontBig ? " 20px" : " 16px")};
+  font-size: ${({ fontBig }) => (fontBig ? " 1.8rem" : " 1.4rem")};
   border: none;
   cursor: pointer;
   font-family: "Ubuntu", sans-serif;
