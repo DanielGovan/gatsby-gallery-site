@@ -14,6 +14,7 @@ import {
   HomeWrapper,
   Para,
   ImageItem,
+  InteriorLink,
 } from "../components/LayoutElements"
 import { ButtonWrap } from "../components/HeroSectionElements"
 import HeroSection from "../components/HeroSection"
@@ -125,17 +126,17 @@ const IndexPage = () => {
         </HomeContent>
 
         <InnerWrap>
-          <Para>So welcome, and take a look around!</Para>
+          <Para>
+            <br />
+            So welcome, and take a look around! See{" "}
+            <InteriorLink to="/gallery">the gallery</InteriorLink> of everyone
+            I've lit, find out about what it's like and{" "}
+            <InteriorLink to="/book_a_shoot">booking a shoot</InteriorLink>, or
+            read about my{" "}
+            <InteriorLink to="/background">background</InteriorLink> in
+            photography.
+          </Para>
           <ButtonWrap>
-            <Button fontBig primary href="/gallery/">
-              Gallery of everyone I've lit &gt;
-            </Button>
-            <Button fontBig primary href="/book_a_shoot">
-              about getting lit by dan &gt;
-            </Button>
-            <Button fontBig primary href="/background">
-              photographic context &gt;
-            </Button>
             <Button
               fontBig
               primary
