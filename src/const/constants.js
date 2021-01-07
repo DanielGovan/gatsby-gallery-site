@@ -5,7 +5,7 @@ export const breakPointS = "330px"
 export const justBlack = "#000"
 export const nearBlack = "#141414"
 
-export const nearWhite = "#141414"
+export const nearWhite = "#eaeaea"
 export const justWhite = "#fff"
 
 export const deskPad = "32px"

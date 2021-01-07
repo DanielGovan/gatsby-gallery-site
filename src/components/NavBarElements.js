@@ -33,7 +33,7 @@ export const NavBarContainer = styled.div`
 `
 
 export const NavLogo = styled(Link)`
-  color: #fff;
+  color: ${cssVars.nearWhite};
   justify-self: flex-start;
   cursor: pointer;
   text-decoration: none;
@@ -44,7 +44,7 @@ export const NavLogo = styled(Link)`
 
 export const NavIcon = styled(GiDragonBalls)`
   margin: 0 0.5rem 0 2rem;
-  color: #fff;
+  color: ${cssVars.nearWhite};
 `
 
 export const MobileIcon = styled.div`
@@ -90,7 +90,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLinks = styled(Link)`
-  color: #fff;
+  color: ${cssVars.nearWhite};
   display: flex;
   align-items: center;
   text-decoration: none;

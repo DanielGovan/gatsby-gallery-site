@@ -26,9 +26,9 @@ export const HeroInner = styled.div`
 
 export const SiteHeader = styled(motion.h1)`
   display: flex;
-  color: #fff;
+  color: ${cssVars.nearWhite};
   font-size: 60px;
-  text-shadow: 1px 1px 10px #000;
+  text-shadow: 1px 1px 10px ${cssVars.justBlack};
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
     font-size: 40px;

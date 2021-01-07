@@ -3,7 +3,7 @@ import styled from "styled-components"
 import * as cssVars from "../const/constants"
 
 export const FooterContainer = styled.div`
-  background-color: #000;
+  background-color: ${cssVars.justBlack};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@ export const SocialIcon = styled(GiDragonBalls)`
   margin-left: 10px;
 `
 export const WebsiteRights = styled.span`
-  color: #fff;
+  color: ${cssVars.nearWhite};
   margin-bottom: 10px;
   font-family: "Roboto" sans-serif;
 `
@@ -44,6 +44,6 @@ export const SocialIcons = styled.div`
 `
 
 export const SocialIconLink = styled.a`
-  color: #fff;
+  color: ${cssVars.nearWhite};
   font-size: 24px;
 `

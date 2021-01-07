@@ -139,6 +139,7 @@ const Gallery = () => {
   return (
     <>
       <Filters>
+        <Search placeholder="Search" onChange={searchHandler} />
         <a href="/" onClick={handleDateFilter}>
           Order by date
         </a>
@@ -146,8 +147,6 @@ const Gallery = () => {
         <a href="/" onClick={handleNameFilter}>
           Order by Name
         </a>
-
-        <Search placeholder="Search" onChange={searchHandler} />
       </Filters>
       {imageArray ? (
         <GalleryWrap

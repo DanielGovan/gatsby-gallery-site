@@ -7,7 +7,7 @@ import * as cssVars from "../const/constants"
 export const Button = styled.a`
   border-radius: 12px;
   white-space: nowrap;
-  color: #fff;
+  color: ${cssVars.nearWhite};
   background: ${({ primary }) => (primary ? "#ff4040" : "#000")};
   padding: ${({ big }) => (big ? " 16px 32px" : " 10px 20px")};
   font-size: ${({ fontBig }) => (fontBig ? " 1.8rem" : " 1.4rem")};
