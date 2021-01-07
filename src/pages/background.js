@@ -5,12 +5,12 @@ import "../slick.css"
 import "react-medium-image-zoom/dist/styles.css"
 
 import Layout from "../components/layout"
+import Para from "../actualComponents/Para"
 import {
   ImageItem,
   ImageGrid,
   Header,
   InnerWrap,
-  Para,
   SubHeader,
   InteriorLink,
 } from "../components/LayoutElements"

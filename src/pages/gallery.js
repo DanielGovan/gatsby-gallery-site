@@ -2,7 +2,8 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { InnerWrap, Header, Para } from "../components/LayoutElements"
+import Para from "../actualComponents/Para"
+import { InnerWrap, Header } from "../components/LayoutElements"
 import Gallery from "../components/Gallery"
 
 const Testimonials = () => {

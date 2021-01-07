@@ -4,12 +4,12 @@ import Slider from "react-slick"
 import "../slick.css"
 
 import Layout from "../components/layout"
+import Para from "../actualComponents/Para"
 import {
   Illustration,
   ImageItem,
   Header,
   SubHeader,
-  Para,
   Callout,
   InnerWrap,
   Column,

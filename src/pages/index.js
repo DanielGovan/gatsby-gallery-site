@@ -6,13 +6,13 @@ import "../slick.css"
 import { Button } from "../components/ButtonElements"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Para from "../actualComponents/Para"
 
 import {
   InnerWrap,
   HomeContent,
   HomeIllus,
   HomeWrapper,
-  Para,
   ImageItem,
   InteriorLink,
 } from "../components/LayoutElements"
