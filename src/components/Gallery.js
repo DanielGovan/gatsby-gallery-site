@@ -14,6 +14,10 @@ import {
   Search,
 } from "./GalleryElements"
 
+// TODO: combine order by date and name into a single toggle button
+// OR make them both togglable and by direction!
+// TODO: add another filtering by skin vs drag
+
 const Gallery = () => {
   const [imagesSource, setImagesSource] = useState([])
   const [imageArray, setImageArray] = useState()

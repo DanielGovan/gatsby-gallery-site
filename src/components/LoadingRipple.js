@@ -2,14 +2,14 @@ import React from "react"
 import styled from "styled-components"
 
 const Rippling = styled.div`
-  width: 10.4rem;
-  height: 10.4rem;
+  width: 15.6rem;
+  height: 15.6rem;
   margin: 6rem auto 0;
 
   div {
     position: absolute;
-    width: 8rem;
-    height: 8rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
     border: 0.5rem solid white;
     animation: 1.5s ripple infinite;
