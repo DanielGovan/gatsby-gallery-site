@@ -5,7 +5,7 @@ import "../slick.css"
 import "react-medium-image-zoom/dist/styles.css"
 
 import FadeInText from "../actualComponents/FadeInText"
-import HeroSection from "../components/HeroSection"
+import HeroSection from "../actualComponents/HeroSection"
 
 import Layout from "../components/layout"
 import Para from "../actualComponents/Para"

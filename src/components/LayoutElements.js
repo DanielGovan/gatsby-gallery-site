@@ -22,39 +22,20 @@ export const InnerWrap = styled.div`
   }
 `
 
-export const Illustration = styled.div`
-  width: 48%;
-  margin: 2rem 0 0;
-  padding: 0 20px;
-  display: inline-block;
-  vertical-align: top;
+export const HomeWrapper = styled.div`
+  min-height: ${cssVars.screenHeight};
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
-    width: auto;
-    display: block;
-    margin: 20px 0;
-    max-width: ${cssVars.breakPointM};
-    width: 100%;
   }
 `
-
-export const Column = styled.div`
-  display: inline-block;
-  width: 48%;
-  margin: 0 3.8% 0 0;
-
-  @media screen and (max-width: ${cssVars.breakPointM}) {
-    display: block;
-    width: 100%;
-    margin-right: 0;
-  }
-`
-
 export const HomeContent = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   max-width: 1000px;
   margin: 2rem auto 0;
   padding: 0 ${cssVars.deskPad} 0 410px;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
@@ -65,14 +46,6 @@ export const HomeContent = styled.div`
     padding: 0 ${cssVars.mobPad};
   }
 `
-
-export const HomeWrapper = styled.div`
-  min-height: ${cssVars.screenHeight};
-
-  @media screen and (max-width: ${cssVars.breakPointM}) {
-  }
-`
-
 export const HomeIllus = styled.div`
   width: 340px;
   max-width: 50%;
@@ -80,7 +53,7 @@ export const HomeIllus = styled.div`
   top: 0;
   left: 32px;
   max-height: 60vh;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
     width: 250px;
@@ -116,13 +89,19 @@ export const GridZoom = styled(Zoom)`
 `
 
 export const ImageItem = styled(Img)`
+  /* display: grid !important; */
+  min-width: 200px;
+  min-height: 200px;
+  /* height: 200px;
+  width: 100px; */
   button {
   }
 
   img {
     /* object-fit: contain !important; */
+    height: 200px;
     background: black !important;
-    object-fit: scale-down !important;
+    object-fit: contain;
   }
 
   img:hover {
@@ -148,15 +127,6 @@ export const SubHeader = styled.h2`
   font-size: 2rem;
   @media screen and (max-width: 500px) {
     font-size: 1.6rem;
-    text-align: center;
-  }
-`
-export const Callout = styled.h2`
-  /* font-family: "Ubuntu", sans-serif; */
-  margin: 0.5rem 0 0;
-  font-size: 1.4rem;
-  @media screen and (max-width: 500px) {
-    font-size: 1.2rem;
     text-align: center;
   }
 `

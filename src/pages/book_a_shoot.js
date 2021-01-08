@@ -6,59 +6,48 @@ import "../slick.css"
 import Layout from "../components/layout"
 import Para from "../actualComponents/Para"
 import {
-  Illustration,
   ImageItem,
   Header,
   SubHeader,
-  Callout,
   InnerWrap,
-  Column,
   List,
   ListItem,
   InlineLink,
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
-import FadeInText from "../actualComponents/FadeInText"
-import HeroSection from "../components/HeroSection"
+// import FadeInText from "../actualComponents/FadeInText"
+import HeroSection from "../actualComponents/HeroSection"
 
-const slickSettingsWide = {
+const slickSettingsPicks = {
   dots: true,
+  autoplay: true,
+  arrows: false,
+  swipeToSlide: true,
   infinite: true,
-  speed: 500,
-  slidesToShow: 1,
+  variableWidth: true,
+  speed: 4000,
+  slidesToShow: 6,
   slidesToScroll: 1,
+  autoplaySpeed: 0,
   responsive: [
     {
-      breakpoint: 660,
+      breakpoint: 900,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
+        slidesToShow: 5,
       },
     },
-  ],
-}
-
-const slickSettingsNarrow = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  responsive: [
     {
       breakpoint: 660,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 1,
+        speed: 2000,
       },
     },
     {
       breakpoint: 330,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
+        slidesToShow: 2,
+        speed: 2000,
       },
     },
   ],
@@ -91,8 +80,8 @@ const slickTestimonialSettings = {
 
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
-    query testimonialImages {
-      allFile(
+    query {
+      testimonialImages: allFile(
         filter: {
           sourceInstanceName: { eq: "testimonialImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
@@ -109,45 +98,21 @@ const AboutShoots = () => {
           }
         }
       }
-      bts_n_1: file(relativePath: { eq: "bts-reflection.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
+      btsImages: allFile(
+        filter: {
+          sourceInstanceName: { eq: "siteImages" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: { regex: "/bts/" }
         }
-      }
-      bts_n_2: file(relativePath: { eq: "bts-220108.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bts_n_3: file(relativePath: { eq: "bts-205504.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bts_w_1: file(relativePath: { eq: "bts-wide1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bts_w_2: file(relativePath: { eq: "bts-wide2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bts_w_3: file(relativePath: { eq: "bts-wide3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxHeight: 600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
@@ -176,6 +141,19 @@ const AboutShoots = () => {
           <span>Gaudy</span>
         </FadeInText> */}
       </HeroSection>
+      <Slider {...slickSettingsPicks}>
+        {data.btsImages.edges
+          //.sort(() => Math.random() - 0.5)
+          .map((image, key) => (
+            <ImageItem
+              key={key}
+              fluid={{
+                ...image.node.childImageSharp.fluid,
+              }}
+              alt="Behind the scenes with Light by Dan"
+            />
+          ))}
+      </Slider>
       <InnerWrap>
         <Header>Book a shoot</Header>
         {/* <SubHeader>Thinking of getting lit by Dan?</SubHeader> */}
@@ -185,71 +163,24 @@ const AboutShoots = () => {
           improving self-image in a safe environment.
         </Para>
 
-        <Column>
-          <SubHeader>How does it work?</SubHeader>
-
-          <List>
-            <ListItem>
-              At my home studio in{" "}
-              <InlineLink
-                target="_blank"
-                href="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
-              >
-                Mile End
-              </InlineLink>
-              , we'll start with a chat about the shoot; your aims, hopes, fears
-              and expectations. We’ll work through a variety of lighting setups,
-              colours and poses, and discuss the shots as we go.
-            </ListItem>
-            <ListItem>
-              I’ll carry out broad edits and whittle them down from hundreds to
-              dozens, then send you a gallery so you can select which you want
-              (and which you want deleted for all time!).
-            </ListItem>
-            <ListItem>
-              Finally I edit the chosen pics and send them to you in full
-              resolution to do with as you wish.
-            </ListItem>
-          </List>
-        </Column>
-
-        <Illustration>
-          <Slider {...slickSettingsNarrow}>
-            <div>
-              <ImageItem
-                fluid={data.bts_n_1.childImageSharp.fluid}
-                alt="Giani behind the scenes with Light By Dan"
-              />
-            </div>
-            <div>
-              <ImageItem
-                fluid={data.bts_n_2.childImageSharp.fluid}
-                alt="Richard behind the scenes with Light By Dan"
-              />
-            </div>
-            <div>
-              <ImageItem
-                fluid={data.bts_n_3.childImageSharp.fluid}
-                alt="Orlando behind the scenes with Light By Dan"
-              />
-            </div>
-          </Slider>
-        </Illustration>
-
         <SubHeader>Packages</SubHeader>
 
-        <Callout>£150 Commission, up to 1hr shoot</Callout>
-        <Para>
-          If you know exactly what you want, we can quickly set it up, try a few
-          variations, and get that look you’re after. 6 final portraits
-          included.
-        </Para>
-        <Callout> £250 Creative shoot, 2hr, 1 or 2 people</Callout>
-        <Para>
-          For those that want to look great, but they're not sure how, this
-          option gives us time to explore and experiment and find what works for
-          you, with a wider range of poses and techniques. 8 portraits included.
-        </Para>
+        <dl>
+          <dt>Commission, £150, up to 1hr shoot6 final portraits included.</dt>
+          <dt>
+            If you know exactly what you want, we can quickly set it up, try a
+            few variations, and get that look you’re after.
+          </dt>
+          <dt>
+            Creative shoot, £250 , 2hr, 1 or 2 people, 8 portraits included.
+          </dt>
+          <dt>
+            For those that want to look great, but they're not sure how, this
+            option gives us time to explore and experiment and find what works
+            for you, with a wider range of poses and techniques.{" "}
+          </dt>
+        </dl>
+
         <Para>
           In either case if you need extra final shots, add £15 each. Headshots
           and drag shoots also available, for any of these email{" "}
@@ -261,39 +192,11 @@ const AboutShoots = () => {
           </InlineLink>{" "}
           to discuss!
         </Para>
-        {/* <ButtonWrap>
-          <Button
-            fontBig
-            primary
-            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
-          >
-            Email now to discuss!
-          </Button>
-        </ButtonWrap> */}
-        {/* <Slider {...slickSettingsWide}>
-          <div>
-            <ImageItem
-              fluid={data.bts_w_1.childImageSharp.fluid}
-              alt="Jason behind the scenes with Light By Dan"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.bts_w_2.childImageSharp.fluid}
-              alt="Vaneet behind the scenes with Light By Dan"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.bts_w_3.childImageSharp.fluid}
-              alt="Harry behind the scenes with Light By Dan"
-            />
-          </div>
-        </Slider> */}
+
         <Header>Testimonials</Header>
 
         <Slider {...slickTestimonialSettings}>
-          {data.allFile.edges.map((image, key) => (
+          {data.testimonialImages.edges.map((image, key) => (
             <ImageItem
               key={key}
               fluid={image.node.childImageSharp.fluid}
@@ -301,6 +204,32 @@ const AboutShoots = () => {
             />
           ))}
         </Slider>
+
+        <SubHeader>How does it work?</SubHeader>
+        <Para>
+          I work out of a [ramshackle] home studio in Mile End, shooting in
+          between coding I like to shoot some friends... you can join them!
+          <br />
+          At my home studio in{" "}
+          <InlineLink
+            target="_blank"
+            href="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
+          >
+            Mile End
+          </InlineLink>
+          , we'll start with a chat about your hopes, fears and expectations,
+          then work through a variety of lighting setups, colours and poses, and
+          conferring over the shots as we go. I’ll carry out broad edits and
+          whittle them down from hundreds to dozens, then send you a gallery so
+          you can select which you want (and which you want deleted for all
+          time!). Finally I edit the chosen pics and send them to you in full
+          resolution to do with as you wish.
+        </Para>
+        <SubHeader>Things to know!</SubHeader>
+        <List>
+          <ListItem>Everyone gets a veto on all photos.</ListItem>
+          <ListItem>I work in a home studio</ListItem>
+        </List>
       </InnerWrap>
     </Layout>
   )

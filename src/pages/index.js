@@ -7,7 +7,7 @@ import "../slick.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Para from "../actualComponents/Para"
-import HeroSection from "../components/HeroSection"
+import HeroSection from "../actualComponents/HeroSection"
 
 import {
   InlineLink,
@@ -126,42 +126,44 @@ const IndexPage = () => {
         </Slider>
 
         <HomeContent>
-          <HomeIllus>
-            <ImageItem fluid={data.melol.childImageSharp.fluid} alt="Dan" />
-          </HomeIllus>
-          <Para>
-            Hi there! My name’s Dan, and I do cute portraits of people with
-            colourful lights in East London. I call it{" "}
-            <strong>Light By Dan</strong>.
-          </Para>
-          <Para>
-            My focus is{" "}
-            <InteriorLink to="/gallery" title="Gallery of subjects">
-              portrait photography
-            </InteriorLink>{" "}
-            now but before that I moonlighted in{" "}
-            <InteriorLink to="/background" title="Photography background">
-              documenting queer nightlife
-            </InteriorLink>{" "}
-            for 10 years, and that's the root of my style: I strive to make my
-            shoots bright and fun with no preconceptions,{" "}
-            <InteriorLink to="/book_a_shoot" title="About my shoots">
-              a safe space to discover more about yourself
-            </InteriorLink>
-            , celebrating vulnerability, absurdity and joy.
-          </Para>
-          <Para>
-            So welcome, and take a look around! Any questions or inquiries
-            contact me at{" "}
-            <InlineLink
-              target="_blank"
-              href="mailto:lightbydan@gmail.com?subject=Site inquiry"
-              title="Email me"
-            >
-              lightbydan@gmail.com
-            </InlineLink>
-            .
-          </Para>
+          <div>
+            <HomeIllus>
+              <ImageItem fluid={data.melol.childImageSharp.fluid} alt="Dan" />
+            </HomeIllus>
+            <Para>
+              Hi there! My name’s Dan, and I do cute portraits of people with
+              colourful lights in East London. I call it{" "}
+              <strong>Light By Dan</strong>.
+            </Para>
+            <Para>
+              My focus is{" "}
+              <InteriorLink to="/gallery" title="Gallery of subjects">
+                portrait photography
+              </InteriorLink>{" "}
+              now but before that I moonlighted in{" "}
+              <InteriorLink to="/background" title="Photography background">
+                documenting queer nightlife
+              </InteriorLink>{" "}
+              for 10 years, and that's the root of my style: I strive to make my
+              shoots bright and fun with no preconceptions,{" "}
+              <InteriorLink to="/book_a_shoot" title="About my shoots">
+                a safe space to discover more about yourself
+              </InteriorLink>
+              , celebrating vulnerability, absurdity and joy.
+            </Para>
+            <Para>
+              So welcome, and take a look around! Any questions or inquiries
+              contact me at{" "}
+              <InlineLink
+                target="_blank"
+                href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+                title="Email me"
+              >
+                lightbydan@gmail.com
+              </InlineLink>
+              .
+            </Para>
+          </div>
         </HomeContent>
       </HomeWrapper>
     </Layout>

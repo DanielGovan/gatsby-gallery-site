@@ -1,15 +1,14 @@
 import React from "react"
-
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import * as cssVars from "../const/constants"
 
-import FadeInWrap from "../actualComponents/FadeInWrap"
+import FadeInWrap from "./FadeInWrap"
 
 // styled-components nor motion work with gatsby-background-image
+// maybe replace with some big image that skips the background plugin?
 const HeroContainer = ({ heroBG, children, position = "center" }) => {
-  console.log("HELLO", position)
   return (
     <BackgroundImage
       Tag="div"
@@ -37,17 +36,18 @@ const HeroContainer = ({ heroBG, children, position = "center" }) => {
 export const HeroInner = styled.div`
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30vh 32px 0;
+  padding: 40vh 32px 0;
 `
 
 export const SiteHeader = styled(motion.h1)`
+  font-family: "Ubuntu", sans-serif;
   display: flex;
   color: ${cssVars.nearWhite};
   font-size: 60px;
-  text-shadow: 1px 1px 10px ${cssVars.justBlack};
+  text-shadow: 4px 4px 10px ${cssVars.justBlack};
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   @media screen and (max-width: ${cssVars.breakPointM}) {

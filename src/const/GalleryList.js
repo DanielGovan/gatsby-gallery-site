@@ -408,8 +408,8 @@ export const GALLERY_IMAGES = [
     date: "9 Sep 2017",
     keyWords: "drag",
     images: [
-      "Javi-9301814.jpg",
       "Javi-9301845.jpg",
+      "Javi-9301814.jpg",
       "Javi-9301869.jpg",
       "Javi-9301903.jpg",
       "Javi-9302028.jpg",
