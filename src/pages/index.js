@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import Para from "../actualComponents/Para"
 
 import {
+  InlineLink,
   InnerWrap,
   HomeContent,
   HomeIllus,
@@ -114,37 +115,34 @@ const IndexPage = () => {
             <strong>Light By Dan</strong>.
           </Para>
           <Para>
-            I learned a lot about how people see themselves taking hundreds of
-            thousands of photos of queer nightlife over 10 years (and deleting
-            most of them).
+            My focus is{" "}
+            <InteriorLink to="/gallery" title="Gallery of subjects">
+              portrait photography
+            </InteriorLink>{" "}
+            now but before that I moonlighted in{" "}
+            <InteriorLink to="/background" title="Photography background">
+              documenting queer nightlife
+            </InteriorLink>{" "}
+            for 10 years, and that's the root of my style: I strive to make my
+            shoots bright and fun with no preconceptions,{" "}
+            <InteriorLink to="/book_a_shoot" title="About my shoots">
+              a safe space to discover more about yourself
+            </InteriorLink>
+            , celebrating vulnerability, absurdity and joy.
           </Para>
           <Para>
-            That still informs my style and vibe with shoots: bright and fun
-            with no preconceptions, a safe space to get to know yourself, and
-            always celebrating vulnerability, absurdity and joy.
+            So welcome, and take a look around! Any questions or inquiries
+            contact me at{" "}
+            <InlineLink
+              target="_blank"
+              href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+              title="Email me"
+            >
+              lightbydan@gmail.com
+            </InlineLink>
+            .
           </Para>
         </HomeContent>
-
-        <InnerWrap>
-          <Para>
-            <br />
-            So welcome, and take a look around! Find out about my{" "}
-            <InteriorLink to="/background">background</InteriorLink> in
-            photography, see{" "}
-            <InteriorLink to="/gallery">the gallery</InteriorLink> of everyone
-            I've lit, or read about what it's like{" "}
-            <InteriorLink to="/book_a_shoot">booking a shoot</InteriorLink>.
-          </Para>
-          <ButtonWrap>
-            <Button
-              fontBig
-              primary
-              href="mailto:lightbydan@gmail.com?subject=Site inquiry"
-            >
-              Or drop me a line!
-            </Button>
-          </ButtonWrap>
-        </InnerWrap>
       </HomeWrapper>
     </Layout>
   )

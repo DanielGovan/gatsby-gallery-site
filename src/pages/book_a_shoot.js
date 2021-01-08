@@ -118,9 +118,9 @@ const AboutShoots = () => {
         <Header>Book a shoot</Header>
         <SubHeader>Thinking of getting lit by Dan?</SubHeader>
         <Para>
-          It’s ideal for promotion if you’re a performer or brand, but more than
-          that it’s a great experience for exploring and improving self-image in
-          a safe environment.
+          A professional shoot is great for self promotion if you’re a performer
+          or brand, but where this shines is as an opportunity for exploring and
+          improving self-image in a safe environment.
         </Para>
 
         <Column>
@@ -135,24 +135,18 @@ const AboutShoots = () => {
               >
                 Mile End
               </InlineLink>
-              , we'll start with a chat about the shoot; your hopes, fears,
-              expectations, and self image.
+              , we'll start with a chat about the shoot; your aims, hopes, fears
+              and expectations. We’ll work through a variety of lighting setups,
+              colours and poses, and discuss the shots as we go.
             </ListItem>
             <ListItem>
-              We’ll work through a variety of lighting setups, colours and
-              poses. I’ll show you some photos as we go, so we can confer and
-              change direction if needed.
+              I’ll carry out broad edits and whittle them down from hundreds to
+              dozens, then send you a gallery so you can select which you want
+              (and which you want deleted for all time!).
             </ListItem>
             <ListItem>
-              Later I’ll carry out broad edits and whittle them down from
-              hundreds to dozens, then I'll send you the set in a gallery so you
-              can select which you want (and which you want deleted for all
-              time!).
-            </ListItem>
-            <ListItem>
-              Finally I edit the final pics and send them to you in full
-              resolution to do with as you wish. If you give the go ahead I
-              might use some on my Instagram or websites too!
+              Finally I edit the chosen pics and send them to you in full
+              resolution to do with as you wish.
             </ListItem>
           </List>
         </Column>
@@ -185,7 +179,8 @@ const AboutShoots = () => {
         <Callout>£150 Commission, up to 1hr shoot</Callout>
         <Para>
           If you know exactly what you want, we can quickly set it up, try a few
-          variations, and get that look you’re after. 6 final portraits included
+          variations, and get that look you’re after. 6 final portraits
+          included.
         </Para>
         <Callout> £250 Creative shoot, 2hr, 1 or 2 people</Callout>
         <Para>

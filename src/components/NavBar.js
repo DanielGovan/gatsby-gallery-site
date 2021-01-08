@@ -57,18 +57,18 @@ const NavBar = () => {
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/gallery/">
-                  Gallery
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/book_a_shoot/">
+                  About shoots
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/book_a_shoot/">
-                  Book a shoot
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/gallery/">
+                  Portrait gallery
                 </NavLinks>
               </NavItem>
               <NavItem>
                 <NavLinks activeStyle={{ fontWeight: 700 }} to="/background/">
-                  Background
+                  Nightlife
                 </NavLinks>
               </NavItem>
               <NavItem>

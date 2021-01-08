@@ -34,7 +34,7 @@ const HeroSection = () => {
           </FadeIn>
           <Context>portrait photography</Context>
         </SiteHeader>
-        <ButtonWrap>
+        {/* <ButtonWrap>
           <Button
             initial={{ x: -500, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -46,7 +46,7 @@ const HeroSection = () => {
           >
             Inquire now
           </Button>
-        </ButtonWrap>
+        </ButtonWrap> */}
       </HeroInner>
     </HeroContainer>
   )

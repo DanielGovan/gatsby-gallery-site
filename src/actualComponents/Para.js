@@ -9,7 +9,7 @@ const StyledPara = styled(motion.p)`
 
   @media screen and (max-width: 500px) {
     font-size: 1.3rem;
-    text-align: center;
+    text-align: left;
   }
 `
 
