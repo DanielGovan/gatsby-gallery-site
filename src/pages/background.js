@@ -35,14 +35,48 @@ const slickSettings = {
     },
   ],
 }
+const slickSettingsPicks = {
+  dots: true,
+  autoplay: true,
+  arrows: false,
+  swipeToSlide: true,
+  infinite: true,
+  speed: 4000,
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  autoplaySpeed: 0,
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 5,
+      },
+    },
+    {
+      breakpoint: 660,
+      settings: {
+        slidesToShow: 3,
+        speed: 2000,
+      },
+    },
+    {
+      breakpoint: 330,
+      settings: {
+        slidesToShow: 2,
+        speed: 2000,
+      },
+    },
+  ],
+}
 
 const Background = () => {
   const data = useStaticQuery(graphql`
     query exhibitionImages {
-      allFile(
+      exhibitionImages: allFile(
         filter: {
-          sourceInstanceName: { eq: "exhibitionImages" }
+          sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: { regex: "/exhibition/" }
         }
       ) {
         edges {
@@ -56,52 +90,21 @@ const Background = () => {
           }
         }
       }
-      imageOne: file(relativePath: { eq: "Context1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
+      nightLifeImages: allFile(
+        filter: {
+          sourceInstanceName: { eq: "siteImages" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: { regex: "/nightlife/" }
         }
-      }
-      imageOne: file(relativePath: { eq: "Context1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageTwo: file(relativePath: { eq: "Context2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageThree: file(relativePath: { eq: "Context3.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageFour: file(relativePath: { eq: "Context4.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageFive: file(relativePath: { eq: "Context5.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      imageSix: file(relativePath: { eq: "Context6.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxHeight: 800, maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
@@ -129,57 +132,37 @@ const Background = () => {
           <span>Gaudy</span>
         </FadeInText> */}
       </HeroSection>
+
+      <Slider {...slickSettingsPicks}>
+        {data.nightLifeImages.edges
+          //.sort(() => Math.random() - 0.5)
+          .map((image, key) => (
+            <ImageItem
+              key={key}
+              fluid={{
+                ...image.node.childImageSharp.fluid,
+                // aspectRatio: 1 / 1,
+              }}
+              alt="Light by Dan picks"
+            />
+          ))}
+      </Slider>
+
       <InnerWrap>
         <Header>Background</Header>
 
         <SubHeader>Nightlife: 2008 to 2018</SubHeader>
         <Para>
           I starting out documenting nights out with friends, my mission to
-          capture moments of unguarded joy (whilst skipping some of the mess). I
-          didn't start official club photography until 2012, then gradually
-          focused more on drag and cabaret performers and perfomances. My aim
-          was always capturing situations rather than things, looking for
-          people’s reactions in the moment.
+          capture moments of unguarded joy (whilst skipping some of the mess)
+          from Popstarz to Sink the Pink. I started dabbling in club photography
+          at a few of my favourite haunts like Shake Yer Dix, Douchebag, Push
+          the Button, Cybil's House and Knickerbocker. Gradually my interest
+          moved more towards drag and cabaret performers and perfomances,
+          especally those I was lucky enough to call friends at the time. In any
+          case my aim was always capturing situations rather than things,
+          looking for people’s reactions in the moment.
         </Para>
-
-        <Slider {...slickSettings}>
-          <div>
-            <ImageItem
-              fluid={data.imageOne.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.imageTwo.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.imageThree.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.imageFour.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.imageFive.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </div>
-          <div>
-            <ImageItem
-              fluid={data.imageSix.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </div>
-        </Slider>
 
         <SubHeader>Living Vivid exhibition: Autumn 2018</SubHeader>
         <Para>
@@ -191,7 +174,7 @@ const Background = () => {
         </Para>
       </InnerWrap>
       <ImageGrid>
-        {data.allFile.edges.map((image, key) => (
+        {data.exhibitionImages.edges.map((image, key) => (
           <ImageItem
             key={key}
             fluid={image.node.childImageSharp.fluid}
