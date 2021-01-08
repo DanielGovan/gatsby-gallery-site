@@ -64,9 +64,51 @@ const slickSettingsNarrow = {
   ],
 }
 
+const slickTestimonialSettings = {
+  dots: true,
+  infinite: true,
+  swipeToSlide: true,
+  speed: 200,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+}
+
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
-    query {
+    query testimonialImages {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "testimonialImages" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxHeight: 600, maxWidth: 350) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
       bts_n_1: file(relativePath: { eq: "bts-reflection.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
@@ -228,7 +270,7 @@ const AboutShoots = () => {
             Email now to discuss!
           </Button>
         </ButtonWrap> */}
-        <Slider {...slickSettingsWide}>
+        {/* <Slider {...slickSettingsWide}>
           <div>
             <ImageItem
               fluid={data.bts_w_1.childImageSharp.fluid}
@@ -247,6 +289,17 @@ const AboutShoots = () => {
               alt="Harry behind the scenes with Light By Dan"
             />
           </div>
+        </Slider> */}
+        <Header>Testimonials</Header>
+
+        <Slider {...slickTestimonialSettings}>
+          {data.allFile.edges.map((image, key) => (
+            <ImageItem
+              key={key}
+              fluid={image.node.childImageSharp.fluid}
+              alt={image.node.relativePath.split(".")[0]}
+            />
+          ))}
         </Slider>
       </InnerWrap>
     </Layout>

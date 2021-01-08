@@ -71,11 +71,6 @@ const NavBar = () => {
                   Portrait gallery
                 </NavLinks>
               </NavItem>
-              <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/testimonials/">
-                  Testimonials
-                </NavLinks>
-              </NavItem>
             </NavMenu>
           </NavBarContainer>
         </Nav>
