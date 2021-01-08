@@ -3,22 +3,23 @@ import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
 import "../slick.css"
 
-import { Button } from "../components/ButtonElements"
+// import { Button } from "../components/ButtonElements"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Para from "../actualComponents/Para"
+import HeroSection from "../components/HeroSection"
 
 import {
   InlineLink,
-  InnerWrap,
+  // InnerWrap,
   HomeContent,
   HomeIllus,
   HomeWrapper,
   ImageItem,
   InteriorLink,
 } from "../components/LayoutElements"
-import { ButtonWrap } from "../components/HeroSectionElements"
-import HeroSection from "../components/HeroSection"
+import FadeInText from "../actualComponents/FadeInText"
+// import { ButtonWrap } from "../components/HeroSectionElements"
 
 const slickSettingsPicks = {
   dots: true,
@@ -82,13 +83,32 @@ const IndexPage = () => {
           }
         }
       }
+      heroBG: file(relativePath: { eq: "header-kage.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
     <Layout>
       <SEO title="Home" />
-      <HeroSection />
+      <HeroSection
+        heroBG={data.heroBG.childImageSharp.fluid}
+        position="center top"
+      >
+        <FadeInText>
+          <span>Queer</span>
+          <span>Vivid</span>
+          <span>Surreal</span>
+          <span>Vibrant</span>
+          <span>Gaudy</span>
+        </FadeInText>
+        <span>portrait photography</span>
+      </HeroSection>
       <HomeWrapper>
         <Slider {...slickSettingsPicks}>
           {data.allFile.edges

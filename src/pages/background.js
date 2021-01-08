@@ -4,6 +4,9 @@ import Slider from "react-slick"
 import "../slick.css"
 import "react-medium-image-zoom/dist/styles.css"
 
+import FadeInText from "../actualComponents/FadeInText"
+import HeroSection from "../components/HeroSection"
+
 import Layout from "../components/layout"
 import Para from "../actualComponents/Para"
 import {
@@ -102,12 +105,30 @@ const Background = () => {
           }
         }
       }
+      heroBG: file(relativePath: { eq: "header-kbryard.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
     <Layout>
       <SEO title="Background" />
+
+      <HeroSection heroBG={data.heroBG.childImageSharp.fluid}>
+        Drawing on 10 years of queer nightlife
+        {/* <FadeInText>
+          <span>Queer</span>
+          <span>Vivid</span>
+          <span>Surreal</span>
+          <span>Vibrant</span>
+          <span>Gaudy</span>
+        </FadeInText> */}
+      </HeroSection>
       <InnerWrap>
         <Header>Background</Header>
 

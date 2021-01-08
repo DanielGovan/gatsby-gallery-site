@@ -18,8 +18,8 @@ import {
   InlineLink,
 } from "../components/LayoutElements"
 import SEO from "../components/seo"
-// import { Button } from "../components/ButtonElements"
-// import { ButtonWrap } from "../components/HeroSectionElements"
+import FadeInText from "../actualComponents/FadeInText"
+import HeroSection from "../components/HeroSection"
 
 const slickSettingsWide = {
   dots: true,
@@ -109,14 +109,34 @@ const AboutShoots = () => {
           }
         }
       }
+      heroBG: file(relativePath: { eq: "header-jason.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   return (
     <Layout>
       <SEO title="Book a shoot" />
+      <HeroSection
+        heroBG={data.heroBG.childImageSharp.fluid}
+        position="center 30%"
+      >
+        Thinking of getting lit by Dan?
+        {/* <FadeInText>
+          <span>Queer</span>
+          <span>Vivid</span>
+          <span>Surreal</span>
+          <span>Vibrant</span>
+          <span>Gaudy</span>
+        </FadeInText> */}
+      </HeroSection>
       <InnerWrap>
         <Header>Book a shoot</Header>
-        <SubHeader>Thinking of getting lit by Dan?</SubHeader>
+        {/* <SubHeader>Thinking of getting lit by Dan?</SubHeader> */}
         <Para>
           A professional shoot is great for self promotion if you’re a performer
           or brand, but where this shines is as an opportunity for exploring and

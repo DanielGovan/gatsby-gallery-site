@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Zoom from "react-medium-image-zoom"
 import * as cssVars from "../const/constants"

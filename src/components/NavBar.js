@@ -62,13 +62,13 @@ const NavBar = () => {
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/gallery/">
-                  Portrait gallery
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/background/">
+                  Nightlife
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/background/">
-                  Nightlife
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/gallery/">
+                  Portrait gallery
                 </NavLinks>
               </NavItem>
               <NavItem>

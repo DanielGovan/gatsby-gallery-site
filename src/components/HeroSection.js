@@ -1,54 +1,76 @@
 import React from "react"
 
-import {
-  HeroContainer,
-  SiteHeader,
-  Context,
-  HeroInner,
-  FadeIn,
-  ButtonWrap,
-} from "../components/HeroSectionElements"
-import { Button } from "../components/ButtonElements"
-import bgimage from "../images/siteimages/art-140427.jpg"
+import BackgroundImage from "gatsby-background-image"
+import styled from "styled-components"
+import { motion } from "framer-motion"
+import * as cssVars from "../const/constants"
 
-const HeroSection = () => {
+import FadeInWrap from "../actualComponents/FadeInWrap"
+
+// styled-components nor motion work with gatsby-background-image
+const HeroContainer = ({ heroBG, children, position = "center" }) => {
+  console.log("HELLO", position)
   return (
-    <HeroContainer
-      style={{ backgroundImage: "url(" + bgimage + ")" }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.8 }}
+    <BackgroundImage
+      Tag="div"
+      fluid={heroBG}
+      backgroundColor={`#000`}
+      style={{
+        backgroundPosition: position,
+        height: "100vh",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        boxShadow: "inset 0 0 0 1000px rgba(0, 0, 0, 0.2)",
+        backgroundSize: "cover",
+        objectFit: "contain",
+        marginTop: "-80px",
+      }}
     >
-      <HeroInner>
-        <SiteHeader
-          initial={{ x: -500, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 1.4 }}
-        >
-          <FadeIn>
-            <span>Queer</span>
-            <span>Vivid</span>
-            <span>Surreal</span>
-            <span>Vibrant</span>
-            <span>Gaudy</span>
-          </FadeIn>
-          <Context>portrait photography</Context>
-        </SiteHeader>
-        {/* <ButtonWrap>
-          <Button
-            initial={{ x: -500, opacity: 0 }}
+      {children}
+    </BackgroundImage>
+  )
+}
+
+export const HeroInner = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30vh 32px 0;
+`
+
+export const SiteHeader = styled(motion.h1)`
+  display: flex;
+  color: ${cssVars.nearWhite};
+  font-size: 60px;
+  text-shadow: 1px 1px 10px ${cssVars.justBlack};
+
+  @media screen and (max-width: ${cssVars.breakPointL}) {
+    font-size: 40px;
+  }
+
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    font-size: 30px;
+    flex-direction: column;
+  }
+`
+
+const HeroSection = ({ heroBG, children, position }) => {
+  return (
+    <FadeInWrap>
+      <HeroContainer heroBG={heroBG} position={position}>
+        <HeroInner>
+          <SiteHeader
+            initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.6 }}
-            fontBig
-            big
-            primary
-            href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+            transition={{ delay: 1.4 }}
           >
-            Inquire now
-          </Button>
-        </ButtonWrap> */}
-      </HeroInner>
-    </HeroContainer>
+            {children}
+          </SiteHeader>
+        </HeroInner>
+      </HeroContainer>
+    </FadeInWrap>
   )
 }
 
