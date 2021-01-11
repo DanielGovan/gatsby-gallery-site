@@ -82,6 +82,10 @@ export const ImageGrid = styled.div`
   @media screen and (max-width: ${cssVars.breakPointM}) {
     padding: 0 10px;
   }
+
+  img {
+    width: 100% !important;
+  }
 `
 export const GridZoom = styled(Zoom)`
   display: grid;
@@ -89,9 +93,10 @@ export const GridZoom = styled(Zoom)`
 `
 
 export const ImageItem = styled(Img)`
-  /* display: grid !important; */
+  display: grid !important;
   min-width: 200px;
-  min-height: 200px;
+  width: 100%;
+  /* min-height: 200px; */
   /* height: 200px;
   width: 100px; */
   button {
@@ -99,9 +104,9 @@ export const ImageItem = styled(Img)`
 
   img {
     /* object-fit: contain !important; */
-    height: 200px;
+    /* height: 200px; */
     background: black !important;
-    object-fit: contain;
+    /* object-fit: contain; */
   }
 
   img:hover {

@@ -1,5 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Zoom from "react-medium-image-zoom"
+import "react-medium-image-zoom/dist/styles.css"
 
 import Layout from "../components/layout"
 import {
@@ -143,11 +145,13 @@ const Background = () => {
       </InnerWrap>
       <ImageGrid>
         {data.exhibitionImages.edges.map((image, key) => (
-          <ImageItem
-            key={key}
-            fluid={image.node.childImageSharp.fluid}
-            alt="Living Vivid Exhibition at Dalston Superstore"
-          />
+          <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
+            <ImageItem
+              key={key}
+              fluid={image.node.childImageSharp.fluid}
+              alt="Living Vivid Exhibition at Dalston Superstore"
+            />
+          </Zoom>
         ))}
       </ImageGrid>
       <InnerWrap>

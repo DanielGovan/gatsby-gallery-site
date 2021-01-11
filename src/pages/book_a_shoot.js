@@ -3,12 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import {
-  // ImageItem,
   Header,
   SubHeader,
   InnerWrap,
-  // List,
-  // ListItem,
   InlineLink,
 } from "../components/LayoutElements"
 import Para from "../actualComponents/Para"
