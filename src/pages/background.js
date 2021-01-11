@@ -97,11 +97,6 @@ const Background = () => {
           <span>Gaudy</span>
         </FadeInText> */}
       </HeroSection>
-
-      <InnerWrap>
-        <SubHeader>Club photography: 2008 to 2016</SubHeader>
-      </InnerWrap>
-
       <FullWidthSlider
         images={data.clubPapsImages.edges}
         alts="Lightbydan's club photography days"
@@ -110,16 +105,24 @@ const Background = () => {
       />
       <InnerWrap>
         {/* <Header>Background</Header> */}
+        <SubHeader>Club photography: 2008 to 2016</SubHeader>
 
         <Para>
           I starting out documenting nights out with friends, my mission to
           capture moments of unguarded joy (whilst skipping some of the mess)
           from Popstarz to Sink the Pink. I started dabbling in club photography
           at a few of my favourite haunts like Shake Yer Dix, Douchebag, Push
-          the Button, Cybil's House and Knickerbocker. In any case my aim was
-          always capturing situations rather than things,
+          the Button,
         </Para>
+
         <SubHeader>Queer nightlife: 2015 to 2018</SubHeader>
+        <Para>
+          Gradually my focus moved more towards drag and cabaret performers and
+          perfomances, especally those I was lucky enough to call friends at the
+          time. Drag became ubiquitous favs like Cybil's House and
+          Knickerbocker, In each case my aim was always to capturing situations
+          rather than things,
+        </Para>
       </InnerWrap>
       <FullWidthSlider
         images={data.nightLifeImages.edges}
@@ -129,11 +132,6 @@ const Background = () => {
       />
 
       <InnerWrap>
-        <Para>
-          Gradually my interest moved more towards drag and cabaret performers
-          and perfomances, especally those I was lucky enough to call friends at
-          the time.
-        </Para>
         <SubHeader>Living Vivid exhibition: 2018</SubHeader>
         <Para>
           After a year of a collaborative crusade to learn from, signal-boost
