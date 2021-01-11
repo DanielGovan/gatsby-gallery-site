@@ -1,11 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Slider from "react-slick"
-import "../slick.css"
 
 import Layout from "../components/layout"
 import {
-  ImageItem,
+  // ImageItem,
   Header,
   SubHeader,
   InnerWrap,
@@ -42,14 +40,14 @@ const AboutShoots = () => {
         filter: {
           sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-          name: { regex: "/bts/" }
+          name: { regex: "/bts-/" }
         }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 600) {
+              fluid(maxWidth: 500) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -85,7 +83,8 @@ const AboutShoots = () => {
       <FullWidthSlider
         images={data.btsImages.edges}
         alts="Behind the scenes with Light by Dan"
-        aspect={null}
+        aspect={1 / 1}
+        maxSlides={6}
       />
 
       <InnerWrap>
@@ -147,6 +146,7 @@ const AboutShoots = () => {
         images={data.testimonialImages.edges}
         alts=""
         aspect={6 / 10}
+        maxSlides={5}
       />
     </Layout>
   )

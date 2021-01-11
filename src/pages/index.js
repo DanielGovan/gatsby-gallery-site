@@ -17,40 +17,6 @@ import {
 import FadeInText from "../actualComponents/FadeInText"
 import FullWidthSlider from "../actualComponents/FullWidthSlider"
 
-const slickSettingsPicks = {
-  dots: true,
-  autoplay: true,
-  arrows: false,
-  swipeToSlide: true,
-  infinite: true,
-  speed: 4000,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  autoplaySpeed: 0,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 5,
-      },
-    },
-    {
-      breakpoint: 660,
-      settings: {
-        slidesToShow: 3,
-        speed: 2000,
-      },
-    },
-    {
-      breakpoint: 330,
-      settings: {
-        slidesToShow: 2,
-        speed: 2000,
-      },
-    },
-  ],
-}
-
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query pickImages {
@@ -109,7 +75,8 @@ const IndexPage = () => {
         <FullWidthSlider
           images={data.allFile.edges}
           alts="Lightbydan's portrait picks"
-          aspect="1 / 1"
+          aspect={1 / 1}
+          maxSlides={7}
         />
 
         <HomeContent>

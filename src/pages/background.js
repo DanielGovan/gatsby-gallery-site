@@ -30,7 +30,7 @@ const Background = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 800, maxWidth: 800) {
+              fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -41,14 +41,32 @@ const Background = () => {
         filter: {
           sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-          name: { regex: "/^nightlife.+wide/" }
+          name: { regex: "/nightlife/" }
         }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 800, maxWidth: 1200) {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+      clubPapsImages: allFile(
+        filter: {
+          sourceInstanceName: { eq: "siteImages" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: { regex: "/club/" }
+        }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -80,28 +98,42 @@ const Background = () => {
         </FadeInText> */}
       </HeroSection>
 
-      <FullWidthSlider
-        images={data.nightLifeImages.edges}
-        alts="Lightbydan's nightlife picks"
-        aspect="8 / 5"
-      />
+      <InnerWrap>
+        <SubHeader>Club photography: 2008 to 2016</SubHeader>
+      </InnerWrap>
 
+      <FullWidthSlider
+        images={data.clubPapsImages.edges}
+        alts="Lightbydan's club photography days"
+        aspect={5 / 4}
+        maxSlides={6}
+      />
       <InnerWrap>
         {/* <Header>Background</Header> */}
 
-        <SubHeader>Nightlife: 2008 to 2018</SubHeader>
         <Para>
           I starting out documenting nights out with friends, my mission to
           capture moments of unguarded joy (whilst skipping some of the mess)
           from Popstarz to Sink the Pink. I started dabbling in club photography
           at a few of my favourite haunts like Shake Yer Dix, Douchebag, Push
           the Button, Cybil's House and Knickerbocker. In any case my aim was
-          always capturing situations rather than things, and gradually my
-          interest moved more towards drag and cabaret performers and
-          perfomances, especally those I was lucky enough to call friends at the
-          time.
+          always capturing situations rather than things,
         </Para>
+        <SubHeader>Queer nightlife: 2015 to 2018</SubHeader>
+      </InnerWrap>
+      <FullWidthSlider
+        images={data.nightLifeImages.edges}
+        alts="Lightbydan's queer nightlife picks"
+        aspect={8 / 5}
+        maxSlides={6}
+      />
 
+      <InnerWrap>
+        <Para>
+          Gradually my interest moved more towards drag and cabaret performers
+          and perfomances, especally those I was lucky enough to call friends at
+          the time.
+        </Para>
         <SubHeader>Living Vivid exhibition: 2018</SubHeader>
         <Para>
           After a year of a collaborative crusade to learn from, signal-boost

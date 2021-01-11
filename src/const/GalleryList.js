@@ -6,7 +6,7 @@ export const GALLERY_IMAGES = [
     date: "28 Nov 2018",
     keyWords: "drag",
     images: [
-      "Acacia+Bones-281109.jpg",
+      "Acacia-281109.jpg",
       "Acacia+Bones-281143.jpg",
       "Acacia+Bones-281246.jpg",
       "Acacia+Bones-281301.jpg",
@@ -29,7 +29,7 @@ export const GALLERY_IMAGES = [
     date: "28 Nov 2018",
     keyWords: "drag",
     images: [
-      "Acacia+Bones-281497.jpg",
+      "Bones-281497.jpg",
       "Acacia+Bones-281195.jpg",
       "Acacia+Bones-281225.jpg",
       "Acacia+Bones-281332.jpg",
@@ -102,10 +102,10 @@ export const GALLERY_IMAGES = [
     ],
   },
   {
-    name: "C",
+    name: "Chirag",
     date: "12 Mar 2019",
     keyWords: "skin",
-    images: ["C-3123648.jpg"],
+    images: ["Chirag-3123415.jpg"],
   },
   {
     name: "Cain",
