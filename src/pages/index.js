@@ -1,7 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Slider from "react-slick"
-import "../slick.css"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,6 +15,7 @@ import {
   InteriorLink,
 } from "../components/LayoutElements"
 import FadeInText from "../actualComponents/FadeInText"
+import FullWidthSlider from "../actualComponents/FullWidthSlider"
 
 const slickSettingsPicks = {
   dots: true,
@@ -107,20 +106,11 @@ const IndexPage = () => {
         <span>portrait photography</span>
       </HeroSection>
       <HomeWrapper>
-        <Slider {...slickSettingsPicks}>
-          {data.allFile.edges
-            //.sort(() => Math.random() - 0.5)
-            .map((image, key) => (
-              <ImageItem
-                key={key}
-                fluid={{
-                  ...image.node.childImageSharp.fluid,
-                  aspectRatio: 1 / 1,
-                }}
-                alt="Light by Dan picks"
-              />
-            ))}
-        </Slider>
+        <FullWidthSlider
+          images={data.allFile.edges}
+          alts="Lightbydan's portrait picks"
+          aspect="1 / 1"
+        />
 
         <HomeContent>
           <div>

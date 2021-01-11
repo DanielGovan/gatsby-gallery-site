@@ -16,66 +16,7 @@ import {
 import Para from "../actualComponents/Para"
 import SEO from "../components/seo"
 import HeroSection from "../actualComponents/HeroSection"
-
-const slickSettingsPicks = {
-  dots: true,
-  autoplay: true,
-  arrows: false,
-  swipeToSlide: true,
-  infinite: true,
-  variableWidth: true,
-  speed: 4000,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  autoplaySpeed: 0,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 5,
-      },
-    },
-    {
-      breakpoint: 660,
-      settings: {
-        slidesToShow: 3,
-        speed: 2000,
-      },
-    },
-    {
-      breakpoint: 330,
-      settings: {
-        slidesToShow: 2,
-        speed: 2000,
-      },
-    },
-  ],
-}
-
-const slickTestimonialSettings = {
-  dots: true,
-  infinite: true,
-  swipeToSlide: true,
-  speed: 200,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 550,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-}
+import FullWidthSlider from "../actualComponents/FullWidthSlider"
 
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
@@ -140,19 +81,13 @@ const AboutShoots = () => {
           <span>Gaudy</span>
         </FadeInText> */}
       </HeroSection>
-      <Slider {...slickSettingsPicks}>
-        {data.btsImages.edges
-          //.sort(() => Math.random() - 0.5)
-          .map((image, key) => (
-            <ImageItem
-              key={key}
-              fluid={{
-                ...image.node.childImageSharp.fluid,
-              }}
-              alt="Behind the scenes with Light by Dan"
-            />
-          ))}
-      </Slider>
+
+      <FullWidthSlider
+        images={data.btsImages.edges}
+        alts="Behind the scenes with Light by Dan"
+        aspect={null}
+      />
+
       <InnerWrap>
         <Header>Book a shoot</Header>
         {/* <SubHeader>Thinking of getting lit by Dan?</SubHeader> */}
@@ -206,17 +141,13 @@ const AboutShoots = () => {
         </Para>
 
         <Header>Testimonials</Header>
-
-        <Slider {...slickTestimonialSettings}>
-          {data.testimonialImages.edges.map((image, key) => (
-            <ImageItem
-              key={key}
-              fluid={image.node.childImageSharp.fluid}
-              alt={image.node.relativePath.split(".")[0]}
-            />
-          ))}
-        </Slider>
       </InnerWrap>
+      <FullWidthSlider
+        type="testimonial"
+        images={data.testimonialImages.edges}
+        alts=""
+        aspect={6 / 10}
+      />
     </Layout>
   )
 }

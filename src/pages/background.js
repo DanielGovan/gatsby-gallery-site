@@ -1,7 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Slider from "react-slick"
-import "../slick.css"
 
 import Layout from "../components/layout"
 import {
@@ -13,43 +11,10 @@ import {
   InteriorLink,
 } from "../components/LayoutElements"
 import HeroSection from "../actualComponents/HeroSection"
+import FullWidthSlider from "../actualComponents/FullWidthSlider"
 import Para from "../actualComponents/Para"
 
 import SEO from "../components/seo"
-
-const slickSettingsPicks = {
-  dots: true,
-  autoplay: true,
-  arrows: false,
-  swipeToSlide: true,
-  infinite: true,
-  speed: 4000,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  autoplaySpeed: 0,
-  responsive: [
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 5,
-      },
-    },
-    {
-      breakpoint: 660,
-      settings: {
-        slidesToShow: 3,
-        speed: 2000,
-      },
-    },
-    {
-      breakpoint: 330,
-      settings: {
-        slidesToShow: 2,
-        speed: 2000,
-      },
-    },
-  ],
-}
 
 const Background = () => {
   const data = useStaticQuery(graphql`
@@ -76,14 +41,14 @@ const Background = () => {
         filter: {
           sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
-          name: { regex: "/nightlife/" }
+          name: { regex: "/^nightlife.+wide/" }
         }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 800, maxWidth: 800) {
+              fluid(maxHeight: 800, maxWidth: 1200) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -115,20 +80,11 @@ const Background = () => {
         </FadeInText> */}
       </HeroSection>
 
-      <Slider {...slickSettingsPicks}>
-        {data.nightLifeImages.edges
-          //.sort(() => Math.random() - 0.5)
-          .map((image, key) => (
-            <ImageItem
-              key={key}
-              fluid={{
-                ...image.node.childImageSharp.fluid,
-                // aspectRatio: 1 / 1,
-              }}
-              alt="Light by Dan picks"
-            />
-          ))}
-      </Slider>
+      <FullWidthSlider
+        images={data.nightLifeImages.edges}
+        alts="Lightbydan's nightlife picks"
+        aspect="8 / 5"
+      />
 
       <InnerWrap>
         {/* <Header>Background</Header> */}
