@@ -9,8 +9,8 @@ import {
   Header,
   SubHeader,
   InnerWrap,
-  List,
-  ListItem,
+  // List,
+  // ListItem,
   InlineLink,
 } from "../components/LayoutElements"
 import Para from "../actualComponents/Para"

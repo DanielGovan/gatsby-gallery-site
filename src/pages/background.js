@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import {
   ImageItem,
   ImageGrid,
-  Header,
+  // Header,
   InnerWrap,
   SubHeader,
   InteriorLink,
