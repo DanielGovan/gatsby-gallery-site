@@ -1,6 +1,5 @@
 import React from "react"
 import { FaInstagram, FaTwitter } from "react-icons/fa"
-import { HiOutlineMail } from "react-icons/hi"
 
 import {
   FooterContainer,
@@ -18,8 +17,8 @@ const Footer = () => {
       <SocialMedia>
         <SocialMediaWrap>
           <WebsiteRights>
-            © Light by Dan {new Date().getFullYear()}
-            <SocialIcon />
+            © Light by Dan {new Date().getFullYear()} <SocialIcon />{" "}
+            lightbydan@gmail.com
           </WebsiteRights>
           <SocialIcons>
             <SocialIconLink
@@ -37,9 +36,6 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <FaTwitter />
-            </SocialIconLink>
-            <SocialIconLink href="mailto:lightbydan@gmail.com?subject=Site inquiry">
-              <HiOutlineMail />
             </SocialIconLink>
           </SocialIcons>
         </SocialMediaWrap>

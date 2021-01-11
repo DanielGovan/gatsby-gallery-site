@@ -404,6 +404,24 @@ export const GALLERY_IMAGES = [
     images: ["JasonW-8110413.jpg"],
   },
   {
+    name: "James",
+    date: "25 Apr 2018",
+    keyWords: "other",
+    images: ["James-4250895.jpg"],
+  },
+  {
+    name: "Roman",
+    date: "27 Jan 2018",
+    keyWords: "drag",
+    images: ["Roman-1271112.jpg"],
+  },
+  {
+    name: "Gabi",
+    date: "17 Oct 2018",
+    keyWords: "other",
+    images: ["Gabi-171680.jpg"],
+  },
+  {
     name: "Javi",
     date: "9 Sep 2017",
     keyWords: "drag",

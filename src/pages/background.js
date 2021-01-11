@@ -2,13 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
 import "../slick.css"
-import "react-medium-image-zoom/dist/styles.css"
-
-import FadeInText from "../actualComponents/FadeInText"
-import HeroSection from "../actualComponents/HeroSection"
 
 import Layout from "../components/layout"
-import Para from "../actualComponents/Para"
 import {
   ImageItem,
   ImageGrid,
@@ -17,24 +12,11 @@ import {
   SubHeader,
   InteriorLink,
 } from "../components/LayoutElements"
+import HeroSection from "../actualComponents/HeroSection"
+import Para from "../actualComponents/Para"
+
 import SEO from "../components/seo"
 
-const slickSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 700,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ],
-}
 const slickSettingsPicks = {
   dots: true,
   autoplay: true,
@@ -149,7 +131,7 @@ const Background = () => {
       </Slider>
 
       <InnerWrap>
-        <Header>Background</Header>
+        {/* <Header>Background</Header> */}
 
         <SubHeader>Nightlife: 2008 to 2018</SubHeader>
         <Para>
@@ -157,20 +139,20 @@ const Background = () => {
           capture moments of unguarded joy (whilst skipping some of the mess)
           from Popstarz to Sink the Pink. I started dabbling in club photography
           at a few of my favourite haunts like Shake Yer Dix, Douchebag, Push
-          the Button, Cybil's House and Knickerbocker. Gradually my interest
-          moved more towards drag and cabaret performers and perfomances,
-          especally those I was lucky enough to call friends at the time. In any
-          case my aim was always capturing situations rather than things,
-          looking for people’s reactions in the moment.
+          the Button, Cybil's House and Knickerbocker. In any case my aim was
+          always capturing situations rather than things, and gradually my
+          interest moved more towards drag and cabaret performers and
+          perfomances, especally those I was lucky enough to call friends at the
+          time.
         </Para>
 
-        <SubHeader>Living Vivid exhibition: Autumn 2018</SubHeader>
+        <SubHeader>Living Vivid exhibition: 2018</SubHeader>
         <Para>
-          After a year of shooting performer friends in a collaborative crusade
-          to learn from, signal-boost and celebrate some of the local queer
-          icons, I had an opportunity to show an exhibition at Dalston
-          Superstore; 40 portraits of kings and queens displayed for 2 months in
-          the same scene that most of them came up in. The circle complete.
+          After a year of a collaborative crusade to learn from, signal-boost
+          and celebrate some of the local queer icons, I had an opportunity to
+          show an exhibition at Dalston Superstore; 40 portraits of kings and
+          queens displayed for 2 months in the same scene that most of them came
+          up in. The circle complete.
         </Para>
       </InnerWrap>
       <ImageGrid>

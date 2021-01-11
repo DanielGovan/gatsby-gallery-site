@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
 import "../slick.css"
 
-// import { Button } from "../components/ButtonElements"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Para from "../actualComponents/Para"
@@ -11,7 +10,6 @@ import HeroSection from "../actualComponents/HeroSection"
 
 import {
   InlineLink,
-  // InnerWrap,
   HomeContent,
   HomeIllus,
   HomeWrapper,
@@ -19,7 +17,6 @@ import {
   InteriorLink,
 } from "../components/LayoutElements"
 import FadeInText from "../actualComponents/FadeInText"
-// import { ButtonWrap } from "../components/HeroSectionElements"
 
 const slickSettingsPicks = {
   dots: true,

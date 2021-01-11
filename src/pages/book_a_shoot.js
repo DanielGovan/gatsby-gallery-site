@@ -4,7 +4,6 @@ import Slider from "react-slick"
 import "../slick.css"
 
 import Layout from "../components/layout"
-import Para from "../actualComponents/Para"
 import {
   ImageItem,
   Header,
@@ -14,8 +13,8 @@ import {
   ListItem,
   InlineLink,
 } from "../components/LayoutElements"
+import Para from "../actualComponents/Para"
 import SEO from "../components/seo"
-// import FadeInText from "../actualComponents/FadeInText"
 import HeroSection from "../actualComponents/HeroSection"
 
 const slickSettingsPicks = {
@@ -91,7 +90,7 @@ const AboutShoots = () => {
           node {
             relativePath
             childImageSharp {
-              fluid(maxHeight: 600, maxWidth: 350) {
+              fluid(maxHeight: 600) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -163,6 +162,19 @@ const AboutShoots = () => {
           improving self-image in a safe environment.
         </Para>
 
+        <Para>
+          At my home studio in{" "}
+          <InlineLink
+            target="_blank"
+            href="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
+          >
+            Mile End
+          </InlineLink>
+          , we'll work through a variety of lighting setups, colours and poses,
+          and conferring over the shots as we go, deleting whatever doesn't
+          work.
+        </Para>
+
         <SubHeader>Packages</SubHeader>
 
         <dl>
@@ -204,32 +216,6 @@ const AboutShoots = () => {
             />
           ))}
         </Slider>
-
-        <SubHeader>How does it work?</SubHeader>
-        <Para>
-          I work out of a [ramshackle] home studio in Mile End, shooting in
-          between coding I like to shoot some friends... you can join them!
-          <br />
-          At my home studio in{" "}
-          <InlineLink
-            target="_blank"
-            href="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
-          >
-            Mile End
-          </InlineLink>
-          , we'll start with a chat about your hopes, fears and expectations,
-          then work through a variety of lighting setups, colours and poses, and
-          conferring over the shots as we go. I’ll carry out broad edits and
-          whittle them down from hundreds to dozens, then send you a gallery so
-          you can select which you want (and which you want deleted for all
-          time!). Finally I edit the chosen pics and send them to you in full
-          resolution to do with as you wish.
-        </Para>
-        <SubHeader>Things to know!</SubHeader>
-        <List>
-          <ListItem>Everyone gets a veto on all photos.</ListItem>
-          <ListItem>I work in a home studio</ListItem>
-        </List>
       </InnerWrap>
     </Layout>
   )
