@@ -15,14 +15,15 @@ const HeroContainer = styled.div`
 `
 
 const HeroImage = styled(Img)`
-  /* top: -80px; */
-  /* width: 100vw;
-  height: 100vh; */
   position: absolute !important;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+
+  img {
+    object-position: center 30% !important;
+  }
 `
 
 const HeroInner = styled.div`
@@ -49,6 +50,11 @@ const SiteHeader = styled(motion.h1)`
   @media screen and (max-width: ${cssVars.breakPointM}) {
     font-size: 30px;
     flex-direction: column;
+  }
+
+  & > span {
+    display: block;
+    flex: auto;
   }
 `
 
