@@ -1,45 +1,38 @@
 import React from "react"
-import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import * as cssVars from "../const/constants"
 
 import FadeInWrap from "./FadeInWrap"
+import Img from "gatsby-image"
 
-// styled-components nor motion work with gatsby-background-image
-// maybe replace with some big image that skips the background plugin?
-const HeroContainer = ({ heroBG, children, position = "center" }) => {
-  return (
-    <BackgroundImage
-      Tag="div"
-      fluid={heroBG}
-      backgroundColor={`#000`}
-      style={{
-        backgroundPosition: position,
-        height: "100vh",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        boxShadow: "inset 0 0 0 1000px rgba(0, 0, 0, 0.2)",
-        backgroundSize: "cover",
-        objectFit: "contain",
-        marginTop: "-80px",
-      }}
-    >
-      {children}
-    </BackgroundImage>
-  )
-}
-
-export const HeroInner = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40vh 32px 0;
+const HeroContainer = styled.div`
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin-top: -80px;
+  overflow: hidden;
 `
 
-export const SiteHeader = styled(motion.h1)`
+const HeroImage = styled(Img)`
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: "100vw";
+  height: "100vh";
+`
+
+const HeroInner = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60vh 32px 0;
+`
+
+const SiteHeader = styled(motion.h1)`
   font-family: "Ubuntu", sans-serif;
   display: flex;
   color: ${cssVars.nearWhite};
@@ -60,6 +53,7 @@ const HeroSection = ({ heroBG, children, position }) => {
   return (
     <FadeInWrap>
       <HeroContainer heroBG={heroBG} position={position}>
+        <HeroImage fluid={heroBG} />
         <HeroInner>
           <SiteHeader
             initial={{ x: -100, opacity: 0 }}

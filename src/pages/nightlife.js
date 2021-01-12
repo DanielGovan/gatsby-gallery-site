@@ -106,28 +106,29 @@ const Background = () => {
         <SubHeader>Club photography</SubHeader>
 
         <Para>
-          I starting documenting nights out with friends in 2008, capturing
-          moments of unguarded joy while skipping some of the mess. After moving
-          to east London I started club photography for a few of my favourite
-          haunts like Shake Yer Dix, Douchebag and Push the Button.
+          I started documenting nights out with friends in 2008, capturing
+          moments of unguarded joy while skipping some of the mess. It was nice
+          showing people the fun they'd forgotten.
         </Para>
         <Para>
-          I always found it awkward going up to to randoms to ask if I could
-          take their photo, but I developed a documentary style that was always
-          trying to get genuine fun moments, and I definately take that forward.
+          After moving to east London I started club photography for a few of my
+          favourite haunts like Shake Yer Dix, Douchebag and Push the Button.
+          Even with practice I found it awkward asking randoms I could take
+          their photo, but I developed a documentary style aiming for genuine
+          fun moments, and I definitely take that forward.
         </Para>
 
-        <SubHeader>Performers and perfomances</SubHeader>
+        <SubHeader>Performers and performances</SubHeader>
         <Para>
           Having learned as much as I could from clubs and crowds, my focus
-          moved towards drag and cabaret, club kids and performers, especally
+          moved towards drag and cabaret, club kids and performers, especially
           those I was lucky enough to call friends at the time.
         </Para>
         <Para>
           When I started dabbling in portraiture, I embarked on a collaborative
           crusade to learn from, signal-boost and celebrate some of the local
-          icons I met at queer creative nights like Sink the Pink, The ShayShay
-          Show, Sunday Funday, Cybil's House, Savage or Knickerbocker.
+          icons I knew from queer creative nights like Sink the Pink, The
+          ShayShay Show, Sunday Funday, Cybil's House, Savage and Knickerbocker.
         </Para>
       </InnerWrap>
       <ImageCarousel
