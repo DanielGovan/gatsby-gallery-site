@@ -105,9 +105,9 @@ export const ImageItem = styled(Img)`
 //Typography
 export const Header = styled.h1`
   font-family: "Ubuntu", sans-serif;
-  margin-bottom: 44px;
   letter-spacing: 2px;
   font-weight: 300;
+  margin-bottom: 44px;
   font-size: 3rem;
   @media screen and (max-width: 500px) {
     font-size: 2.2rem;

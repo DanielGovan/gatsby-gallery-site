@@ -43,10 +43,13 @@ const NavLogo = styled(Link)`
   font-size: 2rem;
   display: flex;
   align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 300;
 `
 
 const NavIcon = styled(GiDragonBalls)`
-  margin: 0 0.5rem 0 2rem;
+  margin: 0 1rem 0 2rem;
   color: ${cssVars.nearWhite};
 `
 
@@ -100,6 +103,7 @@ const NavLinks = styled(Link)`
   padding: 0.5rem 1rem;
   height: 100%;
   font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
     text-align: center;
