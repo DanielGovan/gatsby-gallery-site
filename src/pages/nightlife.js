@@ -90,7 +90,7 @@ const Background = () => {
 
   return (
     <Layout>
-      <SEO title="Background" />
+      <SEO title="Night life" />
       <HeroSection heroBG={data.heroBG.childImageSharp.fluid}>
         Drawing on 10 years
         <br />
@@ -107,23 +107,28 @@ const Background = () => {
         <SubHeader>Club photography</SubHeader>
 
         <Para>
-          I starting out just documenting nights out with friends in 2008, my
-          mission to capture moments of unguarded joy, whilst skipping some of
-          the mess. After moving to east London I started club photography for a
-          few of my favourite haunts like Shake Yer Dix, Douchebag and Push the
-          Button. I always found it awkward going up to to randoms to ask if I
-          could take their photo, but I developed a documentary style that was
-          always trying to get genuine fun moments, and I definately take that
-          forward.
+          I starting documenting nights out with friends in 2008, capturing
+          moments of unguarded joy while skipping some of the mess. After moving
+          to east London I started club photography for a few of my favourite
+          haunts like Shake Yer Dix, Douchebag and Push the Button.
+        </Para>
+        <Para>
+          I always found it awkward going up to to randoms to ask if I could
+          take their photo, but I developed a documentary style that was always
+          trying to get genuine fun moments, and I definately take that forward.
         </Para>
 
-        <SubHeader>Queer nightlife</SubHeader>
+        <SubHeader>Performers and perfomances</SubHeader>
         <Para>
-          Gradually my focus moved more towards drag and cabaret performers and
-          perfomances, especally those I was lucky enough to call friends at the
-          time. Drag became ubiquitous favs like Cybil's House and
-          Knickerbocker, In each case my aim was always to capturing situations
-          rather than things,
+          Having learned as much as I could from clubs and crowds, my focus
+          moved towards drag and cabaret, club kids and performers, especally
+          those I was lucky enough to call friends at the time.
+        </Para>
+        <Para>
+          When I started dabbling in portraiture, I embarked on a collaborative
+          crusade to learn from, signal-boost and celebrate some of the local
+          icons I met at queer creative nights like Sink the Pink, The ShayShay
+          Show, Sunday Funday, Cybil's House, Savage or Knickerbocker.
         </Para>
       </InnerWrap>
       <FullWidthSlider
@@ -134,13 +139,11 @@ const Background = () => {
       />
 
       <InnerWrap>
-        <SubHeader>Living Vivid exhibition: 2018</SubHeader>
+        <SubHeader>Living Vivid exhibition</SubHeader>
         <Para>
-          After a year of a collaborative crusade to learn from, signal-boost
-          and celebrate some of the local queer icons, I had an opportunity to
-          show an exhibition at Dalston Superstore; 40 portraits of kings and
-          queens displayed for 2 months in the same scene that most of them came
-          up in. The circle complete.
+          In autumn 2018, I had an opportunity to show an exhibition at Dalston
+          Superstore; 40 portraits of kings and queens displayed for 2 months in
+          the same scene that most of them came up in: The circle complete.
         </Para>
       </InnerWrap>
       <ImageGrid>
@@ -155,15 +158,17 @@ const Background = () => {
         ))}
       </ImageGrid>
       <InnerWrap>
-        <SubHeader>Light By Dan: 2017 onwards</SubHeader>
+        <SubHeader>Light By Dan</SubHeader>
         <Para>
-          But now it's all about portraits, making connections with people and
-          changing the way they see themselves. Which is, I hope, what you're
-          here for! Check out the{" "}
-          <InteriorLink to="/gallery">gallery</InteriorLink> for just about
+          But now it's all about portraits, which is, I hope, what you're here
+          for! I love making real connections with people and maybe even
+          changing the way they see themselves.
+        </Para>
+        <Para>
+          Check out the <InteriorLink to="/gallery">gallery</InteriorLink> for
           everyone I've ever lit, or{" "}
-          <InteriorLink to="/book_a_shoot">Book a shoot</InteriorLink> to see
-          about getting some of the magic for yourself.
+          <InteriorLink to="/prices">Book a shoot</InteriorLink> to see about
+          getting some of the magic for yourself.
         </Para>
       </InnerWrap>
     </Layout>

@@ -1,16 +1,117 @@
 import React, { useState, useEffect } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
+import { GiDragonBalls } from "react-icons/gi"
 import { IconContext } from "react-icons/lib"
-import {
-  Nav,
-  NavLogo,
-  NavBarContainer,
-  NavIcon,
-  MobileIcon,
-  NavMenu,
-  NavLinks,
-  NavItem,
-} from "./NavBarElements"
+import styled from "styled-components"
+import { Link } from "gatsby"
+import * as cssVars from "../const/constants"
+
+const Nav = styled.nav`
+  background: ${({ active }) =>
+    active
+      ? "#000"
+      : "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100% )"};
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  @media screen and (max-width: ${cssVars.breakPointL}) {
+    background: ${({ click }) => (click ? "#000" : "transparent")};
+    transition: 0.8s all ease;
+  }
+`
+
+const NavBarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+`
+
+const NavLogo = styled(Link)`
+  color: ${cssVars.nearWhite};
+  justify-self: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+`
+
+const NavIcon = styled(GiDragonBalls)`
+  margin: 0 0.5rem 0 2rem;
+  color: ${cssVars.nearWhite};
+`
+
+const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: ${cssVars.breakPointL}) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`
+
+const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+
+  @media screen and (max-width: ${cssVars.breakPointL}) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: ${({ click }) => (click ? "100%" : "-1000px")};
+    opacity: 1;
+    transition: all 0.2 ease;
+    background: #000;
+    font-size: 1.5rem;
+  }
+`
+const NavItem = styled.li`
+  padding: 0;
+  height: 80px;
+
+  @media screen and (max-width: ${cssVars.breakPointL}) {
+    width: 100%;
+  }
+`
+
+const NavLinks = styled(Link)`
+  color: ${cssVars.nearWhite};
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+
+  @media screen and (max-width: ${cssVars.breakPointL}) {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+  &:hover {
+    color: #ff4040;
+    transition: all 0.3 ease;
+  }
+`
 
 const NavBar = () => {
   const [click, setClick] = useState(false)
@@ -57,12 +158,12 @@ const NavBar = () => {
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/book_a_shoot/">
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/prices/">
                   About shoots
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/background/">
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/nightlife/">
                   Nightlife
                 </NavLinks>
               </NavItem>

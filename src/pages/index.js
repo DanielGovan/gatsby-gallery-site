@@ -95,12 +95,12 @@ const IndexPage = () => {
                 portrait photography
               </InteriorLink>{" "}
               now but before that I moonlighted in{" "}
-              <InteriorLink to="/background" title="Photography background">
+              <InteriorLink to="/nightlife" title="Photography background">
                 documenting queer nightlife
               </InteriorLink>{" "}
               for 10 years, and that's the root of my style: I strive to make my
               shoots bright and fun with no preconceptions,{" "}
-              <InteriorLink to="/book_a_shoot" title="About my shoots">
+              <InteriorLink to="/prices" title="About my shoots">
                 a safe space to discover more about yourself
               </InteriorLink>
               , celebrating vulnerability, absurdity and joy.

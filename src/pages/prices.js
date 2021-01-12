@@ -67,7 +67,9 @@ const AboutShoots = () => {
         heroBG={data.heroBG.childImageSharp.fluid}
         position="center 30%"
       >
-        Thinking of getting lit by Dan?
+        Thinking of getting
+        <br />
+        lit by Dan?
       </HeroSection>
 
       <FullWidthSlider
@@ -78,12 +80,12 @@ const AboutShoots = () => {
       />
 
       <InnerWrap>
-        <Header>Book a shoot</Header>
-        {/* <SubHeader>Thinking of getting lit by Dan?</SubHeader> */}
+        {/* <Header>Book a shoot</Header> */}
         <Para>
-          A professional shoot is great for self promotion if you’re a performer
-          or brand, but where this shines is as an opportunity for exploring and
-          improving self-image in a safe environment.
+          A professional shoot is great for visual promotion if you’re a
+          performer or brand, but where this experience shines is as an
+          opportunity for exploring and improving self-image in a safe
+          environment. Plus being art is fun!
         </Para>
 
         <Para>
@@ -96,19 +98,22 @@ const AboutShoots = () => {
           </InlineLink>
           , we'll work through a variety of lighting setups, colours and poses,
           and conferring over the shots as we go, deleting whatever doesn't
-          work.
+          work. Everyone gets vetos on everything, we only put out what we're
+          both happy with.
         </Para>
 
         <SubHeader>Packages</SubHeader>
 
         <dl>
-          <dt>Commission, £150, up to 1hr shoot6 final portraits included.</dt>
+          <dt>
+            Commission, £150, up to 1hr shoot, 6 final portraits included.
+          </dt>
           <dt>
             If you know exactly what you want, we can quickly set it up, try a
             few variations, and get that look you’re after.
           </dt>
           <dt>
-            Creative shoot, £250 , 2hr, 1 or 2 people, 8 portraits included.
+            Creative shoot, £250, 2hr, 8 portraits included, 1 or 2 people.
           </dt>
           <dt>
             For those that want to look great, but they're not sure how, this
