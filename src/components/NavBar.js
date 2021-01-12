@@ -72,6 +72,8 @@ const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
+  margin: 0;
+  padding: 0;
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
     display: flex;
@@ -124,7 +126,6 @@ const NavBar = () => {
 
   const handleClick = () => {
     setClick(!click)
-    console.log(click)
   }
 
   const changeNav = () => {

@@ -158,6 +158,9 @@ const Background = () => {
           <InternalLink target="/prices">Book a shoot</InternalLink> to see
           about getting some of the magic for yourself.
         </Para>
+        <br />
+        <br />
+        <br />
       </InnerWrap>
     </Layout>
   )

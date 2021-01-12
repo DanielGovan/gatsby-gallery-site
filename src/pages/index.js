@@ -21,7 +21,7 @@ const HomeWrapper = styled.div`
 `
 const HomeContent = styled.div`
   max-width: 1000px;
-  margin: 2rem auto 0;
+  margin: 6rem auto 6rem;
   padding: 0 ${cssVars.deskPad} 0 410px;
   position: relative;
 

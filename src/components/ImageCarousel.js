@@ -82,8 +82,6 @@ const ImageCarousel = ({
     slickSettings = slickSettingsTestimonials
   }
 
-  console.log("HEYA", aspect)
-
   return (
     <StyledFullWidthSlider {...slickSettings}>
       {images

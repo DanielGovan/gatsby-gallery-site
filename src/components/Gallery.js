@@ -171,7 +171,6 @@ const Gallery = () => {
       item.name.toLowerCase().includes(searchValue.toLowerCase())
     )
     setImageArray(filteredImages)
-    console.log("Search attempt", searchValue, filteredImages)
   }, [searchValue, imagesSource])
 
   const searchHandler = e => {
@@ -189,7 +188,6 @@ const Gallery = () => {
       item.keyWords.includes(picsFilter)
     )
     setImageArray(filteredImages)
-    console.log("Filter attempt", picsFilter, filteredImages)
   }, [picsFilter, imagesSource])
 
   const handleFilterToggle = e => {
