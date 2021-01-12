@@ -5,14 +5,67 @@ import "react-medium-image-zoom/dist/styles.css"
 import { GALLERY_IMAGES } from "../const/GalleryList"
 import LoadingRipple from "./LoadingRipple"
 import { useStaticQuery, graphql } from "gatsby"
-import {
-  GalleryWrap,
-  GalleryItem,
-  GalleryImageInfo,
-  GalleryImage,
-  Filters,
-  Search,
-} from "./GalleryElements"
+import styled from "styled-components"
+import Img from "gatsby-image"
+import { motion } from "framer-motion"
+
+import * as cssVars from "../const/constants"
+// ${cssVars}
+
+const Filters = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 ${cssVars.deskPad};
+
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    padding: 0 ${cssVars.mobPad};
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px 12px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+`
+const Search = styled.input`
+  padding: 4px 8px;
+  font-size: 1.2rem;
+`
+
+const GalleryWrap = styled(motion.div)`
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  margin: 0 auto;
+  width: 100%;
+`
+
+const GalleryItem = styled(motion.div)`
+  display: grid;
+  position: relative;
+  max-width: 50vh;
+`
+
+const GalleryImageInfo = styled.div`
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+`
+
+const GalleryImage = styled(Img)`
+  width: 100%;
+`
 
 // TODO: combine order by date and name into a single toggle button
 // OR make them both togglable and by direction!

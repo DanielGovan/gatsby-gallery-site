@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "./layout.css"
-import NavBar from "./NavBar"
-import Footer from "./Footer"
+import NavBar from "../actualComponents/NavBar"
+import Footer from "../actualComponents/Footer"
 import { MainWrap } from "./LayoutElements"
 import { Helmet } from "react-helmet"
 

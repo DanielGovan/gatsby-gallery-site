@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import Para from "../actualComponents/Para"
 // import { InnerWrap, Header } from "../components/LayoutElements"
-import Gallery from "../components/Gallery"
+import Gallery from "../actualComponents/Gallery"
 
 const Testimonials = () => {
   return (
