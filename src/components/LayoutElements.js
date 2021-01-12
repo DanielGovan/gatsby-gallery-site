@@ -102,28 +102,6 @@ export const ImageItem = styled(Img)`
   }
 `
 
-//Typography
-export const Header = styled.h1`
-  font-family: "Ubuntu", sans-serif;
-  letter-spacing: 2px;
-  font-weight: 300;
-  margin-bottom: 44px;
-  font-size: 3rem;
-  @media screen and (max-width: 500px) {
-    font-size: 2.2rem;
-    text-align: center;
-  }
-`
-export const SubHeader = styled.h2`
-  font-family: "Ubuntu", sans-serif;
-  margin: 2rem 0 1rem;
-  font-size: 2rem;
-  @media screen and (max-width: 500px) {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-`
-
 export const List = styled.ul`
   margin: 0;
   padding: 0 0 0 20px;

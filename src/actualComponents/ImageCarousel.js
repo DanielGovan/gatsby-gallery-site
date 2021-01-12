@@ -15,7 +15,7 @@ const SliderItem = styled(Img)`
   }
 `
 
-const FullWidthSlider = ({
+const ImageCarousel = ({
   images,
   alts = "",
   aspect = 1 / 1,
@@ -102,4 +102,4 @@ const FullWidthSlider = ({
   )
 }
 
-export default FullWidthSlider
+export default ImageCarousel

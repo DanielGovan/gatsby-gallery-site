@@ -96,14 +96,15 @@ const NavItem = styled.li`
 `
 
 const NavLinks = styled(Link)`
+  align-items: center;
   color: ${cssVars.nearWhite};
   display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.2rem;
+  font-weight: 300;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
     text-align: center;

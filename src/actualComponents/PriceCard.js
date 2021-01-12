@@ -22,8 +22,9 @@ const StyledPriceCard = styled.div`
     margin: 0 0rem 2rem 0;
   }
 
-  h3 {
+  h2 {
     font-size: 2rem;
+    margin: 0;
   }
 
   div {
@@ -32,17 +33,13 @@ const StyledPriceCard = styled.div`
 
   ul {
     padding: 1rem 1rem 0 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 1rem 0 0 0rem;
   }
-
-  /* @media screen and (max-width: ${cssVars.breakPointM}) {
-    width: 100%;
-  } */
 `
 
 const PriceCard = ({ children }) => {

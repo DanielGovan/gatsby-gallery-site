@@ -15,7 +15,7 @@ import {
   InteriorLink,
 } from "../components/LayoutElements"
 import FadeInText from "../actualComponents/FadeInText"
-import FullWidthSlider from "../actualComponents/FullWidthSlider"
+import ImageCarousel from "../actualComponents/ImageCarousel"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -72,7 +72,7 @@ const IndexPage = () => {
         <span>portrait photography</span>
       </HeroSection>
       <HomeWrapper>
-        <FullWidthSlider
+        <ImageCarousel
           images={data.allFile.edges}
           alts="Lightbydan's portrait picks"
           aspect={1 / 1}

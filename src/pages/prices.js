@@ -2,16 +2,12 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import {
-  Header,
-  SubHeader,
-  InnerWrap,
-  InlineLink,
-} from "../components/LayoutElements"
+import { InnerWrap, InlineLink } from "../components/LayoutElements"
+import { Header, SubHeader } from "../actualComponents/Headers"
 import Para from "../actualComponents/Para"
 import SEO from "../components/seo"
 import HeroSection from "../actualComponents/HeroSection"
-import FullWidthSlider from "../actualComponents/FullWidthSlider"
+import ImageCarousel from "../actualComponents/ImageCarousel"
 import PriceCard, { PriceWrap } from "../actualComponents/PriceCard"
 
 const AboutShoots = () => {
@@ -73,7 +69,7 @@ const AboutShoots = () => {
         lit by Dan?
       </HeroSection>
 
-      <FullWidthSlider
+      <ImageCarousel
         images={data.btsImages.edges}
         alts="Behind the scenes with Light by Dan"
         aspect={1 / 1}
@@ -103,10 +99,10 @@ const AboutShoots = () => {
           both happy with.
         </Para>
 
-        <SubHeader>Packages</SubHeader>
+        <Header>Packages</Header>
         <PriceWrap>
           <PriceCard>
-            <h3>Commission</h3>
+            <SubHeader>Commission</SubHeader>
             <div>
               <ul>
                 <li>£150</li>
@@ -120,7 +116,7 @@ const AboutShoots = () => {
             </div>
           </PriceCard>
           <PriceCard>
-            <h3>Creative shoot</h3>
+            <SubHeader>Creative shoot</SubHeader>
             <div>
               <ul>
                 <li>£250</li>
@@ -151,7 +147,7 @@ const AboutShoots = () => {
 
         <Header>Testimonials</Header>
       </InnerWrap>
-      <FullWidthSlider
+      <ImageCarousel
         type="testimonial"
         images={data.testimonialImages.edges}
         alts=""

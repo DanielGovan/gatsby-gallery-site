@@ -7,13 +7,12 @@ import Layout from "../components/layout"
 import {
   ImageItem,
   ImageGrid,
-  // Header,
   InnerWrap,
-  SubHeader,
   InteriorLink,
 } from "../components/LayoutElements"
+import { Header, SubHeader } from "../actualComponents/Headers"
 import HeroSection from "../actualComponents/HeroSection"
-import FullWidthSlider from "../actualComponents/FullWidthSlider"
+import ImageCarousel from "../actualComponents/ImageCarousel"
 import Para from "../actualComponents/Para"
 
 import SEO from "../components/seo"
@@ -96,7 +95,7 @@ const Background = () => {
         <br />
         of queer nightlife
       </HeroSection>
-      <FullWidthSlider
+      <ImageCarousel
         images={data.clubPapsImages.edges}
         alts="Lightbydan's club photography days"
         aspect={5 / 4}
@@ -131,7 +130,7 @@ const Background = () => {
           Show, Sunday Funday, Cybil's House, Savage or Knickerbocker.
         </Para>
       </InnerWrap>
-      <FullWidthSlider
+      <ImageCarousel
         images={data.nightLifeImages.edges}
         alts="Lightbydan's queer nightlife picks"
         aspect={8 / 5}
@@ -139,7 +138,7 @@ const Background = () => {
       />
 
       <InnerWrap>
-        <SubHeader>Living Vivid exhibition</SubHeader>
+        <Header>Living Vivid</Header>
         <Para>
           In autumn 2018, I had an opportunity to show an exhibition at Dalston
           Superstore; 40 portraits of kings and queens displayed for 2 months in
@@ -158,7 +157,7 @@ const Background = () => {
         ))}
       </ImageGrid>
       <InnerWrap>
-        <SubHeader>Light By Dan</SubHeader>
+        <Header>Light By Dan</Header>
         <Para>
           But now it's all about portraits, which is, I hope, what you're here
           for! I love making real connections with people and maybe even
