@@ -26,36 +26,45 @@ const FullWidthSlider = ({
     dots: true,
     autoplay: true,
     arrows: false,
+    lazyLoad: "progressive",
     swipeToSlide: true,
+    waitForAnimate: false,
+    mobileFirst: true,
     infinite: true,
-    speed: 4000,
+    speed: 3000,
     slidesToShow: maxSlides,
     slidesToScroll: 1,
-    autoplaySpeed: 0,
+    autoplaySpeed: 6000,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1400,
         settings: {
           slidesToShow: maxSlides - 1,
         },
       },
       {
-        breakpoint: 900,
+        breakpoint: 1200,
         settings: {
           slidesToShow: maxSlides - 2,
         },
       },
       {
-        breakpoint: 660,
+        breakpoint: 980,
         settings: {
-          slidesToShow: maxSlides - 3 || 2,
+          slidesToShow: maxSlides - 5,
+        },
+      },
+      {
+        breakpoint: 760,
+        settings: {
+          slidesToShow: maxSlides - 6 || 1,
           speed: 4000,
         },
       },
       {
-        breakpoint: 350,
+        breakpoint: 450,
         settings: {
-          slidesToShow: maxSlides - 4 || 1,
+          slidesToShow: maxSlides - 7 || 1,
           speed: 2000,
         },
       },

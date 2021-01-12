@@ -76,7 +76,7 @@ const IndexPage = () => {
           images={data.allFile.edges}
           alts="Lightbydan's portrait picks"
           aspect={1 / 1}
-          maxSlides={7}
+          maxSlides={8}
         />
 
         <HomeContent>

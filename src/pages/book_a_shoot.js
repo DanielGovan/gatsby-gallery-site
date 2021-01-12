@@ -68,13 +68,6 @@ const AboutShoots = () => {
         position="center 30%"
       >
         Thinking of getting lit by Dan?
-        {/* <FadeInText>
-          <span>Queer</span>
-          <span>Vivid</span>
-          <span>Surreal</span>
-          <span>Vibrant</span>
-          <span>Gaudy</span>
-        </FadeInText> */}
       </HeroSection>
 
       <FullWidthSlider

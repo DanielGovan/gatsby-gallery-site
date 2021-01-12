@@ -1,10 +1,8 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
-// import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Zoom from "react-medium-image-zoom"
 import * as cssVars from "../const/constants"
-// ${cssVars}
 
 //Layout
 
@@ -24,18 +22,15 @@ export const InnerWrap = styled.div`
 
 export const HomeWrapper = styled.div`
   min-height: ${cssVars.screenHeight};
+  overflow: hidden;
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
   }
 `
 export const HomeContent = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   max-width: 1000px;
   margin: 2rem auto 0;
   padding: 0 ${cssVars.deskPad} 0 410px;
-  /* overflow: hidden; */
   position: relative;
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
@@ -96,21 +91,14 @@ export const ImageItem = styled(Img)`
   display: grid !important;
   min-width: 200px;
   width: 100%;
-  /* min-height: 200px; */
-  /* height: 200px;
-  width: 100px; */
   button {
   }
 
   img {
-    /* object-fit: contain !important; */
-    /* height: 200px; */
     background: black !important;
-    /* object-fit: contain; */
   }
 
   img:hover {
-    /* transform: scale(1.1); */
   }
 `
 

@@ -22,6 +22,7 @@ const Background = () => {
   const data = useStaticQuery(graphql`
     query exhibitionImages {
       exhibitionImages: allFile(
+        sort: { fields: sourceInstanceName, order: ASC }
         filter: {
           sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
@@ -40,6 +41,7 @@ const Background = () => {
         }
       }
       nightLifeImages: allFile(
+        sort: { fields: sourceInstanceName, order: ASC }
         filter: {
           sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
@@ -58,6 +60,7 @@ const Background = () => {
         }
       }
       clubPapsImages: allFile(
+        sort: { fields: sourceInstanceName, order: ASC }
         filter: {
           sourceInstanceName: { eq: "siteImages" }
           extension: { regex: "/(jpg)|(png)|(jpeg)/" }
@@ -88,36 +91,33 @@ const Background = () => {
   return (
     <Layout>
       <SEO title="Background" />
-
       <HeroSection heroBG={data.heroBG.childImageSharp.fluid}>
-        Drawing on 10 years of queer nightlife
-        {/* <FadeInText>
-          <span>Queer</span>
-          <span>Vivid</span>
-          <span>Surreal</span>
-          <span>Vibrant</span>
-          <span>Gaudy</span>
-        </FadeInText> */}
+        Drawing on 10 years
+        <br />
+        of queer nightlife
       </HeroSection>
       <FullWidthSlider
         images={data.clubPapsImages.edges}
         alts="Lightbydan's club photography days"
         aspect={5 / 4}
-        maxSlides={6}
+        maxSlides={7}
       />
       <InnerWrap>
         {/* <Header>Background</Header> */}
-        <SubHeader>Club photography: 2008 to 2016</SubHeader>
+        <SubHeader>Club photography</SubHeader>
 
         <Para>
-          I starting out documenting nights out with friends, my mission to
-          capture moments of unguarded joy (whilst skipping some of the mess)
-          from Popstarz to Sink the Pink. I started dabbling in club photography
-          at a few of my favourite haunts like Shake Yer Dix, Douchebag, Push
-          the Button,
+          I starting out just documenting nights out with friends in 2008, my
+          mission to capture moments of unguarded joy, whilst skipping some of
+          the mess. After moving to east London I started club photography for a
+          few of my favourite haunts like Shake Yer Dix, Douchebag and Push the
+          Button. I always found it awkward going up to to randoms to ask if I
+          could take their photo, but I developed a documentary style that was
+          always trying to get genuine fun moments, and I definately take that
+          forward.
         </Para>
 
-        <SubHeader>Queer nightlife: 2015 to 2018</SubHeader>
+        <SubHeader>Queer nightlife</SubHeader>
         <Para>
           Gradually my focus moved more towards drag and cabaret performers and
           perfomances, especally those I was lucky enough to call friends at the
@@ -130,7 +130,7 @@ const Background = () => {
         images={data.nightLifeImages.edges}
         alts="Lightbydan's queer nightlife picks"
         aspect={8 / 5}
-        maxSlides={6}
+        maxSlides={5}
       />
 
       <InnerWrap>
