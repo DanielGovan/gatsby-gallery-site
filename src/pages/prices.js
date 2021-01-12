@@ -12,6 +12,7 @@ import Para from "../actualComponents/Para"
 import SEO from "../components/seo"
 import HeroSection from "../actualComponents/HeroSection"
 import FullWidthSlider from "../actualComponents/FullWidthSlider"
+import PriceCard, { PriceWrap } from "../actualComponents/PriceCard"
 
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
@@ -103,24 +104,38 @@ const AboutShoots = () => {
         </Para>
 
         <SubHeader>Packages</SubHeader>
-
-        <dl>
-          <dt>
-            Commission, £150, up to 1hr shoot, 6 final portraits included.
-          </dt>
-          <dt>
-            If you know exactly what you want, we can quickly set it up, try a
-            few variations, and get that look you’re after.
-          </dt>
-          <dt>
-            Creative shoot, £250, 2hr, 8 portraits included, 1 or 2 people.
-          </dt>
-          <dt>
-            For those that want to look great, but they're not sure how, this
-            option gives us time to explore and experiment and find what works
-            for you, with a wider range of poses and techniques.{" "}
-          </dt>
-        </dl>
+        <PriceWrap>
+          <PriceCard>
+            <h3>Commission</h3>
+            <div>
+              <ul>
+                <li>£150</li>
+                <li>up to 1hr shoot</li>
+                <li>6 final portraits included</li>
+              </ul>
+              <Para>
+                If you know exactly what you want, we can quickly set it up, try
+                a few variations, and get that look you’re after.
+              </Para>
+            </div>
+          </PriceCard>
+          <PriceCard>
+            <h3>Creative shoot</h3>
+            <div>
+              <ul>
+                <li>£250</li>
+                <li>2hr shoot</li>
+                <li>8 portraits included</li>
+                <li>1 or 2 people</li>
+              </ul>
+              <Para>
+                For those that want to look great, but they're not sure how,
+                this option gives us time to explore and experiment and find
+                what works for you, with a wider range of poses and techniques.
+              </Para>
+            </div>
+          </PriceCard>
+        </PriceWrap>
 
         <Para>
           In either case if you need extra final shots, add £15 each. Headshots
