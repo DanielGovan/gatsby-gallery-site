@@ -80,7 +80,7 @@ const IndexPage = () => {
       }
       heroBG: file(relativePath: { eq: "header-kage.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1920) {
+          fluid(maxWidth: 2200) {
             ...GatsbyImageSharpFluid
           }
         }
