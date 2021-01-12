@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Zoom from "react-medium-image-zoom"
+import { FaArrowDown, FaArrowUp } from "react-icons/fa"
 import "react-medium-image-zoom/dist/styles.css"
 
 import { GALLERY_IMAGES } from "../const/GalleryList"
@@ -20,17 +21,6 @@ const Filters = styled.div`
 
   @media screen and (max-width: ${cssVars.breakPointS}) {
     padding: 0 ${cssVars.mobPad};
-  }
-
-  a {
-    display: inline-block;
-    text-decoration: none;
-    margin: 10px;
-    padding: 6px 12px;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    cursor: pointer;
   }
 `
 const Search = styled.input`
@@ -66,18 +56,37 @@ const GalleryImageInfo = styled.div`
 const GalleryImage = styled(Img)`
   width: 100%;
 `
-
-// TODO: combine order by date and name into a single toggle button
-// OR make them both togglable and by direction!
-// TODO: add another filtering by skin vs drag
-
 const Gallery = () => {
+  const FilterToggles = styled.a`
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: ${({ active }) =>
+      active ? cssVars.nearWhite : cssVars.justBlack};
+    color: ${({ active }) => (active ? cssVars.justBlack : cssVars.nearWhite)};
+
+    &::after {
+      display: block;
+      width: 10px;
+      content: ${({ direction }) => (direction === false ? "DOWN" : "UP")};
+    }
+  `
+
+  const picFilters = ["all", "drag", "skin", "other"]
+
+  // TODO: combine order by date and name into a single toggle button
+  // OR make them both togglable and by direction!
+  // TODO: add another filtering by skin vs drag
+
   const [imagesSource, setImagesSource] = useState([])
   const [imageArray, setImageArray] = useState()
   const [searchValue, setSearchValue] = useState(null)
-  // const [sortType, setSortType] = useState("date")
-  // const [sortDirection, setSortDirection] = useState("down")
-  // const [filter, setFilter] = useState("all")
+  const [sortType, setSortType] = useState("dateType")
+  const [sortDirection, setSortDirection] = useState(false)
+  const [picsFilter, setPicsFilter] = useState(picFilters[0]) // current filter
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -101,29 +110,11 @@ const Gallery = () => {
     }
   `)
 
-  // Sorting
-
-  const sortImages = (type, direction) => {
-    // if type == type, change direction
-    // if not, change type & reset direction
-    let sortedImages = [...imageArray].sort((a, b) => {
-      if (a === b) {
-        return 0
-      }
-      if (direction === "up") {
-        return a[type] > b[type] ? -1 : 1
-      } else {
-        return a[type] < b[type] ? -1 : 1
-      }
-    })
-    setImageArray(sortedImages)
-  }
-
   // Images init
   useEffect(() => {
     const displayImages = []
     // map data array to image query
-    GALLERY_IMAGES.map(({ name, date, images }) => {
+    GALLERY_IMAGES.map(({ name, date, keyWords, images }) => {
       const img = data.allFile.edges.find(
         ({ node }) => node.relativePath === images[0]
       ).node
@@ -131,7 +122,7 @@ const Gallery = () => {
       const dateType = Date.parse(date)
       var parts = date.split(" ")
       let humanDate = parts[1] + " '" + parts[2].substring(2)
-      displayImages.push({ img, name, dateType, humanDate })
+      displayImages.push({ img, name, dateType, humanDate, keyWords })
       return null
     })
     // sort images by date
@@ -145,7 +136,31 @@ const Gallery = () => {
     setImagesSource(sortedImages)
   }, [data.allFile.edges])
 
-  // Filtering
+  // Sorting
+
+  const handleSort = (e, type) => {
+    e.preventDefault()
+    if (sortType === type) {
+      setSortDirection(!!!sortDirection)
+    } else {
+      setSortDirection(false)
+    }
+    setSortType(type)
+    let sortedImages = [...imageArray].sort((a, b) => {
+      if (a === b) {
+        return 0
+      }
+      if (sortDirection === true) {
+        return a[type] > b[type] ? -1 : 1
+      } else {
+        return a[type] < b[type] ? -1 : 1
+      }
+    })
+    setImageArray(sortedImages)
+    setSortType(type)
+  }
+
+  // Search
 
   useEffect(() => {
     if (searchValue === null) return
@@ -159,18 +174,30 @@ const Gallery = () => {
     console.log("Search attempt", searchValue, filteredImages)
   }, [searchValue, imagesSource])
 
-  const handleDateFilter = e => {
-    e.preventDefault()
-    sortImages("dateType", "up")
-  }
-
-  const handleNameFilter = e => {
-    e.preventDefault()
-    sortImages("name", "down")
-  }
-
   const searchHandler = e => {
     setSearchValue(e.target.value)
+  }
+
+  // Filter
+
+  useEffect(() => {
+    if (picsFilter === null) return
+    if (picsFilter === "all") {
+      return setImageArray(imagesSource)
+    }
+    let filteredImages = [...imagesSource].filter(item =>
+      item.keyWords.includes(picsFilter)
+    )
+    setImageArray(filteredImages)
+    console.log("Filter attempt", picsFilter, filteredImages)
+  }, [picsFilter, imagesSource])
+
+  const handleFilterToggle = e => {
+    e.preventDefault()
+    const currentPlace = picFilters.indexOf(picsFilter)
+    const newPlace =
+      currentPlace == picFilters.length - 1 ? 0 : currentPlace + 1
+    setPicsFilter(picFilters[newPlace])
   }
 
   // Animation varients
@@ -193,13 +220,29 @@ const Gallery = () => {
     <>
       <Filters>
         <Search placeholder="Search" onChange={searchHandler} />
-        <a href="/" onClick={handleDateFilter}>
-          Order by date
-        </a>
-
-        <a href="/" onClick={handleNameFilter}>
-          Order by Name
-        </a>
+        <FilterToggles
+          active={sortType === "dateType" ? true : false}
+          direction={sortDirection}
+          href="/"
+          onClick={e => handleSort(e, "dateType")}
+        >
+          Order by date{" "}
+          {sortType === "dateType" &&
+            (sortDirection === true ? <FaArrowDown /> : <FaArrowUp />)}
+        </FilterToggles>
+        <FilterToggles
+          active={sortType === "name" ? true : false}
+          direction={sortDirection}
+          href="/"
+          onClick={e => handleSort(e, "name")}
+        >
+          Order by Name{" "}
+          {sortType === "name" &&
+            (sortDirection === true ? <FaArrowDown /> : <FaArrowUp />)}
+        </FilterToggles>
+        <FilterToggles href="/" onClick={handleFilterToggle}>
+          Toggle filter ({picsFilter})
+        </FilterToggles>
       </Filters>
       {imageArray ? (
         <GalleryWrap

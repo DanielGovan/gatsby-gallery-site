@@ -1,5 +1,7 @@
 export const TEST = "Badgers"
 
+//NB only 1st image in each array is avaiable, the rest are unused and were removed from the repo, kept for reference
+
 export const GALLERY_IMAGES = [
   {
     name: "Acacia",
