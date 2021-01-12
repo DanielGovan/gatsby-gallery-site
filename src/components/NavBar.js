@@ -21,7 +21,10 @@ const Nav = styled.nav`
   z-index: 999;
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
-    background: ${({ click }) => (click ? "#000" : "transparent")};
+    background: ${({ click }) =>
+      click
+        ? "#000"
+        : "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100% )"};
     transition: 0.8s all ease;
   }
 `
