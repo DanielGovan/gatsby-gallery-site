@@ -87,9 +87,8 @@ const Background = () => {
     <Layout>
       <SEO title="Night life" />
       <HeroSection heroBG={data.heroBG.childImageSharp.fluid}>
-        Drawing on 10 years
-        <br />
-        of queer nightlife
+        <span>Drawing on 10 years</span>
+        <span>of queer nightlife</span>
       </HeroSection>
       <ImageCarousel
         images={data.clubPapsImages.edges}

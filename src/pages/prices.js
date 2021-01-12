@@ -65,9 +65,8 @@ const AboutShoots = () => {
         heroBG={data.heroBG.childImageSharp.fluid}
         position="center 30%"
       >
-        Thinking of getting
-        <br />
-        lit by Dan?
+        <span>Thinking of getting</span>
+        <span>lit by Dan?</span>
       </HeroSection>
 
       <ImageCarousel

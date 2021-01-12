@@ -4,7 +4,7 @@ import * as cssVars from "../const/constants"
 
 const StyledFadeInText = styled.span`
   width: 10rem;
-  text-align: right;
+  text-align: left;
   position: relative;
 
   span {
@@ -14,7 +14,7 @@ const StyledFadeInText = styled.span`
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    right: 1rem;
+    left: 0;
     bottom: 0;
     @media screen and (max-width: ${cssVars.breakPointM}) {
       right: auto;

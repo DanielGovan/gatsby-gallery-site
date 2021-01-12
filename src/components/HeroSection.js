@@ -39,6 +39,7 @@ const HeroInner = styled.div`
 const SiteHeader = styled(motion.h1)`
   font-family: "Ubuntu", sans-serif;
   display: flex;
+  flex-direction: column;
   color: ${cssVars.nearWhite};
   font-size: 60px;
   text-shadow: 4px 4px 10px ${cssVars.justBlack};
@@ -48,8 +49,7 @@ const SiteHeader = styled(motion.h1)`
   }
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
-    font-size: 30px;
-    flex-direction: column;
+    font-size: 40px;
   }
 
   & > span {

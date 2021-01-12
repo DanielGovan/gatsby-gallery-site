@@ -102,7 +102,7 @@ const IndexPage = () => {
           <span>Vibrant</span>
           <span>Gaudy</span>
         </FadeInText>
-        <span>portrait photography</span>
+        <span>portrait</span> <span>photography</span>
       </HeroSection>
       <HomeWrapper>
         <ImageCarousel
