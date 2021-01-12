@@ -15,11 +15,14 @@ const HeroContainer = styled.div`
 `
 
 const HeroImage = styled(Img)`
-  position: absolute;
-  top: -80px;
+  /* top: -80px; */
+  /* width: 100vw;
+  height: 100vh; */
+  position: absolute !important;
+  top: 0;
   left: 0;
-  width: "100vw";
-  height: "100vh";
+  right: 0;
+  bottom: 0;
 `
 
 const HeroInner = styled.div`

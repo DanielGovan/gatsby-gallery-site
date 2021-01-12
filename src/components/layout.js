@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import "./layout.css"
 import NavBar from "../actualComponents/NavBar"
 import Footer from "../actualComponents/Footer"
-import { MainWrap } from "./LayoutElements"
+import { MainWrap } from "./wraps"
 import { Helmet } from "react-helmet"
 
 const Layout = ({ children }) => {

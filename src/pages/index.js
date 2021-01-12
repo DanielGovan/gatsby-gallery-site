@@ -1,21 +1,54 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import styled from "styled-components"
+import * as cssVars from "../const/constants"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Para from "../actualComponents/Para"
 import HeroSection from "../actualComponents/HeroSection"
-
-import {
-  InlineLink,
-  HomeContent,
-  HomeIllus,
-  HomeWrapper,
-  ImageItem,
-  InteriorLink,
-} from "../components/LayoutElements"
+import { ExternalLink, InternalLink } from "../actualComponents/links"
 import FadeInText from "../actualComponents/FadeInText"
 import ImageCarousel from "../actualComponents/ImageCarousel"
+
+const HomeWrapper = styled.div`
+  min-height: ${cssVars.screenHeight};
+  overflow: hidden;
+
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+  }
+`
+const HomeContent = styled.div`
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  padding: 0 ${cssVars.deskPad} 0 410px;
+  position: relative;
+
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    padding: 0 ${cssVars.deskPad};
+  }
+
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    padding: 0 ${cssVars.mobPad};
+  }
+`
+const HomeIllus = styled.div`
+  width: 340px;
+  max-width: 50%;
+  position: absolute;
+  top: 0;
+  left: 32px;
+  max-height: 60vh;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    width: 250px;
+    position: static;
+    float: left;
+    margin-right: 20px;
+  }
+`
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -82,7 +115,11 @@ const IndexPage = () => {
         <HomeContent>
           <div>
             <HomeIllus>
-              <ImageItem fluid={data.melol.childImageSharp.fluid} alt="Dan" />
+              <Img
+                fluid={data.melol.childImageSharp.fluid}
+                style={{ background: "#000" }}
+                alt="Dan"
+              />
             </HomeIllus>
             <Para>
               Hi there! My name’s Dan, and I do cute portraits of people with
@@ -91,30 +128,30 @@ const IndexPage = () => {
             </Para>
             <Para>
               My focus is{" "}
-              <InteriorLink to="/gallery" title="Gallery of subjects">
+              <InternalLink target="/gallery" title="Gallery of subjects">
                 portrait photography
-              </InteriorLink>{" "}
+              </InternalLink>{" "}
               now but before that I moonlighted in{" "}
-              <InteriorLink to="/nightlife" title="Photography background">
+              <InternalLink target="/nightlife" title="Photography background">
                 documenting queer nightlife
-              </InteriorLink>{" "}
+              </InternalLink>{" "}
               for 10 years, and that's the root of my style: I strive to make my
               shoots bright and fun with no preconceptions,{" "}
-              <InteriorLink to="/prices" title="About my shoots">
+              <InternalLink target="/prices" title="About my shoots">
                 a safe space to discover more about yourself
-              </InteriorLink>
+              </InternalLink>
               , celebrating vulnerability, absurdity and joy.
             </Para>
             <Para>
               So welcome, and take a look around! Any questions or inquiries
               contact me at{" "}
-              <InlineLink
+              <ExternalLink
                 target="_blank"
-                href="mailto:lightbydan@gmail.com?subject=Site inquiry"
+                target="mailto:lightbydan@gmail.com?subject=Site inquiry"
                 title="Email me"
               >
                 lightbydan@gmail.com
-              </InlineLink>
+              </ExternalLink>
               .
             </Para>
           </div>

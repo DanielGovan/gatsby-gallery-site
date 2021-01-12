@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import Para from "../actualComponents/Para"
-// import { InnerWrap, Header } from "../components/LayoutElements"
+// import { InnerWrap, Header } from "../components/wraps"
 import Gallery from "../actualComponents/Gallery"
 
 const Testimonials = () => {

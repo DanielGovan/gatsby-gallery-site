@@ -2,8 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import { InnerWrap, InlineLink } from "../components/LayoutElements"
-import { Header, SubHeader } from "../actualComponents/Headers"
+import { InnerWrap } from "../components/wraps"
+import { ExternalLink } from "../actualComponents/links"
+import { Header, SubHeader } from "../actualComponents/headers"
 import Para from "../actualComponents/Para"
 import SEO from "../components/seo"
 import HeroSection from "../actualComponents/HeroSection"
@@ -87,12 +88,12 @@ const AboutShoots = () => {
 
         <Para>
           At my home studio in{" "}
-          <InlineLink
-            target="_blank"
-            href="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
+          <ExternalLink
+            title="Google Maps link"
+            target="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
           >
             Mile End
-          </InlineLink>
+          </ExternalLink>
           , we'll work through a variety of lighting setups, colours and poses,
           and conferring over the shots as we go, deleting whatever doesn't
           work. Everyone gets vetos on everything, we only put out what we're
@@ -136,12 +137,9 @@ const AboutShoots = () => {
         <Para>
           In either case if you need extra final shots, add £15 each. Headshots
           and drag shoots also available, for any of these email{" "}
-          <InlineLink
-            target="_blank"
-            href="mailto:lightbydan@gmail.com?subject=Booking inquiry"
-          >
+          <ExternalLink target="mailto:lightbydan@gmail.com?subject=Booking inquiry">
             lightbydan@gmail.com
-          </InlineLink>{" "}
+          </ExternalLink>{" "}
           to discuss!
         </Para>
 

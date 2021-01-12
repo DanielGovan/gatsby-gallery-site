@@ -1,16 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css"
 
 import Layout from "../components/layout"
-import {
-  ImageItem,
-  ImageGrid,
-  InnerWrap,
-  InteriorLink,
-} from "../components/LayoutElements"
-import { Header, SubHeader } from "../actualComponents/Headers"
+import { InnerWrap } from "../components/wraps"
+import { InternalLink } from "../actualComponents/links"
+import { Header, SubHeader } from "../actualComponents/headers"
+import ImageGrid from "../actualComponents/ImageGrid"
 import HeroSection from "../actualComponents/HeroSection"
 import ImageCarousel from "../actualComponents/ImageCarousel"
 import Para from "../actualComponents/Para"
@@ -146,17 +142,10 @@ const Background = () => {
           the same scene that most of them came up in: The circle complete.
         </Para>
       </InnerWrap>
-      <ImageGrid>
-        {data.exhibitionImages.edges.map((image, key) => (
-          <Zoom overlayBgColorEnd="rgba(0, 0, 0, 0.6)">
-            <ImageItem
-              key={key}
-              fluid={image.node.childImageSharp.fluid}
-              alt="Living Vivid Exhibition at Dalston Superstore"
-            />
-          </Zoom>
-        ))}
-      </ImageGrid>
+      <ImageGrid
+        images={data.exhibitionImages.edges}
+        alt="Living Vivid Exhibition at Dalston Superstore"
+      />
       <InnerWrap>
         <Header>Light By Dan</Header>
         <Para>
@@ -165,10 +154,10 @@ const Background = () => {
           changing the way they see themselves.
         </Para>
         <Para>
-          Check out the <InteriorLink to="/gallery">gallery</InteriorLink> for
-          everyone I've ever lit, or{" "}
-          <InteriorLink to="/prices">Book a shoot</InteriorLink> to see about
-          getting some of the magic for yourself.
+          Check out the <InternalLink target="/gallery">gallery</InternalLink>{" "}
+          for everyone I've ever lit, or{" "}
+          <InternalLink target="/prices">Book a shoot</InternalLink> to see
+          about getting some of the magic for yourself.
         </Para>
       </InnerWrap>
     </Layout>
