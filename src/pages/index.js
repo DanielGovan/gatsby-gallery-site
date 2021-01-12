@@ -4,13 +4,13 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import * as cssVars from "../const/constants"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import Para from "../actualComponents/Para"
-import HeroSection from "../actualComponents/HeroSection"
-import { ExternalLink, InternalLink } from "../actualComponents/links"
-import FadeInText from "../actualComponents/FadeInText"
-import ImageCarousel from "../actualComponents/ImageCarousel"
+import Para from "../components/Para"
+import HeroSection from "../components/HeroSection"
+import { ExternalLink, InternalLink } from "../Elements/links"
+import FadeInText from "../components/FadeInText"
+import ImageCarousel from "../components/ImageCarousel"
 
 const HomeWrapper = styled.div`
   min-height: ${cssVars.screenHeight};

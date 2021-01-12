@@ -1,15 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import { InnerWrap } from "../components/wraps"
-import { ExternalLink } from "../actualComponents/links"
-import { Header, SubHeader } from "../actualComponents/headers"
-import Para from "../actualComponents/Para"
+import Layout from "../components/Layout"
+import { InnerWrap } from "../Elements/wraps"
+import { ExternalLink } from "../Elements/links"
+import { Header, SubHeader } from "../Elements/headers"
+import Para from "../components/Para"
 import SEO from "../components/seo"
-import HeroSection from "../actualComponents/HeroSection"
-import ImageCarousel from "../actualComponents/ImageCarousel"
-import PriceCard, { PriceWrap } from "../actualComponents/PriceCard"
+import HeroSection from "../components/HeroSection"
+import ImageCarousel from "../components/ImageCarousel"
+import PriceCard, { PriceWrap } from "../components/PriceCard"
 
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
