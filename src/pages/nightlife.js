@@ -95,6 +95,7 @@ const Background = () => {
         alts="Lightbydan's club photography days"
         aspect={5 / 4}
         maxSlides={7}
+        minSlides={2}
       />
       <InnerWrap>
         {/* <Header>Background</Header> */}
@@ -131,6 +132,7 @@ const Background = () => {
         alts="Lightbydan's queer nightlife picks"
         aspect={8 / 5}
         maxSlides={5}
+        minSlides={1}
       />
 
       <InnerWrap>

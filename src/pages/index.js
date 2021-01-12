@@ -110,6 +110,7 @@ const IndexPage = () => {
           alts="Lightbydan's portrait picks"
           aspect={1 / 1}
           maxSlides={8}
+          minSlides={3}
         />
 
         <HomeContent>

@@ -21,6 +21,7 @@ const ImageCarousel = ({
   aspect = 1 / 1,
   type,
   maxSlides = 6,
+  minSlides = 1,
 }) => {
   const slickSettingsPicks = {
     dots: true,
@@ -31,10 +32,10 @@ const ImageCarousel = ({
     waitForAnimate: false,
     mobileFirst: true,
     infinite: true,
-    speed: 3000,
+    speed: 1000,
     slidesToShow: maxSlides,
     slidesToScroll: 1,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1400,
@@ -45,26 +46,26 @@ const ImageCarousel = ({
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: maxSlides - 2,
+          slidesToShow: Math.max(maxSlides - 2, minSlides),
         },
       },
       {
         breakpoint: 980,
         settings: {
-          slidesToShow: maxSlides - 5,
+          slidesToShow: Math.max(maxSlides - 5, minSlides),
         },
       },
       {
         breakpoint: 760,
         settings: {
-          slidesToShow: maxSlides - 6 || 1,
+          slidesToShow: Math.max(maxSlides - 6, minSlides),
           speed: 4000,
         },
       },
       {
         breakpoint: 450,
         settings: {
-          slidesToShow: maxSlides - 7 || 1,
+          slidesToShow: Math.max(maxSlides - 7, minSlides),
           speed: 2000,
         },
       },

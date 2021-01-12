@@ -74,6 +74,7 @@ const AboutShoots = () => {
         alts="Behind the scenes with Light by Dan"
         aspect={1 / 1}
         maxSlides={6}
+        minSlides={2}
       />
 
       <InnerWrap>
@@ -150,6 +151,7 @@ const AboutShoots = () => {
         alts=""
         aspect={6 / 10}
         maxSlides={5}
+        minSlides={2}
       />
     </Layout>
   )
