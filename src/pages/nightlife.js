@@ -109,7 +109,7 @@ const Background = () => {
         <Para>
           After moving to east London I started club photography for a few of my
           favourite haunts like Shake Yer Dix, Douchebag and Push the Button.
-          Even with practice I found it awkward asking randoms I could take
+          Even with practice I found it awkward asking randoms if I could take
           their photo, but I developed a documentary style aiming for genuine
           fun moments, and I definitely take that forward.
         </Para>
@@ -150,7 +150,7 @@ const Background = () => {
       <InnerWrap>
         <Header>Light By Dan</Header>
         <Para>
-          But now it's all about portraits, which is, I hope, what you're here
+          But now it's all about portraits which is -I hope- what you're here
           for! I love making real connections with people and maybe even
           changing the way they see themselves.
         </Para>

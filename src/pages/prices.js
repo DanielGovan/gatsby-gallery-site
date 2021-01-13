@@ -93,11 +93,11 @@ const AboutShoots = () => {
             target="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
           >
             Mile End
-          </ExternalLink>
-          , we'll work through a variety of lighting setups, colours and poses,
-          and conferring over the shots as we go, deleting whatever doesn't
-          work. Everyone gets vetos on everything, we only put out what we're
-          both happy with.
+          </ExternalLink>{" "}
+          we'll work through a variety of lighting setups, colours and poses,
+          conferring over the shots as we go and deleting whatever doesn't work.
+          Everyone gets to veto everything, so we only put out what we're both
+          happy with.
         </Para>
 
         <Header>Packages</Header>
