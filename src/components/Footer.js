@@ -65,7 +65,7 @@ const Footer = () => {
               href="//www.instagram.com/lightbydan"
               target="_blank"
               aria-label="Instagram"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
             >
               <FaInstagram />
             </SocialIconLink>
@@ -73,7 +73,7 @@ const Footer = () => {
               href="//www.twitter.com/lightbydan"
               target="_blank"
               aria-label="Twitter"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer me"
             >
               <FaTwitter />
             </SocialIconLink>
