@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import * as cssVars from "../const/constants"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Para from "../components/Para"
 import HeroSection from "../components/HeroSection"

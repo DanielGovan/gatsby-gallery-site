@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import "react-medium-image-zoom/dist/styles.css"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import { InnerWrap } from "../Elements/wraps"
 import { InternalLink } from "../Elements/links"
 import { Header, SubHeader } from "../Elements/headers"

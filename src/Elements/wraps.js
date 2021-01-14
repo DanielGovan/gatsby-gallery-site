@@ -1,8 +1,6 @@
 import styled from "styled-components"
 import * as cssVars from "../const/constants"
 
-//Layout
-
 export const MainWrap = styled.main`
   margin: 0 auto;
   min-height: ${cssVars.screenHeight};

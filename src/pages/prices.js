@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import { InnerWrap } from "../Elements/wraps"
 import { ExternalLink } from "../Elements/links"
 import { Header, SubHeader } from "../Elements/headers"
