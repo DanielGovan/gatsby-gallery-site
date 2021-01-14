@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react"
 import Zoom from "react-medium-image-zoom"
 import { FaArrowDown, FaArrowUp } from "react-icons/fa"
 import "react-medium-image-zoom/dist/styles.css"
-
-import { GALLERY_IMAGES } from "../const/GalleryList"
-import LoadingRipple from "./LoadingRipple"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
 
+import { GALLERY_IMAGES } from "../const/GalleryList"
+import LoadingRipple from "./LoadingRipple"
 import * as cssVars from "../const/constants"
-// ${cssVars}
+
+// TODO: Export Gallery Item and Filter Toggles as UI components to reduce complexity here.
+
+// Styling =====================
 
 const Filters = styled.div`
   margin: 0 auto;
@@ -75,18 +77,13 @@ const Gallery = () => {
     }
   `
 
-  const picFilters = ["all", "drag", "skin", "other"]
-
-  // TODO: combine order by date and name into a single toggle button
-  // OR make them both togglable and by direction!
-  // TODO: add another filtering by skin vs drag
-
+  const filterTypes = ["all", "drag", "skin", "other"]
   const [imagesSource, setImagesSource] = useState([])
   const [imageArray, setImageArray] = useState()
   const [searchValue, setSearchValue] = useState(null)
   const [sortType, setSortType] = useState("dateType")
   const [sortDirection, setSortDirection] = useState(false)
-  const [picsFilter, setPicsFilter] = useState(picFilters[0]) // current filter
+  const [picsFilter, setPicsFilter] = useState(filterTypes[0])
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -110,7 +107,8 @@ const Gallery = () => {
     }
   `)
 
-  // Images init
+  // Images initialisation  =====================
+
   useEffect(() => {
     const displayImages = []
     // map data array to image query
@@ -136,7 +134,7 @@ const Gallery = () => {
     setImagesSource(sortedImages)
   }, [data.allFile.edges])
 
-  // Sorting
+  // Sorting =====================
 
   const handleSort = (e, type) => {
     e.preventDefault()
@@ -160,7 +158,7 @@ const Gallery = () => {
     setSortType(type)
   }
 
-  // Search
+  // Search =====================
 
   useEffect(() => {
     if (searchValue === null) return
@@ -177,7 +175,7 @@ const Gallery = () => {
     setSearchValue(e.target.value)
   }
 
-  // Filter
+  // Filter =====================
 
   useEffect(() => {
     if (picsFilter === null) return
@@ -192,13 +190,14 @@ const Gallery = () => {
 
   const handleFilterToggle = e => {
     e.preventDefault()
-    const currentPlace = picFilters.indexOf(picsFilter)
+    const currentPlace = filterTypes.indexOf(picsFilter)
     const newPlace =
-      currentPlace == picFilters.length - 1 ? 0 : currentPlace + 1
-    setPicsFilter(picFilters[newPlace])
+      currentPlace == filterTypes.length - 1 ? 0 : currentPlace + 1
+    setPicsFilter(filterTypes[newPlace])
   }
 
-  // Animation varients
+  // Animation (varients) =====================
+
   const galleryWrapAnimation = {
     hidden: { opacity: 0 },
     show: {
