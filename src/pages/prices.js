@@ -60,7 +60,7 @@ const AboutShoots = () => {
   `)
   return (
     <Layout>
-      <SEO title="Book a shoot" />
+      <SEO title="Prices" />
       <HeroSection
         heroBG={data.heroBG.childImageSharp.fluid}
         position="center 30%"

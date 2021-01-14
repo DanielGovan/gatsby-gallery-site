@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Light by Dan`,
-    description: `Creating queer surreal portrait photography in East London, celebrating, vulnerability, joy, and the absurdity of being`,
+    description: `Surreal, colourful, queer, fun portrait photography in East London, celebrating vulnerability, joy, and absurdity.`,
     author: `Dan Govan`,
   },
   plugins: [

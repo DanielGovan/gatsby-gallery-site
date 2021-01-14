@@ -85,7 +85,7 @@ const Background = () => {
 
   return (
     <Layout>
-      <SEO title="Night life" />
+      <SEO title="Nightlife" />
       <HeroSection heroBG={data.heroBG.childImageSharp.fluid}>
         <span>Drawing on 10 years</span>
         <span>of queer nightlife</span>
