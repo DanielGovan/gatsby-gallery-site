@@ -147,7 +147,6 @@ const IndexPage = () => {
               So welcome, and take a look around! Any questions or inquiries
               contact me at{" "}
               <ExternalLink
-                target="_blank"
                 target="mailto:lightbydan@gmail.com?subject=Site inquiry"
                 title="Email me"
               >

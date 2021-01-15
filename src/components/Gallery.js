@@ -11,7 +11,7 @@ import { GALLERY_IMAGES } from "../const/GalleryList"
 import LoadingRipple from "./LoadingRipple"
 import * as cssVars from "../const/constants"
 
-// TODO: Export Gallery Item and Filter Toggles as UI components to reduce complexity here.
+// TODO: Export Gallery Item and Filter Toggles as UI components to reduce complexity here. Would Memofication be useful here?
 
 // Styling =====================
 
@@ -192,7 +192,7 @@ const Gallery = () => {
     e.preventDefault()
     const currentPlace = filterTypes.indexOf(picsFilter)
     const newPlace =
-      currentPlace == filterTypes.length - 1 ? 0 : currentPlace + 1
+      currentPlace === filterTypes.length - 1 ? 0 : currentPlace + 1
     setPicsFilter(filterTypes[newPlace])
   }
 
