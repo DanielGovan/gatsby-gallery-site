@@ -1,7 +1,8 @@
 import React from "react"
 import { FaInstagram, FaTwitter } from "react-icons/fa"
-
+import { SiBuymeacoffee } from "react-icons/si"
 import { GiDragonBalls } from "react-icons/gi"
+import { IconContext } from "react-icons/lib"
 import styled from "styled-components"
 import * as cssVars from "../const/constants"
 
@@ -66,16 +67,31 @@ const Footer = () => {
               target="_blank"
               aria-label="Instagram"
               rel="noopener noreferrer me"
+              title="Instagram"
             >
               <FaInstagram />
             </SocialIconLink>
+
             <SocialIconLink
               href="//www.twitter.com/lightbydan"
               target="_blank"
               aria-label="Twitter"
               rel="noopener noreferrer me"
+              title="Twitter"
             >
               <FaTwitter />
+            </SocialIconLink>
+
+            <SocialIconLink
+              href="//www.buymeacoffee.com/lightbydan"
+              target="_blank"
+              aria-label="Buy Me A Coffee"
+              rel="me"
+              title="Buy Me A Coffee"
+            >
+              <IconContext.Provider value={{ color: "#ff4040" }}>
+                <SiBuymeacoffee />
+              </IconContext.Provider>
             </SocialIconLink>
           </SocialIcons>
         </SocialMediaWrap>

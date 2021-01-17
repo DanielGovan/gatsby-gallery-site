@@ -8,6 +8,8 @@ export const nearBlack = "#141414"
 export const nearWhite = "#eaeaea"
 export const justWhite = "#fff"
 
+export const colorPick = "#ff4040"
+
 export const deskPad = "32px"
 export const mobPad = "10px"
 

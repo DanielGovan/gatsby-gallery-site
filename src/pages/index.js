@@ -11,6 +11,7 @@ import HeroSection from "../components/HeroSection"
 import { ExternalLink, InternalLink } from "../Elements/links"
 import FadeInText from "../components/FadeInText"
 import ImageCarousel from "../components/ImageCarousel"
+import CoffeeButton from "../components/CoffeeButton"
 
 const HomeWrapper = styled.div`
   min-height: ${cssVars.screenHeight};
@@ -94,6 +95,7 @@ const IndexPage = () => {
       <HeroSection
         heroBG={data.heroBG.childImageSharp.fluid}
         position="center top"
+        button={<CoffeeButton />}
       >
         <FadeInText>
           <span>Queer</span>
@@ -152,7 +154,15 @@ const IndexPage = () => {
               >
                 lightbydan@gmail.com
               </ExternalLink>
-              .
+              . Also if you like my work and want to encourage more of it, you
+              can tip me over at{" "}
+              <ExternalLink
+                target="//www.buymeacoffee.com/lightbydan"
+                title="Tip me via Buy me A Coffee"
+              >
+                Buy me A Coffee
+              </ExternalLink>
+              !
             </Para>
           </div>
         </HomeContent>

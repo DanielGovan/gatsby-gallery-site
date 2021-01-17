@@ -10,8 +10,8 @@ import ImageGrid from "../components/ImageGrid"
 import HeroSection from "../components/HeroSection"
 import ImageCarousel from "../components/ImageCarousel"
 import Para from "../components/Para"
-
 import SEO from "../components/seo"
+import CoffeeButton from "../components/CoffeeButton"
 
 const Background = () => {
   const data = useStaticQuery(graphql`
@@ -86,7 +86,10 @@ const Background = () => {
   return (
     <Layout>
       <SEO title="Nightlife" />
-      <HeroSection heroBG={data.heroBG.childImageSharp.fluid}>
+      <HeroSection
+        heroBG={data.heroBG.childImageSharp.fluid}
+        button={<CoffeeButton />}
+      >
         <span>Drawing on 10 years</span>
         <span>of queer nightlife</span>
       </HeroSection>

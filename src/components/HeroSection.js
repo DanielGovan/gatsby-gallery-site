@@ -58,7 +58,7 @@ const SiteHeader = styled(motion.h1)`
   }
 `
 
-const HeroSection = ({ heroBG, children, position }) => {
+const HeroSection = ({ heroBG, children, button, position }) => {
   return (
     <FadeInWrap>
       <HeroContainer heroBG={heroBG} position={position}>
@@ -71,6 +71,7 @@ const HeroSection = ({ heroBG, children, position }) => {
           >
             {children}
           </SiteHeader>
+          {button}
         </HeroInner>
       </HeroContainer>
     </FadeInWrap>
