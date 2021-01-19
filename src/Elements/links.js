@@ -51,6 +51,8 @@ const StyledExternalButton = styled.a`
   background: rgba(0, 0, 0, 0.6);
   border: solid 1px rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  opacity: 0.9;
+  transition: all 0.5s ease;
 
   @media screen and (max-width: ${cssVars.breakPointL}) {
     font-size: 1.4rem;
@@ -70,6 +72,7 @@ const StyledExternalButton = styled.a`
   &:hover {
     background: rgba(0, 0, 0, 1);
     border: solid 1px rgba(255, 255, 255, 1);
+    opacity: 1;
   }
 
   svg {

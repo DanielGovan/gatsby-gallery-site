@@ -90,7 +90,7 @@ const Background = () => {
         heroBG={data.heroBG.childImageSharp.fluid}
         button={<CoffeeButton />}
       >
-        <span>Drawing on 10 years</span>
+        <span>Drawing on ten years</span>
         <span>of queer nightlife</span>
       </HeroSection>
       <ImageCarousel
@@ -106,15 +106,15 @@ const Background = () => {
 
         <Para>
           I started documenting nights out with friends in 2008, capturing
-          moments of unguarded joy while skipping some of the mess. It was nice
-          showing people the fun they'd forgotten.
+          moments of unguarded joy (while skipping some of the mess), it was
+          nice showing people the fun they'd forgotten!
         </Para>
         <Para>
           After moving to east London I started club photography for a few of my
           favourite haunts like Shake Yer Dix, Douchebag and Push the Button.
           Even with practice I found it awkward asking randoms if I could take
           their photo, but I developed a documentary style aiming for genuine
-          fun moments, and I definitely take that forward.
+          fun moments, and I've taken that forward.
         </Para>
 
         <SubHeader>Performers and performances</SubHeader>
@@ -124,10 +124,10 @@ const Background = () => {
           those I was lucky enough to call friends at the time.
         </Para>
         <Para>
-          When I started dabbling in portraiture, I embarked on a collaborative
-          crusade to learn from, signal-boost and celebrate some of the local
-          icons I knew from queer creative nights like Sink the Pink, The
-          ShayShay Show, Sunday Funday, Cybil's House, Savage and Knickerbocker.
+          My first real foray into portraiture was a collaborative crusade to
+          learn from, signal-boost and celebrate some of the local icons I knew
+          from queer creative nights like Sink the Pink, The ShayShay Show,
+          Sunday Funday, Cybil's House, Savage and Knickerbocker.
         </Para>
       </InnerWrap>
       <ImageCarousel
@@ -153,15 +153,15 @@ const Background = () => {
       <InnerWrap>
         <Header>Light By Dan</Header>
         <Para>
-          But now it's all about portraits which is -I hope- what you're here
-          for! I love making real connections with people and maybe even
-          changing the way they see themselves.
+          But now it's all about the portraits; I love making real connections
+          with people, finding out about them and maybe even changing the way
+          they see themselves.
         </Para>
         <Para>
           Check out the <InternalLink target="/gallery">gallery</InternalLink>{" "}
-          for everyone I've ever lit, or{" "}
-          <InternalLink target="/prices">Book a shoot</InternalLink> to see
-          about getting some of the magic for yourself.
+          for everyone I've ever lit, or find out{" "}
+          <InternalLink target="/prices">about shoots</InternalLink> if you're
+          interested in getting some of the magic for yourself!
         </Para>
         <br />
         <br />

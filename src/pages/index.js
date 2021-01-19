@@ -125,42 +125,42 @@ const IndexPage = () => {
               />
             </HomeIllus>
             <Para>
-              Hi there! My name’s Dan, and I do cute portraits of people with
-              colourful lights in East London. I call it{" "}
-              <strong>Light By Dan</strong>.
+              Hi there! My name’s Dan, and I do cute portraits with colourful
+              lights in East London. I call it <strong>Light By Dan</strong>.
             </Para>
             <Para>
-              My focus is{" "}
+              My focus now is{" "}
               <InternalLink target="/gallery" title="Gallery of subjects">
                 portrait photography
               </InternalLink>{" "}
-              now but before that I moonlighted in{" "}
+              but I spent 10 years{" "}
               <InternalLink target="/nightlife" title="Photography background">
                 documenting queer nightlife
               </InternalLink>{" "}
-              for 10 years, and that's the root of my style: I strive to make my
-              shoots bright and fun with no preconceptions,{" "}
+              and that's the root of my style: I strive to make my shoots bright
+              and fun with no preconceptions,{" "}
               <InternalLink target="/prices" title="About my shoots">
                 a safe space to discover more about yourself
               </InternalLink>
               , celebrating vulnerability, absurdity and joy.
             </Para>
             <Para>
-              So welcome, and take a look around! Any questions or inquiries
-              contact me at{" "}
+              So welcome, and take a look around! Any questions please contact
+              me at{" "}
               <ExternalLink
                 target="mailto:lightbydan@gmail.com?subject=Site inquiry"
                 title="Email me"
               >
                 lightbydan@gmail.com
               </ExternalLink>
-              . Also if you like my work and want to encourage more of it, you
-              can tip me over at{" "}
+              .<br />
+              And if you love my work and want to encourage more of it, consider
+              tipping me via{" "}
               <ExternalLink
                 target="//www.buymeacoffee.com/lightbydan"
                 title="Tip me via Buy me A Coffee"
               >
-                Buy me A Coffee
+                buy me a coffee
               </ExternalLink>
               !
             </Para>

@@ -38,6 +38,10 @@ const WebsiteRights = styled.span`
   color: ${cssVars.nearWhite};
   margin-bottom: 10px;
   font-family: "Roboto" sans-serif;
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `
 
 const SocialIcons = styled.div`
@@ -58,8 +62,7 @@ const Footer = () => {
       <SocialMedia>
         <SocialMediaWrap>
           <WebsiteRights>
-            © Light by Dan {new Date().getFullYear()} <SocialIcon />{" "}
-            lightbydan@gmail.com
+            © Light by Dan {new Date().getFullYear()} - lightbydan@gmail.com
           </WebsiteRights>
           <SocialIcons>
             <SocialIconLink

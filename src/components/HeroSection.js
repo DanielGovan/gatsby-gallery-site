@@ -50,11 +50,15 @@ const SiteHeader = styled(motion.h1)`
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
     font-size: 40px;
+    max-width: 250px;
   }
 
   & > span {
     display: block;
     flex: auto;
+    @media screen and (min-width: ${cssVars.breakPointM}) {
+      display: inline;
+    }
   }
 `
 
