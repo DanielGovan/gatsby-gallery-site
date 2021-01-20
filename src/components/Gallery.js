@@ -17,7 +17,7 @@ import * as cssVars from "../const/constants"
 // Styling =====================
 
 const Filters = styled.div`
-  margin: 0 auto;
+  margin: 80px auto 0;
   width: 100%;
   max-width: 1000px;
   padding: 0 ${cssVars.deskPad};
@@ -244,7 +244,7 @@ const Gallery = () => {
             (sortDirection === true ? <FaArrowDown /> : <FaArrowUp />)}
         </FilterToggles>
         <FilterToggles href="/" onClick={handleFilterToggle}>
-          Filter: ({picsFilter})
+          Filter: {picsFilter}
         </FilterToggles>
       </Filters>
       {imageArray ? (
