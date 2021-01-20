@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import * as cssVars from "../const/constants"
+import * as cssVars from "../../const/constants"
 
 const StyledFadeInText = styled.span`
   width: 10rem;

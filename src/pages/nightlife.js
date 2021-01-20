@@ -97,7 +97,7 @@ const Background = () => {
         images={data.clubPapsImages.edges}
         alts="Lightbydan's club photography days"
         aspect={5 / 4}
-        maxSlides={7}
+        maxSlides={6}
         minSlides={2}
       />
       <InnerWrap>
@@ -114,9 +114,17 @@ const Background = () => {
           favourite haunts like Shake Yer Dix, Douchebag and Push the Button.
           Even with practice I found it awkward asking randoms if I could take
           their photo, but I developed a documentary style aiming for genuine
-          fun moments, and I've taken that forward.
+          fun moments, that I maintain still.
         </Para>
-
+      </InnerWrap>
+      <ImageCarousel
+        images={data.nightLifeImages.edges}
+        alts="Lightbydan's queer nightlife picks"
+        aspect={8 / 5}
+        maxSlides={5}
+        minSlides={1}
+      />
+      <InnerWrap>
         <SubHeader>Performers and performances</SubHeader>
         <Para>
           Having learned as much as I could from clubs and crowds, my focus
@@ -130,26 +138,19 @@ const Background = () => {
           Sunday Funday, Cybil's House, Savage and Knickerbocker.
         </Para>
       </InnerWrap>
-      <ImageCarousel
-        images={data.nightLifeImages.edges}
-        alts="Lightbydan's queer nightlife picks"
-        aspect={8 / 5}
-        maxSlides={5}
-        minSlides={1}
-      />
-
       <InnerWrap>
         <Header>Living Vivid</Header>
         <Para>
           In autumn 2018, I had an opportunity to show an exhibition at Dalston
-          Superstore; 40 portraits of kings and queens displayed for 2 months in
-          the same scene that most of them came up in: The circle complete.
+          Superstore; forty portraits of kings and queens displayed for two
+          months in the same scene that most of them came up in: The circle
+          complete.
         </Para>
+        <ImageGrid
+          images={data.exhibitionImages.edges}
+          alt="Living Vivid Exhibition at Dalston Superstore"
+        />
       </InnerWrap>
-      <ImageGrid
-        images={data.exhibitionImages.edges}
-        alt="Living Vivid Exhibition at Dalston Superstore"
-      />
       <InnerWrap>
         <Header>Light By Dan</Header>
         <Para>
@@ -163,9 +164,6 @@ const Background = () => {
           <InternalLink target="/prices">about shoots</InternalLink> if you're
           interested in getting some of the magic for yourself!
         </Para>
-        <br />
-        <br />
-        <br />
       </InnerWrap>
     </Layout>
   )

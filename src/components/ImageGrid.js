@@ -12,12 +12,8 @@ const StyledImageGrid = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 1000px;
-  padding: 0 ${cssVars.deskPad};
-  @media screen and (max-width: ${cssVars.breakPointM}) {
-    padding: 0 10px;
-  }
 
-  @media screen and (max-width: ${cssVars.breakPointS}) {
+  @media screen and (max-width: ${cssVars.breakPointM}) {
     div:nth-child(n + 5) {
       display: none;
     }

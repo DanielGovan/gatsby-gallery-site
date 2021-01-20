@@ -24,6 +24,8 @@ const StyledHeroButton = styled.a`
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
     font-size: 1.2rem;
+    bottom: 16px;
+    right: 16px;
   }
 
   &:hover {

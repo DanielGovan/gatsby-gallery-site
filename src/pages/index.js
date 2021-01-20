@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 import Para from "../components/Para"
 import HeroSection from "../components/HeroSection"
 import { ExternalLink, InternalLink } from "../Elements/links"
-import FadeInText from "../components/FadeInText"
+import FadeInText from "../components/animations/FadeInText"
 import ImageCarousel from "../components/ImageCarousel"
 import HeroButton from "../components/HeroButton"
 

@@ -3,14 +3,13 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import * as cssVars from "../const/constants"
 
-import FadeInWrap from "./FadeInWrap"
+import FadeInWrap from "./animations/FadeInWrap"
 import Img from "gatsby-image"
 
 const HeroContainer = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  margin-top: -80px;
   overflow: hidden;
 `
 
