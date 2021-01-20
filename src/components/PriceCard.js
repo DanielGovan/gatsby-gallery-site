@@ -43,6 +43,7 @@ const StyledPriceCard = styled.div`
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
     width: 100%;
+    padding: 1rem 1.5rem;
     ul,
     p {
       padding-top: 0;

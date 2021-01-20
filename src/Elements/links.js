@@ -63,7 +63,7 @@ const StyledExternalButton = styled.a`
   @media screen and (max-width: ${cssVars.breakPointM}) {
     font-size: 1.2rem;
     position: static;
-    margin-top: 2rem;
+    margin-top: 1rem;
     float: right;
     /* top: 50vh;
     right: 0; */

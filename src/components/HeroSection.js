@@ -34,6 +34,10 @@ const HeroInner = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 60vh 32px 0;
+
+  @media screen and (max-width: ${cssVars.breakPointM}) {
+    padding: 50vh ${cssVars.mobPad} 0;
+  }
 `
 
 const SiteHeader = styled(motion.h1)`
@@ -49,8 +53,8 @@ const SiteHeader = styled(motion.h1)`
   }
 
   @media screen and (max-width: ${cssVars.breakPointM}) {
-    font-size: 40px;
-    max-width: 250px;
+    font-size: 50px;
+    max-width: 310px;
   }
 
   & > span {

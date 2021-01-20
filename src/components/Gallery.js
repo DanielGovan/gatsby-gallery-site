@@ -11,7 +11,8 @@ import { GALLERY_IMAGES } from "../const/GalleryList"
 import LoadingRipple from "./LoadingRipple"
 import * as cssVars from "../const/constants"
 
-// TODO: Export Gallery Item and Filter Toggles as UI components to reduce complexity here. Would Memofication be useful here?
+// TODO: Export Gallery Item and Filter Toggles as UI components to reduce complexity here. Would Memofication / useCallBack hooks be useful here?
+// Bug when 1st toggles order
 
 // Styling =====================
 
@@ -28,6 +29,10 @@ const Filters = styled.div`
 const Search = styled.input`
   padding: 4px 8px;
   font-size: 1.2rem;
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    display: block;
+    width: 100%;
+  }
 `
 
 const GalleryWrap = styled(motion.div)`
@@ -66,6 +71,7 @@ const Gallery = () => {
     padding: 6px 12px;
     border-radius: 10px;
     cursor: pointer;
+    border: solid 1px #fff;
     background: ${({ active }) =>
       active ? cssVars.nearWhite : cssVars.justBlack};
     color: ${({ active }) => (active ? cssVars.justBlack : cssVars.nearWhite)};
@@ -223,7 +229,7 @@ const Gallery = () => {
           href="/"
           onClick={e => handleSort(e, "dateType")}
         >
-          Order by date{" "}
+          Date{" "}
           {sortType === "dateType" &&
             (sortDirection === true ? <FaArrowDown /> : <FaArrowUp />)}
         </FilterToggles>
@@ -233,12 +239,12 @@ const Gallery = () => {
           href="/"
           onClick={e => handleSort(e, "name")}
         >
-          Order by Name{" "}
+          Name{" "}
           {sortType === "name" &&
             (sortDirection === true ? <FaArrowDown /> : <FaArrowUp />)}
         </FilterToggles>
         <FilterToggles href="/" onClick={handleFilterToggle}>
-          Toggle filter ({picsFilter})
+          Filter: ({picsFilter})
         </FilterToggles>
       </Filters>
       {imageArray ? (

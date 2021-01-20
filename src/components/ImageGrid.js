@@ -17,6 +17,12 @@ const StyledImageGrid = styled.div`
     padding: 0 10px;
   }
 
+  @media screen and (max-width: ${cssVars.breakPointS}) {
+    div:nth-child(n + 5) {
+      display: none;
+    }
+  }
+
   img {
     width: 100% !important;
   }

@@ -84,8 +84,8 @@ const AboutShoots = () => {
         <Para>
           A professional shoot is great for visual promotion if you’re a
           performer or brand, but where this experience shines is as an
-          opportunity for exploring and improving self-image in a safe
-          environment. Plus being art is fun!
+          opportunity for exploring self-image in a safe environment. Plus being
+          art is fun!
         </Para>
 
         <Para>
@@ -97,9 +97,8 @@ const AboutShoots = () => {
             Mile End
           </ExternalLink>{" "}
           we'll work through a variety of lighting setups, colours and poses,
-          conferring over the shots as we go and deleting whatever doesn't work.
-          Everyone gets to veto everything, so we only put out what we're both
-          happy with.
+          conferring over the shots as we go. Everyone gets to veto everything,
+          so we only put out what we're both happy with.
         </Para>
 
         <Header>Packages</Header>
@@ -137,8 +136,8 @@ const AboutShoots = () => {
         </PriceWrap>
 
         <Para>
-          In either case if you need extra final shots, add £15 each. Headshots
-          and drag shoots also available, for any of these email{" "}
+          Extra final shots are available for £15 each if you just can't decide.
+          I do headshots and drag shoots too, so email{" "}
           <ExternalLink target="mailto:lightbydan@gmail.com?subject=Booking inquiry">
             lightbydan@gmail.com
           </ExternalLink>{" "}
