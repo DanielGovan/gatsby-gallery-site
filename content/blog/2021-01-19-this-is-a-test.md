@@ -1,5 +1,5 @@
 ---
-path: /writing/test
+path: /words/test
 layout: blog
 title: This is a test
 draft: false

@@ -1,7 +1,6 @@
 import React from "react"
 import { FaInstagram, FaTwitter } from "react-icons/fa"
 import { SiBuymeacoffee } from "react-icons/si"
-import { GiDragonBalls } from "react-icons/gi"
 import { IconContext } from "react-icons/lib"
 import styled from "styled-components"
 import * as cssVars from "../const/constants"
@@ -31,9 +30,6 @@ const SocialMediaWrap = styled.div`
   }
 `
 
-const SocialIcon = styled(GiDragonBalls)`
-  margin-left: 10px;
-`
 const WebsiteRights = styled.span`
   color: ${cssVars.nearWhite};
   margin-bottom: 10px;
