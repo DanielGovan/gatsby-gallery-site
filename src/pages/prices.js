@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 import HeroSection from "../components/HeroSection"
 import ImageCarousel from "../components/ImageCarousel"
 import PriceCard, { PriceWrap } from "../components/PriceCard"
-import CoffeeButton from "../components/CoffeeButton"
+import HeroButton from "../components/HeroButton"
 
 const AboutShoots = () => {
   const data = useStaticQuery(graphql`
@@ -65,7 +65,7 @@ const AboutShoots = () => {
       <HeroSection
         heroBG={data.heroBG.childImageSharp.fluid}
         position="center 30%"
-        button={<CoffeeButton />}
+        button={<HeroButton />}
       >
         <span>Thinking of getting</span>
         <span>lit by Dan?</span>

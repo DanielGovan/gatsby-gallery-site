@@ -11,7 +11,7 @@ import HeroSection from "../components/HeroSection"
 import { ExternalLink, InternalLink } from "../Elements/links"
 import FadeInText from "../components/FadeInText"
 import ImageCarousel from "../components/ImageCarousel"
-import CoffeeButton from "../components/CoffeeButton"
+import HeroButton from "../components/HeroButton"
 
 const HomeWrapper = styled.div`
   min-height: ${cssVars.screenHeight};
@@ -95,7 +95,7 @@ const IndexPage = () => {
       <HeroSection
         heroBG={data.heroBG.childImageSharp.fluid}
         position="center top"
-        button={<CoffeeButton />}
+        button={<HeroButton />}
       >
         <FadeInText>
           <span>Queer</span>

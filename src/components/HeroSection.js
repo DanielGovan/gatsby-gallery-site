@@ -79,8 +79,8 @@ const HeroSection = ({ heroBG, children, button, position }) => {
           >
             {children}
           </SiteHeader>
-          {button}
         </HeroInner>
+        {button}
       </HeroContainer>
     </FadeInWrap>
   )

@@ -11,7 +11,7 @@ import HeroSection from "../components/HeroSection"
 import ImageCarousel from "../components/ImageCarousel"
 import Para from "../components/Para"
 import SEO from "../components/seo"
-import CoffeeButton from "../components/CoffeeButton"
+import HeroButton from "../components/HeroButton"
 
 const Background = () => {
   const data = useStaticQuery(graphql`
@@ -88,7 +88,7 @@ const Background = () => {
       <SEO title="Nightlife" />
       <HeroSection
         heroBG={data.heroBG.childImageSharp.fluid}
-        button={<CoffeeButton />}
+        button={<HeroButton />}
       >
         <span>Drawing on ten years</span>
         <span>of queer nightlife</span>
