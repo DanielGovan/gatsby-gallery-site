@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import Zoom from "react-medium-image-zoom"
 import { FaArrowDown, FaArrowUp } from "react-icons/fa"
 import "react-medium-image-zoom/dist/styles.css"
@@ -90,6 +90,7 @@ const Gallery = () => {
   const [sortType, setSortType] = useState("dateType")
   const [sortDirection, setSortDirection] = useState(false)
   const [picsFilter, setPicsFilter] = useState(filterTypes[0])
+  const filtering = useRef(false)
 
   const data = useStaticQuery(graphql`
     query galleryImages {
@@ -184,10 +185,8 @@ const Gallery = () => {
   // Filter =====================
 
   useEffect(() => {
-    if (picsFilter === null) return
-    if (picsFilter === "all") {
-      return setImageArray(imagesSource)
-    }
+    if (!filtering.current || picsFilter === null) return
+    if (picsFilter === "all") return setImageArray(imagesSource)
     let filteredImages = [...imagesSource].filter(item =>
       item.keyWords.includes(picsFilter)
     )
@@ -196,6 +195,7 @@ const Gallery = () => {
 
   const handleFilterToggle = e => {
     e.preventDefault()
+    filtering.current = true
     const currentPlace = filterTypes.indexOf(picsFilter)
     const newPlace =
       currentPlace === filterTypes.length - 1 ? 0 : currentPlace + 1
