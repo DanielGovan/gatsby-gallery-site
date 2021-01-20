@@ -7,9 +7,9 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
 
-import { GALLERY_IMAGES } from "../const/GalleryList"
-import LoadingRipple from "./LoadingRipple"
-import * as cssVars from "../const/constants"
+import { GALLERY_IMAGES } from "../../const/GalleryList"
+import LoadingRipple from "../LoadingRipple"
+import * as cssVars from "../../const/constants"
 
 // TODO: Export Gallery Item and Filter Toggles as UI components to reduce complexity here. Would Memofication / useCallBack hooks be useful here?
 // Bug when 1st toggles order
