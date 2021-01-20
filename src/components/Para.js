@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const StyledPara = styled(motion.p)`
   font-size: 1.5rem;
   line-height: 1.3;
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.5rem 0 2.5rem;
 
   @media screen and (max-width: 500px) {
     font-size: 1.3rem;

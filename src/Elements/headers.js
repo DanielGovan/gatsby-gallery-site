@@ -6,10 +6,10 @@ const StyledHeader = styled.h1`
   letter-spacing: 2px;
   font-weight: 300;
   margin: 4rem 0 1rem 0;
-  font-size: 3rem;
+  font-size: 4rem;
+  text-align: center;
   @media screen and (max-width: 500px) {
     font-size: 2.2rem;
-    text-align: center;
   }
 `
 
