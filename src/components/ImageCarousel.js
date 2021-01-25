@@ -96,7 +96,7 @@ const ImageCarousel = ({
     ],
   }
 
-  console.log(Math.max(maxSlides - 2, minSlides), maxSlides - 2, minSlides)
+  // console.log(Math.max(maxSlides - 2, minSlides), maxSlides - 2, minSlides)
 
   const slickSettingsTestimonials = {
     ...slickSettingsPicks,
@@ -106,6 +106,7 @@ const ImageCarousel = ({
   let slickSettings = slickSettingsPicks
   if (type === "testimonial") {
     slickSettings = slickSettingsTestimonials
+  } else {
   }
 
   return (
@@ -113,20 +114,37 @@ const ImageCarousel = ({
       <IconContext.Provider value={{ color: "white", size: "50px" }}>
         <GiSideswipe />
       </IconContext.Provider>
-      <StyledFullWidthSlider {...slickSettings}>
-        {images
-          //.sort(() => Math.random() - 0.5)
-          .map((image, key) => (
-            <SliderItem
-              key={key}
-              fluid={{
-                ...image.node.childImageSharp.fluid,
-                aspectRatio: aspect,
-              }}
-              alt={alts}
-            />
-          ))}
-      </StyledFullWidthSlider>
+      {type === "testimonial" ? (
+        <StyledFullWidthSlider {...slickSettings}>
+          {images
+            .sort(() => Math.random() - 0.5)
+            .map((image, key) => (
+              <SliderItem
+                key={key}
+                fluid={{
+                  ...image.img.childImageSharp.fluid,
+                  aspectRatio: aspect,
+                }}
+                alt={image.altText}
+              />
+            ))}
+        </StyledFullWidthSlider>
+      ) : (
+        <StyledFullWidthSlider {...slickSettings}>
+          {images
+            .sort(() => Math.random() - 0.5)
+            .map((image, key) => (
+              <SliderItem
+                key={key}
+                fluid={{
+                  ...image.node.childImageSharp.fluid,
+                  aspectRatio: aspect,
+                }}
+                alt={alts}
+              />
+            ))}
+        </StyledFullWidthSlider>
+      )}
     </SliderArea>
   )
 }

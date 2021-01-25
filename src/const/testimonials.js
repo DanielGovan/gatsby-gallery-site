@@ -1,18 +1,18 @@
 export const TESTIMONIAL_COPY = [
   {
-    name: "andreas",
+    name: "Andreas",
     quote:
       "Was lovely, loved the result and was super comfortable. Round 2 with bubbles pls!",
     image: "andreas.jpg",
   },
   {
-    name: "andy",
+    name: "Andy",
     quote:
       "Professional but super-friendly, out of my comfort zone but love the results.",
     image: "andy.jpg",
   },
   {
-    name: "stella",
+    name: "Stella",
     quote:
       "Shooting with Dan was the best experience. He was professional and fun and so talented.",
     image: "stella.jpg",
@@ -36,7 +36,7 @@ export const TESTIMONIAL_COPY = [
     image: "paud.jpg",
   },
   {
-    name: "chris",
+    name: "Chris",
     quote:
       "Brilliant! A calm and comfy environment, and the shots were amazing",
     image: "chris.jpg",
@@ -48,7 +48,7 @@ export const TESTIMONIAL_COPY = [
     image: "danb.jpg",
   },
   {
-    name: "jake",
+    name: "Jake",
     quote:
       "He was lovely and put me at ease even htough I had very little experience. 5 stars.",
     image: "jake.jpg",

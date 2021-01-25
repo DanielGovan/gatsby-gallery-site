@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -11,8 +11,10 @@ import HeroSection from "../components/HeroSection"
 import ImageCarousel from "../components/ImageCarousel"
 import PriceCard, { PriceWrap } from "../components/PriceCard"
 import HeroButton from "../components/HeroButton"
+import { TESTIMONIAL_COPY } from "../const/testimonials"
 
 const AboutShoots = () => {
+  const [imageArray, setImageArray] = useState()
   const data = useStaticQuery(graphql`
     query {
       testimonialImages: allFile(
@@ -59,6 +61,22 @@ const AboutShoots = () => {
       }
     }
   `)
+
+  useEffect(() => {
+    const displayImages = []
+    // map data array to image query
+    TESTIMONIAL_COPY.map(({ name, quote, image }) => {
+      const img = data.testimonialImages.edges.find(
+        ({ node }) => node.relativePath === image
+      ).node
+      const altText = `${name}: ${quote}`
+
+      displayImages.push({ img, altText })
+      return null
+    })
+    setImageArray(displayImages)
+    // console.log("displayImages", displayImages)
+  }, [data])
   return (
     <Layout>
       <SEO title="Prices" />
@@ -146,14 +164,16 @@ const AboutShoots = () => {
 
         <Header>Testimonials</Header>
       </InnerWrap>
-      <ImageCarousel
-        type="testimonial"
-        images={data.testimonialImages.edges}
-        alts=""
-        aspect={6 / 10}
-        maxSlides={5}
-        minSlides={2}
-      />
+      {imageArray && (
+        <ImageCarousel
+          type="testimonial"
+          images={imageArray}
+          alts=""
+          aspect={6 / 10}
+          maxSlides={5}
+          minSlides={2}
+        />
+      )}
     </Layout>
   )
 }
