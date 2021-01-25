@@ -7,8 +7,15 @@ export const TESTIMONIAL_COPY = [
   },
   {
     name: "andy",
-    quote: "Professional but super-",
+    quote:
+      "Professional but super-friendly, out of my comfort zone but love the results.",
     image: "andy.jpg",
+  },
+  {
+    name: "stella",
+    quote:
+      "Shooting with Dan was the best experience. He was professional and fun and so talented.",
+    image: "stella.jpg",
   },
   {
     name: "Charlie",
@@ -23,6 +30,12 @@ export const TESTIMONIAL_COPY = [
     image: "chirag.jpg",
   },
   {
+    name: "Paud",
+    quote:
+      "Dan is inquisitive and reassuring, I'm a firm believer that the best work comes from the kindest environments, which must be why his photos are so beautiful",
+    image: "paud.jpg",
+  },
+  {
     name: "chris",
     quote:
       "Brilliant! A calm and comfy environment, and the shots were amazing",
@@ -33,18 +46,6 @@ export const TESTIMONIAL_COPY = [
     quote:
       "Such an amazing experience! Fun, creative and humorous. Work has only gotten better too.",
     image: "danb.jpg",
-  },
-  {
-    name: "Dan",
-    quote:
-      "Couldn;t have felt more at ease! Great experience to really see your body as beautiful.",
-    image: "danf.jpg",
-  },
-  {
-    name: "Diogo",
-    quote:
-      "Dan made me feel comfortable despite how insecure I am about my physical appearance.",
-    image: "diago.jpg",
   },
   {
     name: "jake",
@@ -77,24 +78,6 @@ export const TESTIMONIAL_COPY = [
     image: "matt.jpg",
   },
   {
-    name: "Owen",
-    quote:
-      "Creative, credible and caring Dan made me feel welcome and wonderful during our shoot.",
-    image: "owen.jpg",
-  },
-  {
-    name: "Paud",
-    quote:
-      "Dan is inquisitive and reassuring, I'm a firm believer that the best work comes from the kindest environments, which must be why his photos are so beautiful",
-    image: "paud.jpg",
-  },
-  {
-    name: "Reggie",
-    quote:
-      "Tons of fun, the results were great. Meta great photographer and got naked!",
-    image: "reggie.jpg",
-  },
-  {
     name: "Sam",
     quote: "Super comfortable environment and such an open creative space.",
     image: "sam.jpg",
@@ -106,21 +89,39 @@ export const TESTIMONIAL_COPY = [
     image: "seb.jpg",
   },
   {
-    name: "stella",
-    quote:
-      "Shooting with Dan was the best experience. He was professional and fun and so talented.",
-    image: "stella.jpg",
-  },
-  {
     name: "Tom",
     quote:
       "Such a wonderful and comfortable experience! I've never felt so safe and honestly couldn't recommend shooting with Dan enough! I've found the experience so fun and thrilling, especially when I'm not used to being in front of the camera!",
     image: "tomr.jpg",
   },
   {
+    name: "Owen",
+    quote:
+      "Creative, credible and caring Dan made me feel welcome and wonderful during our shoot.",
+    image: "owen.jpg",
+  },
+  {
+    name: "Reggie",
+    quote:
+      "Tons of fun, the results were great. Meta great photographer and got naked!",
+    image: "reggie.jpg",
+  },
+  {
+    name: "Diogo",
+    quote:
+      "Dan made me feel comfortable despite how insecure I am about my physical appearance.",
+    image: "diago.jpg",
+  },
+  {
     name: "Toni",
     quote:
       "I was lit by Dan and it was a very easy, friendly and fun experience!",
     image: "toni.jpg",
+  },
+  {
+    name: "Dan",
+    quote:
+      "Couldn;t have felt more at ease! Great experience to really see your body as beautiful.",
+    image: "danf.jpg",
   },
 ]
