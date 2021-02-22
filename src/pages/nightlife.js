@@ -103,7 +103,6 @@ const Background = () => {
       <InnerWrap>
         {/* <Header>Background</Header> */}
         <SubHeader>Club photography</SubHeader>
-
         <Para>
           I started documenting nights out with friends in 2008, capturing
           moments of unguarded joy (while skipping some of the mess), it was

@@ -6,6 +6,12 @@ import { InternalLink } from "../Elements/links"
 
 const StyledBlogRoll = styled.div``
 
+const Article = styled.article`
+  img {
+    max-width: 100%;
+  }
+`
+
 const BlogRoll = ({ data, count }) => {
   const { edges: posts } = data.allMarkdownRemark
 
@@ -14,12 +20,9 @@ const BlogRoll = ({ data, count }) => {
       {posts &&
         posts.map(({ node: post }) => (
           <div className="is-parent column is-6" key={post.id}>
-            <article
-              className={`blog-list-item tile is-child box notification ${
-                post.frontmatter.featuredpost ? "is-featured" : ""
-              }`}
-            >
+            <Article>
               <header>
+                <img src={"/" + post.frontmatter.featuredImage} alt="" />
                 <p className="post-meta">
                   <InternalLink target={post.frontmatter.path}>
                     {post.frontmatter.title}
@@ -38,7 +41,7 @@ const BlogRoll = ({ data, count }) => {
                   Keep Reading →
                 </InternalLink>
               </p>
-            </article>
+            </Article>
           </div>
         ))}
     </StyledBlogRoll>
@@ -66,6 +69,7 @@ export default () => (
                 path
                 title
                 date(formatString: "MMMM DD, YYYY")
+                featuredImage
               }
             }
           }

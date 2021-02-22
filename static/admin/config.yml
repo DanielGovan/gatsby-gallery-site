@@ -3,7 +3,7 @@ backend:
   repo: danielgovan/gatsby-gallery-site
   branch: master
 
-media_folder: static/uploads
+media_folder: static/assets
 public_folder: assets
 
 collections:
@@ -20,7 +20,7 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - {
           label: "Featured Image",
-          name: "thumbnail",
+          name: "featuredImage",
           widget: "image",
           allow_multiple: false,
           required: false,

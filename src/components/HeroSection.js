@@ -24,6 +24,16 @@ const HeroImage = styled(Img)`
     object-position: center 30% !important;
   }
 `
+const HeroStatic = styled.img`
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  max-height: 100%;
+  object-position: center 30% !important;
+`
 
 const HeroInner = styled.div`
   position: absolute;
@@ -65,11 +75,13 @@ const SiteHeader = styled(motion.h1)`
   }
 `
 
-const HeroSection = ({ heroBG, children, button, position }) => {
+const HeroSection = ({ heroBG, staticImg, children, button, position }) => {
+  console.log("heroBG", heroBG)
   return (
     <FadeInWrap>
       <HeroContainer heroBG={heroBG} position={position}>
-        <HeroImage fluid={heroBG} />
+        {heroBG && <HeroImage fluid={heroBG} />}
+        {staticImg && <HeroStatic src={"/" + staticImg} alt="" />}
         <HeroInner>
           <SiteHeader
             initial={{ x: -100, opacity: 0 }}
