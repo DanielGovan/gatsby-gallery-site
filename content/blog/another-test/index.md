@@ -1,5 +1,5 @@
 ---
-path: words/{{slug}}
+path: words/another-test/index
 layout: blog
 title: Another test?
 draft: false
