@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 import styled from "styled-components"
 import { InternalLink } from "../Elements/links"
+import Img from "gatsby-image"
 
 const StyledBlogRoll = styled.div``
 
@@ -12,8 +13,11 @@ const Article = styled.article`
   }
 `
 
+const FeaturedImage = styled(Img)``
+
 const BlogRoll = ({ data, count }) => {
   const { edges: posts } = data.allMarkdownRemark
+  console.log("data.allMarkdownRemark", data.allMarkdownRemark)
 
   return (
     <StyledBlogRoll>
@@ -22,7 +26,9 @@ const BlogRoll = ({ data, count }) => {
           <div className="is-parent column is-6" key={post.id}>
             <Article>
               <header>
-                <img src={"/" + post.frontmatter.featuredImage} alt="" />
+                <FeaturedImage
+                  fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+                />
                 <p className="post-meta">
                   <InternalLink target={post.frontmatter.path}>
                     {post.frontmatter.title}
@@ -69,7 +75,13 @@ export default () => (
                 path
                 title
                 date(formatString: "MMMM DD, YYYY")
-                featuredImage
+                featuredImage {
+                  childImageSharp {
+                    fluid(maxWidth: 1024) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }

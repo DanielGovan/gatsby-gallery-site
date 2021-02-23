@@ -13,7 +13,7 @@ export default function Template({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <HeroSection staticImg={frontmatter.featuredImage}>
+      <HeroSection heroBG={frontmatter.featuredImage.childImageSharp.fluid}>
         <span>{frontmatter.title}</span>
       </HeroSection>
       <InnerWrap>
@@ -39,7 +39,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
-        featuredImage
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1024) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
