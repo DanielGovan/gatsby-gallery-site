@@ -11,13 +11,13 @@ collections:
     label: "Blog"
     folder: "content/blog"
     create: true
-    slug: "index"
+    slug: "words"
     media_folder: ""
     public_folder: ""
-    path: "{{title}}/index"
+    path: "{{title}}/words"
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: path, label: Path, default: "/words/{{title}}/index" }
+      - { name: path, label: Path, default: "/words/{{title}}/words" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }

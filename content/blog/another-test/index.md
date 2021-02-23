@@ -1,5 +1,5 @@
 ---
-path: /words/another-test/index
+path: /words/another-test
 layout: blog
 title: Another test?
 draft: false

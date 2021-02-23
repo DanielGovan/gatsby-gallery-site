@@ -1,5 +1,5 @@
 ---
-path: /words/test
+path: /words/test1
 layout: blog
 draft: false
 thumbnail: assets/screenshot-2021-01-15-at-11.48.50.png
