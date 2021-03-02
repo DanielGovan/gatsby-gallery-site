@@ -170,17 +170,17 @@ const NavBar = () => {
               </NavItem>
               <NavItem>
                 <NavLinks activeStyle={{ fontWeight: 700 }} to="/prices/">
-                  About shoots
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks activeStyle={{ fontWeight: 700 }} to="/nightlife/">
-                  Nightlife
+                  Prices
                 </NavLinks>
               </NavItem>
               <NavItem>
                 <NavLinks activeStyle={{ fontWeight: 700 }} to="/gallery/">
-                  Portrait gallery
+                  Gallery
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks activeStyle={{ fontWeight: 700 }} to="/nightlife/">
+                  Background
                 </NavLinks>
               </NavItem>
             </NavMenu>

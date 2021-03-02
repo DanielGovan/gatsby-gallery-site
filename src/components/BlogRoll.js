@@ -15,23 +15,22 @@ const StyledBlogRoll = styled.div`
 const Article = styled.article`
   header {
     position: relative;
-    .post-meta,
-    p {
+    .post-content {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5);
       padding: 10px;
       h2 {
         margin: 0 auto;
       }
-    }
-    p {
-      background: rgba(0, 0, 0, 0.6);
-      top: auto;
-      bottom: 0;
-      margin: 0;
+      span {
+        font-size: 0.8rem;
+      }
+      p {
+        margin: 0.5rem 0 0;
+      }
     }
   }
   img {
@@ -59,17 +58,11 @@ const BlogRoll = ({ data, count }) => {
                 <FeaturedImage
                   fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
                 />
-                <div className="post-meta">
+                <div className="post-content">
                   <h2>{post.frontmatter.title}</h2>
                   <span>{post.frontmatter.date}</span>
+                  <p>{post.excerpt}</p>
                 </div>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <InternalLink target={post.frontmatter.path}>
-                    Keep Reading →
-                  </InternalLink>
-                </p>
               </header>
             </InternalLink>
           </Article>
