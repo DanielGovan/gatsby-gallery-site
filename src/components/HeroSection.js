@@ -57,6 +57,11 @@ const SiteHeader = styled(motion.h1)`
   font-size: 60px;
   text-shadow: 4px 4px 10px ${cssVars.justBlack};
 
+  small {
+    font-size: 1.5rem;
+    display: block;
+  }
+
   @media screen and (max-width: ${cssVars.breakPointL}) {
     font-size: 50px;
   }

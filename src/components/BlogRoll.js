@@ -5,9 +5,35 @@ import styled from "styled-components"
 import { InternalLink } from "../Elements/links"
 import Img from "gatsby-image"
 
-const StyledBlogRoll = styled.div``
+const StyledBlogRoll = styled.div`
+  margin: 80px auto 0;
+  display: grid;
+  column-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+`
 
 const Article = styled.article`
+  header {
+    position: relative;
+    .post-meta,
+    p {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      h2 {
+        margin: 0 auto;
+      }
+    }
+    p {
+      background: rgba(0, 0, 0, 0.6);
+      top: auto;
+      bottom: 0;
+      margin: 0;
+    }
+  }
   img {
     max-width: 100%;
   }
@@ -19,36 +45,34 @@ const BlogRoll = ({ data, count }) => {
   const { edges: posts } = data.allMarkdownRemark
   console.log("data.allMarkdownRemark", data.allMarkdownRemark)
 
+  //restructre the html:
+  // whole thing linkable
+  // h1 in the image
+
   return (
     <StyledBlogRoll>
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column is-6" key={post.id}>
-            <Article>
+          <Article>
+            <InternalLink target={post.frontmatter.path}>
               <header>
                 <FeaturedImage
                   fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
                 />
-                <p className="post-meta">
+                <div className="post-meta">
+                  <h2>{post.frontmatter.title}</h2>
+                  <span>{post.frontmatter.date}</span>
+                </div>
+                <p>
+                  {post.excerpt}
+                  <br />
                   <InternalLink target={post.frontmatter.path}>
-                    {post.frontmatter.title}
+                    Keep Reading →
                   </InternalLink>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
                 </p>
               </header>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <InternalLink target={post.frontmatter.path}>
-                  Keep Reading →
-                </InternalLink>
-              </p>
-            </Article>
-          </div>
+            </InternalLink>
+          </Article>
         ))}
     </StyledBlogRoll>
   )

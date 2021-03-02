@@ -2,7 +2,7 @@
 path: /words/one-more-test
 layout: blog
 title: One more test
-draft: true
+draft: false
 description: One more test
 featuredImage: screenshot-2021-02-12-at-09.11.48.png
 date: 2021-02-22T23:20:06.743Z

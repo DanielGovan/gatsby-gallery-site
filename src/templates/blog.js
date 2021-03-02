@@ -14,13 +14,14 @@ export default function Template({
     <Layout>
       <SEO title={frontmatter.title} />
       <HeroSection heroBG={frontmatter.featuredImage.childImageSharp.fluid}>
-        <span>{frontmatter.title}</span>
+        <span>
+          {frontmatter.title}
+          <small>{frontmatter.date}</small>
+        </span>
       </HeroSection>
       <InnerWrap>
         <div className="blog-post-container">
           <div className="blog-post">
-            <h1>{frontmatter.title}</h1>
-            <h2>{frontmatter.date}</h2>
             <div
               className="blog-post-content"
               dangerouslySetInnerHTML={{ __html: html }}
