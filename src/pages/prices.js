@@ -110,9 +110,9 @@ const AboutShoots = () => {
           At my home studio in{" "}
           <ExternalLink
             title="Google Maps link"
-            target="//www.google.com/maps/place/Mile+End+Station/@51.5251447,-0.0509267,14z/data=!4m5!3m4!1s0x48761d307352cb15:0xe6fed20d26c2bbf8!8m2!3d51.5251447!4d-0.0334172"
+            target="//www.google.com/maps/place/Whitechapel+Station/@51.5194973,-0.0612018,15z/data=!4m5!3m4!1s0x0:0xfd131553558a271f!8m2!3d51.5194973!4d-0.0612018"
           >
-            Mile End
+            Whitechapel
           </ExternalLink>{" "}
           we'll work through a variety of lighting setups, colours and poses,
           conferring over the shots as we go. Everyone gets to veto everything,
