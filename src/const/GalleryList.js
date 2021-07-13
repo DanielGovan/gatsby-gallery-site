@@ -1062,4 +1062,34 @@ export const GALLERY_IMAGES = [
     keyWords: "skin",
     images: ["ChrisR-06551.jpg"],
   },
+  {
+    name: "Domhnall",
+    date: "4 July 2021",
+    keyWords: "skin",
+    images: ["Domhnall-09429.jpg"],
+  },
+  {
+    name: "Elliot R",
+    date: "17 June 2021",
+    keyWords: "skin",
+    images: ["ElliotR-08750.jpg"],
+  },
+  {
+    name: "Isi",
+    date: "4 July 2021",
+    keyWords: "skin",
+    images: ["Isi-09606.jpg"],
+  },
+  {
+    name: "Luke",
+    date: "5 June 2021",
+    keyWords: "skin",
+    images: ["Luke-07514.jpg"],
+  },
+  {
+    name: "Ollie",
+    date: "13 June 2021",
+    keyWords: "skin",
+    images: ["Ollie-07972.jpg"],
+  },
 ]
