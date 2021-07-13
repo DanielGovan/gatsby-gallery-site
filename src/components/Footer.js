@@ -81,7 +81,7 @@ const Footer = () => {
               <FaTwitter />
             </SocialIconLink>
 
-            <SocialIconLink
+            {/* <SocialIconLink
               href="//www.buymeacoffee.com/lightbydan"
               target="_blank"
               aria-label="Buy Me A Coffee"
@@ -91,7 +91,7 @@ const Footer = () => {
               <IconContext.Provider value={{ color: "#ff4040" }}>
                 <SiBuymeacoffee />
               </IconContext.Provider>
-            </SocialIconLink>
+            </SocialIconLink> */}
           </SocialIcons>
         </SocialMediaWrap>
       </SocialMedia>

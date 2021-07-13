@@ -153,16 +153,7 @@ const IndexPage = () => {
               >
                 lightbydan@gmail.com
               </ExternalLink>
-              .<br />
-              And if you love my work and want to encourage more of it, consider
-              tipping me via{" "}
-              <ExternalLink
-                target="//www.buymeacoffee.com/lightbydan"
-                title="Tip me via Buy me A Coffee"
-              >
-                buy me a coffee
-              </ExternalLink>
-              !
+              .
             </Para>
           </div>
         </HomeContent>

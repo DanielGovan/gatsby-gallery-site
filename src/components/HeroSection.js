@@ -96,7 +96,7 @@ const HeroSection = ({ heroBG, staticImg, children, button, position }) => {
             {children}
           </SiteHeader>
         </HeroInner>
-        <FadeInWrap after={2}>{button}</FadeInWrap>
+        {/* <FadeInWrap after={2}>{button}</FadeInWrap> */}
       </HeroContainer>
     </FadeInWrap>
   )
